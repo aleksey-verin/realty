@@ -1,6 +1,4 @@
-import { FC, useEffect, useReducer, useRef, useState } from 'react';
-import ImgDashboard from './ui/sidebar/ImgDashboard';
-import ImgDashboard2 from './ui/sidebar/ImgDashboardActive';
+import { FC, useEffect, useRef, useState } from 'react';
 import { routesType } from '../routes/routes';
 
 interface SidebarItemProps {
