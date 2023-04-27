@@ -9,70 +9,87 @@ import ImgTasksActive from '../components/ui/sidebar/ImgTasksActive';
 import ImgCalendar from '../components/ui/sidebar/ImgCalendar';
 import ImgNotes from '../components/ui/sidebar/ImgNotes';
 import ImgSettings from '../components/ui/sidebar/ImgSettings';
+import Dashboard from '../pages/Dashboard';
+import Deals from '../pages/Deals';
+import Customers from '../pages/Customers';
+import Tasks from '../pages/Tasks';
+import Calendar from '../pages/Calendar';
+import Notes from '../pages/Notes';
+import Settings from '../pages/Settings';
+import ImgCalendarActive from '../components/ui/sidebar/ImgCalendarActive';
+import ImgNotesActive from '../components/ui/sidebar/ImgNotesActive';
+import ImgSettingsActive from '../components/ui/sidebar/ImgSettingsActive';
 
-export const routes = [
+export const sidebarRoutes = [
   {
     path: 'dashboard',
     title: 'Dashboard',
-    images: {
+    menuImage: {
       normal: <ImgDashboard />,
       active: <ImgDashboardActive />
-    }
+    },
+    element: <Dashboard />
   },
   {
     path: 'deals',
     title: 'Deals',
-    images: {
+    menuImage: {
       normal: <ImgDeals />,
       active: <ImgDealsActive />
-    }
+    },
+    element: <Deals />
   },
   {
     path: 'customers',
     title: 'Customers',
-    images: {
+    menuImage: {
       normal: <ImgCustomers />,
       active: <ImgCustomersActive />
-    }
+    },
+    element: <Customers />
   },
   {
     path: 'tasks',
     title: 'Tasks',
-    images: {
+    menuImage: {
       normal: <ImgTasks />,
       active: <ImgTasksActive />
-    }
+    },
+    element: <Tasks />
   },
   {
     path: 'calendar',
     title: 'Calendar',
-    images: {
+    menuImage: {
       normal: <ImgCalendar />,
-      active: <ImgCalendar />
-    }
+      active: <ImgCalendarActive />
+    },
+    element: <Calendar />
   },
   {
     path: 'notes',
     title: 'Notes',
-    images: {
+    menuImage: {
       normal: <ImgNotes />,
-      active: <ImgNotes />
-    }
+      active: <ImgNotesActive />
+    },
+    element: <Notes />
   },
   {
     path: 'settings',
     title: 'Settings',
-    images: {
+    menuImage: {
       normal: <ImgSettings />,
-      active: <ImgSettings />
-    }
+      active: <ImgSettingsActive />
+    },
+    element: <Settings />
   }
 ];
 
 export interface routesType {
   path: string;
   title: string;
-  images: images;
+  menuImage: images;
 }
 
 interface images {

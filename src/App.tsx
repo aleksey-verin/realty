@@ -1,25 +1,25 @@
+import Sidebar from './components/Sidebar';
+import Header from './components/Header';
+import { HashRouter, Navigate, Route, Routes } from 'react-router-dom';
+import { sidebarRoutes } from './routes/routes';
 import './App.css';
-import ImgLogo from './components/ui/ImgLogo';
-import SidebarItem from './components/SidebarItem';
-import { routes } from './routes/routes';
 
 function App() {
   return (
     <div className="container">
-      <header className="header">
-        <div className="header-logo">
-          <ImgLogo />
-        </div>
-        <div className="header-menu">MENU</div>
-      </header>
-      <main className="main">
-        <nav className="sidebar">
-          {routes.map((item) => (
-            <SidebarItem data={item} />
-          ))}
-        </nav>
-        <section className="section">Section</section>
-      </main>
+      <HashRouter>
+        <Header />
+        <main className="main">
+          <Sidebar />
+          <Routes>
+            {sidebarRoutes.map(({ element, path }, index) => (
+              <Route key={index} element={element} path={path} />
+            ))}
+
+            <Route path="*" element={<Navigate replace to={sidebarRoutes[0].path} />} />
+          </Routes>
+        </main>
+      </HashRouter>
     </div>
   );
 }

@@ -29,7 +29,7 @@
 }
 .main {
   display: flex;
-  height: calc(100vh - 90px);
+  // height: calc(100vh - 90px);
 }
 .sidebar {
   flex: 0 0 90px;
@@ -50,17 +50,20 @@
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    transition: background-color 0.1s 0s;
+    transition: all 0.1s 0s;
+
     &:hover {
-      background-color: #514ef3;
+      // outline: 2px solid #514ef3;
+      -webkit-box-shadow: inset 0px 0px 0px 2px #514ef3;
+      -moz-box-shadow: inset 0px 0px 0px 2px #514ef3;
+      box-shadow: inset 0px 0px 0px 2px #514ef3;
     }
     &:active {
       background-color: #3431e4;
     }
     &.active {
       background-color: #514ef3;
-    }
-    & svg {
+      // outline: 2px solid #514ef3;
     }
   }
 }
