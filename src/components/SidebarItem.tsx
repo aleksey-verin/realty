@@ -6,7 +6,7 @@ interface SidebarItemProps {
 }
 
 const SidebarItem: FC<SidebarItemProps> = ({ data }) => {
-  const { path, title, images } = data;
+  const { title, images } = data; // will add 'path'
   const [isActive, setIsActive] = useState(false);
   const [over, setOver] = useState(false);
 

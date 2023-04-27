@@ -77,6 +77,6 @@ export interface routesType {
 }
 
 interface images {
-  normal: ReactElement;
-  active: ReactElement;
+  normal: JSX.Element;
+  active: JSX.Element;
 }
