@@ -1,4 +1,3 @@
-import { ReactElement } from 'react';
 import ImgDashboard from '../components/ui/sidebar/ImgDashboard';
 import ImgDeals from '../components/ui/sidebar/ImgDeals';
 import ImgDashboardActive from '../components/ui/sidebar/ImgDashboardActive';
