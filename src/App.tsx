@@ -1,6 +1,7 @@
 import './App.css';
-import ImgDashboard from './components/ui/ImgDashboard';
 import ImgLogo from './components/ui/ImgLogo';
+import SidebarItem from './components/SidebarItem';
+import { routes } from './routes/routes';
 
 function App() {
   return (
@@ -13,15 +14,9 @@ function App() {
       </header>
       <main className="main">
         <nav className="sidebar">
-          <div className="sidebar-item">
-            <ImgDashboard />
-          </div>
-          <div className="sidebar-item">
-            <ImgDashboard />
-          </div>
-          <div className="sidebar-item">
-            <ImgDashboard />
-          </div>
+          {routes.map((item) => (
+            <SidebarItem data={item} />
+          ))}
         </nav>
         <section className="section">Section</section>
       </main>
