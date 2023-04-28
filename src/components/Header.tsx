@@ -1,15 +1,31 @@
 import { FC } from 'react';
-import ImgLogo from './ui/ImgLogo';
+import Logo from './header/Logo';
+import ImgSearch from './ui/ImgSearch';
+import ImgAdd from './ui/ImgAdd';
 
 interface HeaderProps {}
 
-const Header: FC<HeaderProps> = ({}) => {
+const Header: FC<HeaderProps> = () => {
+  const styleUser = {
+    backgroundImage: `url('./public/avatar.jpg')`
+  };
+
   return (
     <header className="header">
-      <div className="header-logo">
-        <ImgLogo />
+      <Logo />
+      <div className="header-title">Deals</div>
+      <div className="header-actions">
+        <div className="header-actions__action button">
+          <div className="button-title">Add New Deal</div>
+          <div className="button-image">
+            <ImgAdd />
+          </div>
+        </div>
+        <div className="header-actions__search search">
+          <ImgSearch />
+        </div>
+        <div style={styleUser} className="header-actions__user user"></div>
       </div>
-      <div className="header-menu">MENU</div>
     </header>
   );
 };

@@ -15,7 +15,6 @@ function App() {
             {sidebarRoutes.map(({ element, path }, index) => (
               <Route key={index} element={element} path={path} />
             ))}
-
             <Route path="*" element={<Navigate replace to={sidebarRoutes[0].path} />} />
           </Routes>
         </main>
