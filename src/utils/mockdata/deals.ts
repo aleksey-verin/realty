@@ -52,6 +52,24 @@ export const mockDeals = [
     access: 'Key with doorman',
     price: 7000,
     progress: 'in progress'
+  },
+  {
+    id: '121982192014',
+    createAt: 168231210000,
+    photoSrc: 'https://tropki.ru/images/hotels3/-828511/page/o59905.webp',
+    address: {
+      address: '1-11 East Street',
+      city: 'New-York',
+      state: 'NY',
+      zip: '33718'
+    },
+    area: 60,
+    numberOfPeople: 2,
+    instructions:
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem eveniet doloremque dignissimos?',
+    access: 'Key with doorman',
+    price: 5000,
+    progress: 'closed'
   }
 ];
 

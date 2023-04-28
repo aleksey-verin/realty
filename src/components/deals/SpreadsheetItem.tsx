@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import StatusItem from '../ui/StatusItem';
+import StatusItem from './StatusItem';
 import ImgEdit from '../ui/images/ImgEdit';
 import { dealsType } from '../../utils/mockdata/deals';
 import dayjs from 'dayjs';
@@ -14,7 +14,8 @@ const SpreadsheetItem: FC<SpreadsheetItemProps> = ({ data }) => {
     address: { address, city, state, zip },
     area,
     createAt,
-    price
+    price,
+    progress
   } = data;
 
   const viewedDate = dayjs(createAt).format('MMM DD, YYYY HH:mm A');
@@ -38,7 +39,7 @@ const SpreadsheetItem: FC<SpreadsheetItemProps> = ({ data }) => {
       <div className="spreadsheet-content__item column-date">{viewedDate}</div>
       <div className="spreadsheet-content__item column-price">${price}</div>
       <div className="spreadsheet-content__item column-status">
-        <StatusItem />
+        <StatusItem status={progress} />
       </div>
       <div className="spreadsheet-content__item column-edit">
         <ImgEdit />

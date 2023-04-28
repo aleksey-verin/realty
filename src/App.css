@@ -246,6 +246,10 @@
 .column-area {
   flex: 0 0 60px;
 }
+.column-area span {
+  font-size: 10px;
+  vertical-align: top;
+}
 .column-date {
   flex: 1 0 200px;
 }
@@ -290,4 +294,8 @@
   justify-content: center;
   text-transform: uppercase;
   background-color: #ececfe;
+}
+.status.closed {
+  color: #092c4c;
+  background-color: #bce1c8;
 }/*# sourceMappingURL=App.css.map */
