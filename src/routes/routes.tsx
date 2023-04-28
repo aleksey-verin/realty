@@ -20,9 +20,19 @@ import ImgCalendarActive from '../components/ui/images/sidebar/ImgCalendarActive
 import ImgNotesActive from '../components/ui/images/sidebar/ImgNotesActive';
 import ImgSettingsActive from '../components/ui/images/sidebar/ImgSettingsActive';
 
+export const routes = {
+  dashboard: '/dashboard',
+  deals: '/deals',
+  customers: '/customers',
+  tasks: '/tasks',
+  calendar: '/calendar',
+  notes: '/notes',
+  settings: '/settings'
+};
+
 export const sidebarRoutes = [
   {
-    path: 'dashboard',
+    path: routes.dashboard,
     title: 'Dashboard',
     menuImage: {
       normal: <ImgDashboard />,
@@ -31,7 +41,7 @@ export const sidebarRoutes = [
     element: <Dashboard />
   },
   {
-    path: 'deals',
+    path: routes.deals,
     title: 'Deals',
     menuImage: {
       normal: <ImgDeals />,
@@ -40,7 +50,7 @@ export const sidebarRoutes = [
     element: <Deals />
   },
   {
-    path: 'customers',
+    path: routes.customers,
     title: 'Customers',
     menuImage: {
       normal: <ImgCustomers />,
@@ -49,7 +59,7 @@ export const sidebarRoutes = [
     element: <Customers />
   },
   {
-    path: 'tasks',
+    path: routes.tasks,
     title: 'Tasks',
     menuImage: {
       normal: <ImgTasks />,
@@ -58,7 +68,7 @@ export const sidebarRoutes = [
     element: <Tasks />
   },
   {
-    path: 'calendar',
+    path: routes.calendar,
     title: 'Calendar',
     menuImage: {
       normal: <ImgCalendar />,
@@ -67,7 +77,7 @@ export const sidebarRoutes = [
     element: <Calendar />
   },
   {
-    path: 'notes',
+    path: routes.notes,
     title: 'Notes',
     menuImage: {
       normal: <ImgNotes />,
@@ -76,7 +86,7 @@ export const sidebarRoutes = [
     element: <Notes />
   },
   {
-    path: 'settings',
+    path: routes.settings,
     title: 'Settings',
     menuImage: {
       normal: <ImgSettings />,

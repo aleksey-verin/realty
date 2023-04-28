@@ -7,7 +7,7 @@ interface HeaderProps {}
 
 const Header: FC<HeaderProps> = () => {
   const styleUser = {
-    backgroundImage: `url('./public/avatar.jpg')`
+    backgroundImage: `url('/avatar.jpg')`
   };
 
   return (

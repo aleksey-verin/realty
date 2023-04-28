@@ -208,8 +208,7 @@
 .spreadsheet-title {
   color: #7e92a2;
   line-height: 30px;
-  padding-top: 14px;
-  padding-bottom: 14px;
+  height: 60px;
   border-bottom: 1px solid #eaeef4;
 }
 .spreadsheet-content {
@@ -222,14 +221,15 @@
   justify-content: space-between;
   text-align: left;
   gap: 24px;
+  padding: 0 12px;
 }
-.column-avatar {
+.column-picture {
   display: flex;
   align-items: center;
   justify-content: center;
   flex: 0 0 44px;
 }
-.column-avatar__pic {
+.column-picture__pic {
   border-radius: 50%;
   box-sizing: border-box;
   border: 1px solid #eaeef4;
@@ -256,14 +256,27 @@
   flex: 0 0 120px;
 }
 .column-edit {
-  flex: 0 0 70px;
+  flex: 0 0 60px;
   display: flex;
+  justify-content: center;
   align-items: center;
 }
-.column-edit svg {
+.column-edit button {
+  border: none;
+  width: 60px;
+  height: 60px;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.column-edit button svg {
   width: 24px;
   height: 24px;
-  cursor: pointer;
+}
+.column-edit:hover button svg path {
+  fill: #514ef3;
 }
 
 .status {

@@ -1,7 +1,7 @@
 import Sidebar from './components/Sidebar';
 import Header from './components/Header';
 import { HashRouter, Navigate, Route, Routes } from 'react-router-dom';
-import { sidebarRoutes } from './routes/routes';
+import { routes, sidebarRoutes } from './routes/routes';
 import './App.css';
 
 function App() {
@@ -15,7 +15,7 @@ function App() {
             {sidebarRoutes.map(({ element, path }, index) => (
               <Route key={index} element={element} path={path} />
             ))}
-            <Route path="*" element={<Navigate replace to={sidebarRoutes[0].path} />} />
+            <Route path="*" element={<Navigate replace to={routes.deals} />} />
           </Routes>
         </main>
       </HashRouter>

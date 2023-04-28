@@ -226,8 +226,7 @@ $color-white: #fff;
   &-title {
     color: $color-grey70;
     line-height: 30px;
-    padding-top: 14px;
-    padding-bottom: 14px;
+    height: 60px;
     border-bottom: 1px solid $color-grey30;
     &__item {
     }
@@ -247,7 +246,8 @@ $color-white: #fff;
   // align-items: center;
   text-align: left;
   gap: 24px;
-  &-avatar {
+  padding: 0 12px;
+  &-picture {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -277,13 +277,27 @@ $color-white: #fff;
     flex: 0 0 120px;
   }
   &-edit {
-    flex: 0 0 70px;
+    flex: 0 0 60px;
     display: flex;
+    justify-content: center;
     align-items: center;
-    & svg {
-      width: 24px;
-      height: 24px;
+    & button {
+      // @include circle-block;
+      border: none;
+      width: 60px;
+      height: 60px;
+      border-radius: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       cursor: pointer;
+      & svg {
+        width: 24px;
+        height: 24px;
+      }
+    }
+    &:hover button svg path {
+      fill: $color-blue;
     }
   }
 }
