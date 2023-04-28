@@ -1,14 +1,14 @@
-import ImgDashboard from '../components/ui/sidebar/ImgDashboard';
-import ImgDeals from '../components/ui/sidebar/ImgDeals';
-import ImgDashboardActive from '../components/ui/sidebar/ImgDashboardActive';
-import ImgDealsActive from '../components/ui/sidebar/ImgDealsActive';
-import ImgCustomers from '../components/ui/sidebar/ImgCustomers';
-import ImgCustomersActive from '../components/ui/sidebar/ImgCustomersActive';
-import ImgTasks from '../components/ui/sidebar/ImgTasks';
-import ImgTasksActive from '../components/ui/sidebar/ImgTasksActive';
-import ImgCalendar from '../components/ui/sidebar/ImgCalendar';
-import ImgNotes from '../components/ui/sidebar/ImgNotes';
-import ImgSettings from '../components/ui/sidebar/ImgSettings';
+import ImgDashboard from '../components/ui/images/sidebar/ImgDashboard';
+import ImgDeals from '../components/ui/images/sidebar/ImgDeals';
+import ImgDashboardActive from '../components/ui/images/sidebar/ImgDashboardActive';
+import ImgDealsActive from '../components/ui/images/sidebar/ImgDealsActive';
+import ImgCustomers from '../components/ui/images/sidebar/ImgCustomers';
+import ImgCustomersActive from '../components/ui/images/sidebar/ImgCustomersActive';
+import ImgTasks from '../components/ui/images/sidebar/ImgTasks';
+import ImgTasksActive from '../components/ui/images/sidebar/ImgTasksActive';
+import ImgCalendar from '../components/ui/images/sidebar/ImgCalendar';
+import ImgNotes from '../components/ui/images/sidebar/ImgNotes';
+import ImgSettings from '../components/ui/images/sidebar/ImgSettings';
 import Dashboard from '../pages/Dashboard';
 import Deals from '../pages/Deals';
 import Customers from '../pages/Customers';
@@ -16,9 +16,9 @@ import Tasks from '../pages/Tasks';
 import Calendar from '../pages/Calendar';
 import Notes from '../pages/Notes';
 import Settings from '../pages/Settings';
-import ImgCalendarActive from '../components/ui/sidebar/ImgCalendarActive';
-import ImgNotesActive from '../components/ui/sidebar/ImgNotesActive';
-import ImgSettingsActive from '../components/ui/sidebar/ImgSettingsActive';
+import ImgCalendarActive from '../components/ui/images/sidebar/ImgCalendarActive';
+import ImgNotesActive from '../components/ui/images/sidebar/ImgNotesActive';
+import ImgSettingsActive from '../components/ui/images/sidebar/ImgSettingsActive';
 
 export const sidebarRoutes = [
   {

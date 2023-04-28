@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import Logo from './header/Logo';
-import ImgSearch from './ui/ImgSearch';
-import ImgAdd from './ui/ImgAdd';
+import ImgAdd from './ui/images/ImgAdd';
+import ImgSearch from './ui/images/ImgSearch';
 
 interface HeaderProps {}
 

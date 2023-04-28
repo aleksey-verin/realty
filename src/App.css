@@ -8,6 +8,7 @@
 .container {
   display: flex;
   flex-direction: column;
+  height: 100%;
 }
 
 .header {
@@ -58,30 +59,42 @@
   color: #fff;
   background-color: rgb(81, 78, 243);
   cursor: pointer;
+  transition: all 0.1s 0s;
 }
 .button svg {
   display: flex;
 }
+.button:hover {
+  background-color: rgb(28, 24, 242);
+}
 
 .search {
+  border-radius: 50%;
+  box-sizing: border-box;
+  border: 1px solid #eaeef4;
+  background-color: #fff;
+  width: 50px;
+  height: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  box-sizing: border-box;
-  border: 1px solid #eaeef4;
-  background-color: #fff;
+  cursor: pointer;
+  transition: all 0.1s 0s;
+}
+.search:hover {
+  box-shadow: inset 0px 0px 0px 2px #514ef3;
+}
+.search:hover svg path {
+  fill: #514ef3;
 }
 
 .user {
-  width: 50px;
-  height: 50px;
   border-radius: 50%;
   box-sizing: border-box;
   border: 1px solid #eaeef4;
   background-color: #fff;
+  width: 50px;
+  height: 50px;
   background-position: 50%;
   background-repeat: no-repeat;
   background-size: cover;
@@ -89,6 +102,7 @@
 
 .main {
   display: flex;
+  height: 100%;
 }
 
 .sidebar {
@@ -101,17 +115,17 @@
   gap: 20px;
 }
 .sidebar-item {
-  width: 50px;
-  height: 50px;
   border-radius: 50%;
   box-sizing: border-box;
   border: 1px solid #eaeef4;
   background-color: #fff;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  transition: all 0.1s 0s;
   display: flex;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
-  transition: all 0.1s 0s;
 }
 .sidebar-item:hover {
   box-shadow: inset 0px 0px 0px 2px #514ef3;
@@ -125,4 +139,142 @@
 
 .section {
   flex: 1 1 auto;
+}
+
+.filters {
+  display: flex;
+  justify-content: space-between;
+  padding: 24px;
+  gap: 20px;
+}
+.filters-title {
+  flex: 1 0 auto;
+  text-align: left;
+  font-size: 16px;
+  font-weight: 700;
+}
+.filters-sort {
+  height: 50px;
+  border-radius: 25px;
+  box-sizing: border-box;
+  border: 1px solid #eaeef4;
+  background-color: #fff;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 14px;
+  line-height: 30px;
+  cursor: pointer;
+  transition: all 0.1s 0s;
+}
+.filters-sort svg {
+  display: flex;
+}
+.filters-sort:hover {
+  box-shadow: inset 0px 0px 0px 2px #514ef3;
+}
+.filters-sort:hover svg path {
+  fill: #514ef3;
+}
+.filters-filter {
+  height: 50px;
+  border-radius: 25px;
+  box-sizing: border-box;
+  border: 1px solid #eaeef4;
+  background-color: #fff;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 14px;
+  line-height: 30px;
+  cursor: pointer;
+  transition: all 0.1s 0s;
+}
+.filters-filter svg {
+  display: flex;
+}
+.filters-filter:hover {
+  box-shadow: inset 0px 0px 0px 2px #514ef3;
+}
+.filters-filter:hover svg path {
+  fill: #514ef3;
+}
+
+.spreadsheet {
+  padding: 0 24px;
+}
+.spreadsheet-title {
+  color: #7e92a2;
+  line-height: 30px;
+  padding-top: 14px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid #eaeef4;
+}
+.spreadsheet-content {
+  height: 79px;
+  border-bottom: 1px solid #eaeef4;
+}
+.column {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: left;
+  gap: 24px;
+}
+.column-avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 44px;
+}
+.column-avatar__pic {
+  border-radius: 50%;
+  box-sizing: border-box;
+  border: 1px solid #eaeef4;
+  background-color: #fff;
+  width: 44px;
+  height: 44px;
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.column-name {
+  flex: 1 0 300px;
+}
+.column-area {
+  flex: 0 0 60px;
+}
+.column-date {
+  flex: 1 0 200px;
+}
+.column-price {
+  flex: 0 0 80px;
+}
+.column-status {
+  flex: 0 0 120px;
+}
+.column-edit {
+  flex: 0 0 70px;
+  display: flex;
+  align-items: center;
+}
+.column-edit svg {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+}
+
+.status {
+  width: 120px;
+  height: 40px;
+  border-radius: 20px;
+  font-size: 12px;
+  color: #514ef3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+  background-color: #ececfe;
 }/*# sourceMappingURL=App.css.map */

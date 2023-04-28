@@ -1,6 +1,17 @@
+$color-black: #000;
+$color-navy: #092c4c;
+$color-blue: #514ef3;
+$color-green: #2dc8a8;
+$color-yellow: #ffc357;
+$color-pink: PINK;
+$color-grey90: #526477;
+$color-grey70: #7e92a2;
+$color-grey50: #d6e1e6;
+$color-grey30: #eaeef4;
+$color-grey10: #f6fafd;
+$color-white: #fff;
+
 @mixin circle-block {
-  width: 50px;
-  height: 50px;
   border-radius: 50%;
   box-sizing: border-box;
   border: 1px solid #eaeef4;
@@ -19,8 +30,6 @@
   gap: 12px;
   font-size: 14px;
   line-height: 30px;
-  color: #fff;
-  background-color: rgba(81, 78, 243, 1);
   & svg {
     display: flex;
   }
@@ -37,6 +46,7 @@
 .container {
   display: flex;
   flex-direction: column;
+  height: 100%;
   // width: 100%;
 }
 
@@ -82,22 +92,38 @@
 
 .button {
   @include oval-block;
+  color: #fff;
+  background-color: rgba(81, 78, 243, 1);
   cursor: pointer;
+  transition: all 0.1s 0s;
+  &:hover {
+    background-color: rgb(28, 24, 242);
+  }
 }
 .search {
+  @include circle-block;
+  width: 50px;
+  height: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
-  @include circle-block;
+  cursor: pointer;
+  transition: all 0.1s 0s;
+  &:hover {
+    -webkit-box-shadow: inset 0px 0px 0px 2px #514ef3;
+    -moz-box-shadow: inset 0px 0px 0px 2px #514ef3;
+    box-shadow: inset 0px 0px 0px 2px #514ef3;
+    & svg {
+      & path {
+        fill: #514ef3;
+      }
+    }
+  }
 }
 .user {
-  // width: 50px;
-  // height: 50px;
-  // border-radius: 50%;
-  // box-sizing: border-box;
-  // border: 1px solid #eaeef4;
-  // background-color: #fff;
   @include circle-block;
+  width: 50px;
+  height: 50px;
   background-position: 50%;
   background-repeat: no-repeat;
   background-size: cover;
@@ -107,7 +133,7 @@
 
 .main {
   display: flex;
-  // height: calc(100vh - 90px);
+  height: 100%;
 }
 
 // ==================== SIDEBAR ====================
@@ -122,29 +148,24 @@
   gap: 20px;
   &-item {
     @include circle-block; // width: 50px;
-    // height: 50px;
-    // border-radius: 50%;
-    // box-sizing: border-box;
-    // border: 1px solid #eaeef4;
-    // background-color: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    width: 50px;
+    height: 50px;
     cursor: pointer;
     transition: all 0.1s 0s;
-
     &:hover {
-      // outline: 2px solid #514ef3;
       -webkit-box-shadow: inset 0px 0px 0px 2px #514ef3;
       -moz-box-shadow: inset 0px 0px 0px 2px #514ef3;
       box-shadow: inset 0px 0px 0px 2px #514ef3;
     }
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
     &:active {
       background-color: #3431e4;
     }
     &.active {
       background-color: #514ef3;
-      // outline: 2px solid #514ef3;
     }
   }
 }
@@ -153,4 +174,128 @@
 
 .section {
   flex: 1 1 auto;
+}
+
+// ==================== DEALS PAGE ====================
+
+.filters {
+  display: flex;
+  justify-content: space-between;
+  padding: 24px;
+  gap: 20px;
+  &-title {
+    flex: 1 0 auto;
+    text-align: left;
+    font-size: 16px;
+    font-weight: 700;
+  }
+  &-sort {
+    @include oval-block;
+    cursor: pointer;
+    transition: all 0.1s 0s;
+    &:hover {
+      -webkit-box-shadow: inset 0px 0px 0px 2px #514ef3;
+      -moz-box-shadow: inset 0px 0px 0px 2px #514ef3;
+      box-shadow: inset 0px 0px 0px 2px #514ef3;
+      & svg {
+        & path {
+          fill: #514ef3;
+        }
+      }
+    }
+  }
+  &-filter {
+    @include oval-block;
+    cursor: pointer;
+    transition: all 0.1s 0s;
+    &:hover {
+      -webkit-box-shadow: inset 0px 0px 0px 2px #514ef3;
+      -moz-box-shadow: inset 0px 0px 0px 2px #514ef3;
+      box-shadow: inset 0px 0px 0px 2px #514ef3;
+      & svg {
+        & path {
+          fill: #514ef3;
+        }
+      }
+    }
+  }
+}
+
+.spreadsheet {
+  padding: 0 24px;
+  &-title {
+    color: $color-grey70;
+    line-height: 30px;
+    padding-top: 14px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid $color-grey30;
+    &__item {
+    }
+    // font-size: 16px;
+  }
+  &-content {
+    height: 79px;
+    border-bottom: 1px solid $color-grey30;
+    &__item {
+    }
+  }
+}
+.column {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  // align-items: center;
+  text-align: left;
+  gap: 24px;
+  &-avatar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 44px;
+    &__pic {
+      @include circle-block;
+      width: 44px;
+      height: 44px;
+      background-position: 50%;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+  }
+  &-name {
+    flex: 1 0 300px;
+  }
+  &-area {
+    flex: 0 0 60px;
+  }
+  &-date {
+    flex: 1 0 200px;
+  }
+  &-price {
+    flex: 0 0 80px;
+  }
+  &-status {
+    flex: 0 0 120px;
+  }
+  &-edit {
+    flex: 0 0 70px;
+    display: flex;
+    align-items: center;
+    & svg {
+      width: 24px;
+      height: 24px;
+      cursor: pointer;
+    }
+  }
+}
+.status {
+  width: 120px;
+  height: 40px;
+  border-radius: 20px;
+  font-size: 12px;
+  color: $color-blue;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+  background-color: #ececfe;
 }
