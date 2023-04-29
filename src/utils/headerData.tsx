@@ -1,4 +1,4 @@
-import { routes, sidebarRoutes } from '../routes/routes';
+import { sidebarRoutes } from '../routes/routes';
 
 export const getHeaderData = (path: string) => {
   const element = sidebarRoutes.find((item) => item.path === path);
