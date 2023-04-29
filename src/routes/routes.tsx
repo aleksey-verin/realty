@@ -27,7 +27,8 @@ export const routes = {
   tasks: '/tasks',
   calendar: '/calendar',
   notes: '/notes',
-  settings: '/settings'
+  settings: '/settings',
+  dealsDetails: '/deals/:id'
 };
 
 export const sidebarRoutes = [
