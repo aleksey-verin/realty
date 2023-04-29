@@ -38,7 +38,8 @@ export const sidebarRoutes = [
       normal: <ImgDashboard />,
       active: <ImgDashboardActive />
     },
-    element: <Dashboard />
+    element: <Dashboard />,
+    headerButtonTitle: 'Add New'
   },
   {
     path: routes.deals,
@@ -47,7 +48,8 @@ export const sidebarRoutes = [
       normal: <ImgDeals />,
       active: <ImgDealsActive />
     },
-    element: <Deals />
+    element: <Deals />,
+    headerButtonTitle: 'Add New Deal'
   },
   {
     path: routes.customers,
@@ -56,7 +58,8 @@ export const sidebarRoutes = [
       normal: <ImgCustomers />,
       active: <ImgCustomersActive />
     },
-    element: <Customers />
+    element: <Customers />,
+    headerButtonTitle: 'Add New Customer'
   },
   {
     path: routes.tasks,
@@ -65,7 +68,8 @@ export const sidebarRoutes = [
       normal: <ImgTasks />,
       active: <ImgTasksActive />
     },
-    element: <Tasks />
+    element: <Tasks />,
+    headerButtonTitle: 'Add New Task'
   },
   {
     path: routes.calendar,
@@ -74,7 +78,8 @@ export const sidebarRoutes = [
       normal: <ImgCalendar />,
       active: <ImgCalendarActive />
     },
-    element: <Calendar />
+    element: <Calendar />,
+    headerButtonTitle: 'Add New Event'
   },
   {
     path: routes.notes,
@@ -83,7 +88,8 @@ export const sidebarRoutes = [
       normal: <ImgNotes />,
       active: <ImgNotesActive />
     },
-    element: <Notes />
+    element: <Notes />,
+    headerButtonTitle: 'Add New Note'
   },
   {
     path: routes.settings,
@@ -92,7 +98,8 @@ export const sidebarRoutes = [
       normal: <ImgSettings />,
       active: <ImgSettingsActive />
     },
-    element: <Settings />
+    element: <Settings />,
+    headerButtonTitle: 'Add New'
   }
 ];
 
@@ -100,6 +107,8 @@ export interface routesType {
   path: string;
   title: string;
   menuImage: images;
+  element: JSX.Element;
+  headerButtonTitle?: string;
 }
 
 interface images {
