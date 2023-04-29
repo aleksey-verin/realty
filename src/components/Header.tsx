@@ -1,5 +1,4 @@
 import { FC, useEffect, useState } from 'react';
-import Logo from './header/Logo';
 import ImgAdd from './ui/images/ImgAdd';
 import ImgSearch from './ui/images/ImgSearch';
 import { useLocation } from 'react-router-dom';
@@ -33,7 +32,6 @@ const Header: FC<HeaderProps> = () => {
 
   return (
     <header className="header">
-      <Logo />
       <div className="header-title">{headerTitle}</div>
       <div className="header-actions">
         {isButtonVisible && (

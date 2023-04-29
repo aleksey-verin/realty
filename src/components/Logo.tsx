@@ -1,11 +1,11 @@
 import { FC } from 'react';
-import ImgLogo from '../ui/images/ImgLogo';
+import ImgLogo from './ui/images/ImgLogo';
 
 interface LogoProps {}
 
 const Logo: FC<LogoProps> = () => {
   return (
-    <div className="header-logo">
+    <div className="logo">
       <ImgLogo />
     </div>
   );

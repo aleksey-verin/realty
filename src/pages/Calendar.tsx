@@ -1,13 +1,17 @@
 import { FC } from 'react';
 import UnderConstruction from '../components/UnderConstruction';
+import Header from '../components/Header';
 
 interface CalendarProps {}
 
 const Calendar: FC<CalendarProps> = () => {
   return (
-    <section className="section">
-      <UnderConstruction />
-    </section>
+    <div className="content">
+      <Header />
+      <main>
+        <UnderConstruction />
+      </main>
+    </div>
   );
 };
 
