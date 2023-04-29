@@ -2,7 +2,7 @@ import { FC, useEffect, useState } from 'react';
 import Logo from './header/Logo';
 import ImgAdd from './ui/images/ImgAdd';
 import ImgSearch from './ui/images/ImgSearch';
-import { useLocation, useParams } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import { getHeaderData } from '../utils/headerData';
 import { sidebarRoutes } from '../routes/routes';
 
