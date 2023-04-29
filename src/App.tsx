@@ -3,7 +3,6 @@ import Header from './components/Header';
 import { HashRouter, Navigate, Route, Routes } from 'react-router-dom';
 import { routes, sidebarRoutes } from './routes/routes';
 import './App.css';
-import DealsDetails from './pages/DealsDetails';
 
 function App() {
   return (

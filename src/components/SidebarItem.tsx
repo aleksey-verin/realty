@@ -9,6 +9,8 @@ interface SidebarItemProps {
 const SidebarItem: FC<SidebarItemProps> = ({ data }) => {
   const { path, title, menuImage } = data;
 
+  if (!menuImage) return;
+
   return (
     <NavLink to={path} className="sidebar-item" title={title}>
       {({ isActive }) => (isActive ? menuImage.active : menuImage.normal)}
