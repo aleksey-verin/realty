@@ -245,9 +245,18 @@ main {
     // font-size: 16px;
   }
   &-content {
-    height: 79px;
-    border-bottom: 1px solid $color-grey30;
     &__item {
+      height: 79px;
+      border-bottom: 1px solid $color-grey30;
+      &:hover {
+        background: linear-gradient(
+          90deg,
+          rgba(255, 255, 255, 0) 0%,
+          rgba(236, 236, 254, 0.5) 10%,
+          rgba(236, 236, 254, 0.5) 90%,
+          rgba(255, 255, 255, 0) 100%
+        );
+      }
     }
   }
 }
@@ -292,25 +301,33 @@ main {
   &-status {
     flex: 0 0 120px;
   }
-  &-edit {
-    flex: 0 0 60px;
+  &-edit,
+  &-show {
+    flex: 0 0 40px;
     display: flex;
     justify-content: center;
     align-items: center;
     & button {
       // @include circle-block;
       border: none;
-      width: 60px;
-      height: 60px;
+      width: 40px;
+      height: 40px;
       border-radius: 30px;
       display: flex;
       align-items: center;
       justify-content: center;
+      background-color: inherit;
+      transition: all 0.2s 0s;
       cursor: pointer;
       & svg {
         width: 24px;
         height: 24px;
       }
+    }
+    &:hover button {
+      -webkit-box-shadow: inset 0px 0px 0px 2px $color-blue;
+      -moz-box-shadow: inset 0px 0px 0px 2px $color-blue;
+      box-shadow: inset 0px 0px 0px 2px $color-blue;
     }
     &:hover button svg path {
       fill: $color-blue;
@@ -381,7 +398,7 @@ main {
     }
     & input {
       background: #f6fafd;
-      /* Grey/Grey 30 */
+      font-size: 16px;
       border: 1px solid #eaeef4;
       border-radius: 8px;
       height: 50px;
@@ -389,10 +406,9 @@ main {
       padding: 10px 20px;
       &::placeholder {
         color: $color-grey70;
-        font-size: 16px;
       }
     }
-    & input[type='date'] {
+    & input[type='datetime-local'] {
       font-family: inherit;
       color: $color-grey70;
     }

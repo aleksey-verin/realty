@@ -19,7 +19,7 @@ const DealsDetails: FC<DealsDetailsProps> = () => {
               <form action="#" className="record-form">
                 <label htmlFor="newNote">Description</label>
                 <input type="text" id="newNote" placeholder="Write your notes" />
-                <input type="date" />
+                <input type="datetime-local" />
                 <label htmlFor="newImage">Image</label>
                 <input type="file" />
                 <button className="button" type="submit">

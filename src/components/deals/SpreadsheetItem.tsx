@@ -3,6 +3,9 @@ import StatusItem from './StatusItem';
 import ImgEdit from '../ui/images/ImgEdit';
 import { dealsType } from '../../utils/mockdata/deals';
 import dayjs from 'dayjs';
+import ImgEye from '../ui/images/ImgEye';
+import { Link } from 'react-router-dom';
+import { routes } from '../../routes/routes';
 
 interface SpreadsheetItemProps {
   data: dealsType;
@@ -10,6 +13,7 @@ interface SpreadsheetItemProps {
 
 const SpreadsheetItem: FC<SpreadsheetItemProps> = ({ data }) => {
   const {
+    id,
     photoSrc,
     address: { address, city, state, zip },
     area,
@@ -26,22 +30,25 @@ const SpreadsheetItem: FC<SpreadsheetItemProps> = ({ data }) => {
   };
 
   return (
-    <div className="spreadsheet-content column">
-      <div className="spreadsheet-content__user column-picture">
+    <div className="spreadsheet-content__item column">
+      <div className="column-picture">
         <div style={styleUser} className="column-picture__pic"></div>
       </div>
-      <div className="spreadsheet-content__item column-name">
-        {`${address}, ${city} ${state} ${zip}`}
-      </div>
-      <div className="spreadsheet-content__item column-area">
+      <div className="column-name">{`${address}, ${city} ${state} ${zip}`}</div>
+      <div className="column-area">
         {area}m<span>2</span>
       </div>
-      <div className="spreadsheet-content__item column-date">{viewedDate}</div>
-      <div className="spreadsheet-content__item column-price">${price}</div>
-      <div className="spreadsheet-content__item column-status">
+      <div className="column-date">{viewedDate}</div>
+      <div className="column-price">${price}</div>
+      <div className="column-status">
         <StatusItem status={progress} />
       </div>
-      <div className="spreadsheet-content__item column-edit">
+      <div className="column-show">
+        <Link to={`${routes.deals}/${id}`}>
+          <ImgEye />
+        </Link>
+      </div>
+      <div className="column-edit">
         <ImgEdit />
       </div>
     </div>

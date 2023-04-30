@@ -29,7 +29,7 @@ export const routes = {
   calendar: '/calendar',
   notes: '/notes',
   settings: '/settings',
-  dealsDetails: '/deals/:id'
+  dealsDetails: '/deals/:id' // for base routing in App.tsx
 };
 
 export const sidebarRoutes = [
