@@ -88,6 +88,9 @@ aside {
 .header-actions__user {
   margin-right: 24px;
 }
+.header-actions.aside-block {
+  background-color: rgba(238, 246, 251, 0.9);
+}
 
 .button {
   height: 50px;
@@ -306,5 +309,5 @@ main {
 }
 .status.closed {
   color: #092c4c;
-  background-color: #bce1c8;
+  background-color: #cbf9da;
 }/*# sourceMappingURL=App.css.map */

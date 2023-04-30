@@ -137,6 +137,9 @@ aside {
       margin-right: 24px;
     }
   }
+  &-actions.aside-block {
+    background-color: rgba(238, 246, 251, 0.9);
+  }
 }
 .button {
   @include oval-block;
@@ -327,6 +330,8 @@ main {
   background-color: #ececfe;
   &.closed {
     color: $color-navy;
-    background-color: #bce1c8;
+    background-color: #cbf9da;
   }
 }
+
+// ======== DEALS PAGE ========

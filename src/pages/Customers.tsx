@@ -7,7 +7,7 @@ interface CustomersProps {}
 const Customers: FC<CustomersProps> = () => {
   return (
     <div className="content">
-      <Header />
+      <Header headerTitle="Customers" isButtonVisible={true} headerButtonTitle="Add New Customer" />
       <main>
         <UnderConstruction />
       </main>

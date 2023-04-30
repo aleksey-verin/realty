@@ -9,8 +9,8 @@ const DealsDetails: FC<DealsDetailsProps> = () => {
 
   return (
     <div className="content">
-      <Header />
-      <main>{id}</main>
+      <Header headerTitle="Deal Details" isButtonVisible={false} isAsideBlockVisible={true} />
+      <main></main>
     </div>
   );
 };

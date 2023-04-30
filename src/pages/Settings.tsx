@@ -7,7 +7,8 @@ interface SettingsProps {}
 const Settings: FC<SettingsProps> = () => {
   return (
     <div className="content">
-      <Header />
+      <Header headerTitle="Settings" isButtonVisible={true} headerButtonTitle="Add New Settings" />
+
       <main>
         <UnderConstruction />
       </main>

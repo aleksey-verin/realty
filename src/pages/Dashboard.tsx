@@ -7,7 +7,7 @@ interface DashboardProps {}
 const Dashboard: FC<DashboardProps> = () => {
   return (
     <div className="content">
-      <Header />
+      <Header headerTitle="Dashboard" isButtonVisible={true} headerButtonTitle="Add New" />
       <main>
         <UnderConstruction />
       </main>

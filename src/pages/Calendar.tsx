@@ -7,7 +7,7 @@ interface CalendarProps {}
 const Calendar: FC<CalendarProps> = () => {
   return (
     <div className="content">
-      <Header />
+      <Header headerTitle="Calendar" isButtonVisible={true} headerButtonTitle="Add New Event" />
       <main>
         <UnderConstruction />
       </main>

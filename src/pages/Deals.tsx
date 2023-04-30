@@ -11,7 +11,7 @@ interface DealsProps {}
 const Deals: FC<DealsProps> = () => {
   return (
     <div className="content">
-      <Header />
+      <Header headerTitle="Deals" isButtonVisible={true} headerButtonTitle="Add New Deals" />
       <main>
         <div className="filters">
           <div className="filters-title">Total: 23 tasks</div>

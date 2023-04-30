@@ -7,7 +7,8 @@ interface TasksProps {}
 const Tasks: FC<TasksProps> = () => {
   return (
     <div className="content">
-      <Header />
+      <Header headerTitle="Tasks" isButtonVisible={true} headerButtonTitle="Add New Tasks" />
+
       <main>
         <UnderConstruction />
       </main>

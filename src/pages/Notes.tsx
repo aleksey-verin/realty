@@ -7,7 +7,8 @@ interface NotesProps {}
 const Notes: FC<NotesProps> = () => {
   return (
     <div className="content">
-      <Header />
+      <Header headerTitle="Notes" isButtonVisible={true} headerButtonTitle="Add New Notes" />
+
       <main>
         <UnderConstruction />
       </main>
