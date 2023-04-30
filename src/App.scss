@@ -335,3 +335,143 @@ main {
 }
 
 // ======== DEALS PAGE ========
+
+.details {
+  display: flex;
+  height: 100%;
+  &-main {
+    flex: 1 1 auto;
+  }
+  &-aside {
+    flex: 0 0 417px;
+    background-color: rgba(238, 246, 251, 0.9);
+    box-sizing: border-box;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    &__record {
+    }
+    &__log {
+    }
+  }
+}
+.record {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #eaeef4;
+  border-radius: 12px;
+  background-color: #fff;
+  padding: 24px;
+  gap: 24px;
+  &-title {
+    font-size: 18px;
+    line-height: 30px;
+    font-weight: 700;
+    text-align: left;
+  }
+  &-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    & label {
+      font-size: 16px;
+      font-weight: 700;
+      text-align: left;
+    }
+    & input {
+      background: #f6fafd;
+      /* Grey/Grey 30 */
+      border: 1px solid #eaeef4;
+      border-radius: 8px;
+      height: 50px;
+      box-sizing: border-box;
+      padding: 10px 20px;
+      &::placeholder {
+        color: $color-grey70;
+        font-size: 16px;
+      }
+    }
+    & input[type='date'] {
+      font-family: inherit;
+      color: $color-grey70;
+    }
+    & button {
+      width: 100px;
+      justify-content: center;
+      align-self: end;
+    }
+  }
+}
+.log {
+  &-title {
+    font-size: 18px;
+    line-height: 30px;
+    font-weight: 700;
+    text-align: left;
+    padding: 24px 0;
+  }
+  &-items {
+    display: flex;
+    flex-direction: column;
+  }
+  &-loader {
+    font-size: 14px;
+    color: $color-blue;
+    display: flex;
+    justify-content: center;
+    &__button {
+      @include oval-block;
+      justify-content: center;
+      width: 150px;
+      cursor: pointer;
+      transition: all 0.1s 0s;
+      &:hover {
+        -webkit-box-shadow: inset 0px 0px 0px 2px #514ef3;
+        -moz-box-shadow: inset 0px 0px 0px 2px #514ef3;
+        box-shadow: inset 0px 0px 0px 2px #514ef3;
+        & svg {
+          & path {
+            fill: #514ef3;
+          }
+        }
+      }
+    }
+  }
+}
+.log-item {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 24px;
+  &__mark {
+    width: 32px;
+    padding-top: 11px;
+    box-sizing: border-box;
+  }
+  &__content {
+    flex: 1 1 auto;
+    text-align: left;
+  }
+}
+.mark {
+  width: 10px;
+  height: 10px;
+  border: 11px solid #514ef3;
+  border-radius: 50%;
+}
+.log-content {
+  font-size: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  &__date {
+    color: $color-grey70;
+  }
+  &__text {
+    text-align: left;
+  }
+  &__image {
+    height: 120px;
+    background-color: $color-grey50;
+  }
+}

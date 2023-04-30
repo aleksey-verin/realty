@@ -1,9 +1,6 @@
-import { FC, useEffect, useState } from 'react';
+import { FC } from 'react';
 import ImgAdd from './ui/images/ImgAdd';
 import ImgSearch from './ui/images/ImgSearch';
-import { useLocation } from 'react-router-dom';
-import { getHeaderData } from '../utils/headerData';
-import { sidebarRoutes } from '../routes/routes';
 
 interface HeaderProps {
   headerTitle: string;

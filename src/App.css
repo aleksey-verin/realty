@@ -310,4 +310,155 @@ main {
 .status.closed {
   color: #092c4c;
   background-color: #cbf9da;
+}
+
+.details {
+  display: flex;
+  height: 100%;
+}
+.details-main {
+  flex: 1 1 auto;
+}
+.details-aside {
+  flex: 0 0 417px;
+  background-color: rgba(238, 246, 251, 0.9);
+  box-sizing: border-box;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.record {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #eaeef4;
+  border-radius: 12px;
+  background-color: #fff;
+  padding: 24px;
+  gap: 24px;
+}
+.record-title {
+  font-size: 18px;
+  line-height: 30px;
+  font-weight: 700;
+  text-align: left;
+}
+.record-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.record-form label {
+  font-size: 16px;
+  font-weight: 700;
+  text-align: left;
+}
+.record-form input {
+  background: #f6fafd;
+  /* Grey/Grey 30 */
+  border: 1px solid #eaeef4;
+  border-radius: 8px;
+  height: 50px;
+  box-sizing: border-box;
+  padding: 10px 20px;
+}
+.record-form input::-moz-placeholder {
+  color: #7e92a2;
+  font-size: 16px;
+}
+.record-form input::placeholder {
+  color: #7e92a2;
+  font-size: 16px;
+}
+.record-form input[type=date] {
+  font-family: inherit;
+  color: #7e92a2;
+}
+.record-form button {
+  width: 100px;
+  justify-content: center;
+  align-self: end;
+}
+
+.log-title {
+  font-size: 18px;
+  line-height: 30px;
+  font-weight: 700;
+  text-align: left;
+  padding: 24px 0;
+}
+.log-items {
+  display: flex;
+  flex-direction: column;
+}
+.log-loader {
+  font-size: 14px;
+  color: #514ef3;
+  display: flex;
+  justify-content: center;
+}
+.log-loader__button {
+  height: 50px;
+  border-radius: 25px;
+  box-sizing: border-box;
+  border: 1px solid #eaeef4;
+  background-color: #fff;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 14px;
+  line-height: 30px;
+  justify-content: center;
+  width: 150px;
+  cursor: pointer;
+  transition: all 0.1s 0s;
+}
+.log-loader__button svg {
+  display: flex;
+}
+.log-loader__button:hover {
+  box-shadow: inset 0px 0px 0px 2px #514ef3;
+}
+.log-loader__button:hover svg path {
+  fill: #514ef3;
+}
+
+.log-item {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+.log-item__mark {
+  width: 32px;
+  padding-top: 11px;
+  box-sizing: border-box;
+}
+.log-item__content {
+  flex: 1 1 auto;
+  text-align: left;
+}
+
+.mark {
+  width: 10px;
+  height: 10px;
+  border: 11px solid #514ef3;
+  border-radius: 50%;
+}
+
+.log-content {
+  font-size: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.log-content__date {
+  color: #7e92a2;
+}
+.log-content__text {
+  text-align: left;
+}
+.log-content__image {
+  height: 120px;
+  background-color: #d6e1e6;
 }/*# sourceMappingURL=App.css.map */
