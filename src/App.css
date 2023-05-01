@@ -71,10 +71,44 @@ aside {
   border-bottom: 1px solid #eaeef4;
 }
 .header-title {
+  padding: 0 24px;
   flex: 1 1 auto;
   display: flex;
   align-items: center;
-  padding: 0 24px;
+  gap: 24px;
+}
+.header-title__back {
+  height: 50px;
+  border-radius: 25px;
+  box-sizing: border-box;
+  border: 1px solid #eaeef4;
+  background-color: #fff;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 14px;
+  line-height: 30px;
+  cursor: pointer;
+  transition: all 0.1s 0s;
+  display: flex;
+  align-items: center;
+}
+.header-title__back svg {
+  display: flex;
+}
+.header-title__back svg path {
+  fill: #526477;
+}
+.header-title__back:hover {
+  box-shadow: inset 0px 0px 0px 2px #514ef3;
+}
+.header-title__back:hover svg path {
+  fill: #514ef3;
+}
+.header-title__text {
+  display: flex;
+  align-items: center;
   font-size: 24px;
   font-weight: 700;
 }
@@ -275,13 +309,13 @@ main {
 .column-status {
   flex: 0 0 120px;
 }
-.column-edit, .column-show {
+.column-edit {
   flex: 0 0 40px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.column-edit button, .column-show button {
+.column-edit button {
   border: none;
   width: 40px;
   height: 40px;
@@ -293,14 +327,14 @@ main {
   transition: all 0.2s 0s;
   cursor: pointer;
 }
-.column-edit button svg, .column-show button svg {
+.column-edit button svg {
   width: 24px;
   height: 24px;
 }
-.column-edit:hover button, .column-show:hover button {
+.column-edit:hover button {
   box-shadow: inset 0px 0px 0px 2px #514ef3;
 }
-.column-edit:hover button svg path, .column-show:hover button svg path {
+.column-edit:hover button svg path {
   fill: #514ef3;
 }
 

@@ -4,6 +4,7 @@ import Header from '../components/Header';
 import ImgEdit from '../components/ui/images/ImgEdit';
 import ImgDelete from '../components/ui/images/ImgDelete';
 import ImgNotfound from '../components/ui/images/ImgNotfound';
+import { routes } from '../routes/routes';
 
 interface DealsDetailsProps {}
 
@@ -16,7 +17,12 @@ const DealsDetails: FC<DealsDetailsProps> = () => {
 
   return (
     <div className="content">
-      <Header headerTitle="Deal Details" isButtonVisible={false} isAsideBlockVisible={true} />
+      <Header
+        headerTitle="Deal Details"
+        isButtonVisible={false}
+        isAsideBlockVisible={true}
+        pathForButtonBack={routes.deals}
+      />
       <main>
         <div className="details">
           <div className="details-main">

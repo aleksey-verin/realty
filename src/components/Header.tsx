@@ -1,38 +1,24 @@
 import { FC } from 'react';
 import ImgAdd from './ui/images/ImgAdd';
 import ImgSearch from './ui/images/ImgSearch';
+import ImgArrowLeft from './ui/images/ImgArrowLeft';
+import { Link } from 'react-router-dom';
 
 interface HeaderProps {
   headerTitle: string;
   isButtonVisible: boolean;
   headerButtonTitle?: string;
   isAsideBlockVisible?: boolean;
+  pathForButtonBack?: string;
 }
 
 const Header: FC<HeaderProps> = ({
   headerTitle,
   isButtonVisible,
   headerButtonTitle,
-  isAsideBlockVisible
+  isAsideBlockVisible,
+  pathForButtonBack
 }) => {
-  // const { pathname } = useLocation();
-  // const [headerTitle, setHeaderTitle] = useState<string>('');
-  // const [isButtonVisible, setIsButtonVisible] = useState(true);
-  // const [headerButtonTitle, setHeaderButtonTitle] = useState<string>('');
-
-  // useEffect(() => {
-  //   if (!pathname) return;
-  //   const info = getHeaderData(pathname);
-  //   if (info) {
-  //     setHeaderTitle(info.title);
-  //   }
-  //   if (info?.headerButtonTitle) {
-  //     setHeaderButtonTitle(info.headerButtonTitle);
-  //   }
-  //   const isThisSidebarPage = sidebarRoutes.findIndex((item) => item.path === pathname);
-  //   isThisSidebarPage >= 0 ? setIsButtonVisible(true) : setIsButtonVisible(false);
-  // }, [pathname]);
-
   const headerActionsClasses = `header-actions ${isAsideBlockVisible ? 'aside-block' : ''}`;
 
   const styleUser = {
@@ -41,7 +27,19 @@ const Header: FC<HeaderProps> = ({
 
   return (
     <header className="header">
-      <div className="header-title">{headerTitle}</div>
+      <div className="header-title">
+        {pathForButtonBack ? (
+          <Link to={pathForButtonBack}>
+            <div className="header-title__back">
+              <div>
+                <ImgArrowLeft />
+              </div>
+              <div>Back</div>
+            </div>
+          </Link>
+        ) : null}
+        <div className="header-title__text">{headerTitle}</div>
+      </div>
       <div className={headerActionsClasses}>
         {isButtonVisible && (
           <div className="header-actions__action button">

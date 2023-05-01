@@ -36,7 +36,6 @@ $color-white: #fff;
 }
 
 #root {
-  // max-width: 1280px;
   width: 100vw;
   margin: 0 auto;
   text-align: center;
@@ -115,12 +114,40 @@ aside {
   display: flex;
   border-bottom: 1px solid #eaeef4;
   &-title {
+    padding: 0 24px;
     flex: 1 1 auto;
     display: flex;
     align-items: center;
-    padding: 0 24px;
-    font-size: 24px;
-    font-weight: 700;
+    gap: 24px;
+    &__back {
+      @include oval-block;
+      cursor: pointer;
+      transition: all 0.1s 0s;
+      display: flex;
+      align-items: center;
+      & svg {
+        & path {
+          fill: $color-grey90;
+        }
+      }
+      &:hover {
+        -webkit-box-shadow: inset 0px 0px 0px 2px #514ef3;
+        -moz-box-shadow: inset 0px 0px 0px 2px #514ef3;
+        box-shadow: inset 0px 0px 0px 2px #514ef3;
+        & svg {
+          & path {
+            fill: #514ef3;
+          }
+        }
+      }
+    }
+    &__text {
+      display: flex;
+      align-items: center;
+      // padding-left: 24px;
+      font-size: 24px;
+      font-weight: 700;
+    }
   }
   &-actions {
     flex: 0 0 417px;
@@ -301,8 +328,7 @@ main {
   &-status {
     flex: 0 0 120px;
   }
-  &-edit,
-  &-show {
+  &-edit {
     flex: 0 0 40px;
     display: flex;
     justify-content: center;

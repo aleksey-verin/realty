@@ -43,13 +43,10 @@ const SpreadsheetItem: FC<SpreadsheetItemProps> = ({ data }) => {
       <div className="column-status">
         <StatusItem status={progress} />
       </div>
-      <div className="column-show">
-        <Link to={`${routes.deals}/${id}`}>
-          <ImgEye />
-        </Link>
-      </div>
       <div className="column-edit">
-        <ImgEdit />
+        <Link to={`${routes.deals}/${id}`}>
+          <ImgEdit />
+        </Link>
       </div>
     </div>
   );
