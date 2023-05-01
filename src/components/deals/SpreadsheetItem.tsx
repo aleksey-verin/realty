@@ -3,7 +3,6 @@ import StatusItem from './StatusItem';
 import ImgEdit from '../ui/images/ImgEdit';
 import { dealsType } from '../../utils/mockdata/deals';
 import dayjs from 'dayjs';
-import ImgEye from '../ui/images/ImgEye';
 import { Link } from 'react-router-dom';
 import { routes } from '../../routes/routes';
 
