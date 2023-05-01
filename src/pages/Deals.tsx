@@ -38,7 +38,6 @@ const Deals: FC<DealsProps> = () => {
             <div className="spreadsheet-title__item column-date">Appointment Date</div>
             <div className="spreadsheet-title__item column-price">Price</div>
             <div className="spreadsheet-title__item column-status">Status</div>
-            <div className="spreadsheet-title__item column-show">Show</div>
             <div className="spreadsheet-title__item column-edit">Edit</div>
           </div>
           <div className="spreadsheet-content">
