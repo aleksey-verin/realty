@@ -358,6 +358,18 @@ main {
   height: 100%;
   &-main {
     flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    &__info {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-gap: 24px;
+      padding: 24px;
+    }
+    &__middle {
+    }
+    &__basic {
+    }
   }
   &-aside {
     flex: 0 0 417px;
@@ -412,8 +424,15 @@ main {
       font-family: inherit;
       color: $color-grey70;
     }
+    & input[type='file'] {
+      font-family: inherit;
+      color: $color-grey70;
+      width: 319px;
+      // overflow: hidden;
+    }
     & button {
       width: 100px;
+      font-weight: 500;
       justify-content: center;
       align-self: end;
     }
@@ -430,6 +449,18 @@ main {
   &-items {
     display: flex;
     flex-direction: column;
+    &__empty {
+      display: flex;
+      color: $color-grey70;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      margin-bottom: 24px;
+      & div:first-child {
+        display: flex;
+        align-items: center;
+      }
+    }
   }
   &-loader {
     font-size: 14px;
@@ -489,5 +520,114 @@ main {
   &__image {
     height: 120px;
     background-color: $color-grey50;
+  }
+}
+
+.information {
+  &-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    &__image {
+      width: 44px;
+      height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    &__info {
+      flex: 1 1 auto;
+      text-align: left;
+      & div:first-child {
+        font-size: 14px;
+        line-height: 30px;
+        color: $color-grey70;
+      }
+      & div:last-child {
+        font-size: 16px;
+        line-height: 30px;
+        font-weight: 700;
+        color: $color-grey90;
+      }
+    }
+  }
+}
+.middle {
+  display: flex;
+  align-items: center;
+  padding: 24px;
+  gap: 20px;
+  background-color: $color-white;
+  &-text {
+    flex: 1 1 auto;
+    text-align: left;
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 40px;
+  }
+  &-edit,
+  &-delete {
+    flex: 0 0 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    & button {
+      border: none;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: inherit;
+      transition: all 0.2s 0s;
+      border: 1px solid #eaeef4;
+      cursor: pointer;
+      & svg {
+        width: 24px;
+        height: 24px;
+      }
+    }
+    &:hover button {
+      -webkit-box-shadow: inset 0px 0px 0px 2px $color-blue;
+      -moz-box-shadow: inset 0px 0px 0px 2px $color-blue;
+      box-shadow: inset 0px 0px 0px 2px $color-blue;
+    }
+    &:hover button svg path {
+      fill: $color-blue;
+    }
+  }
+  &-delete {
+  }
+  &-edit {
+  }
+}
+
+.basic {
+  display: flex;
+  padding: 24px;
+  gap: 24px;
+
+  &-info {
+    flex: 1 1 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 24px;
+    & div:nth-child(7) {
+      grid-column-start: 1;
+      grid-column-end: 3;
+      & div:last-child {
+        font-weight: 400;
+      }
+    }
+    // padding: 24px;
+  }
+  &-image {
+    &__pic {
+      width: 320px;
+      height: 320px;
+      background: $color-grey30;
+      border-radius: 12px;
+    }
   }
 }
