@@ -1,0 +1,29 @@
+.button {
+  display: flex;
+  align-items: center;
+  height: 50px;
+  border-radius: 25px;
+  box-sizing: border-box;
+  border: 1px solid #eaeef4;
+  background-color: #fff;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 30px;
+  color: #fff;
+  background-color: rgb(81, 78, 243);
+  cursor: pointer;
+  transition: all 0.1s 0s;
+  & div {
+    display: flex;
+  }
+  & svg path {
+    fill: #fff;
+  }
+  &:hover {
+    background-color: rgb(28, 24, 242);
+  }
+}

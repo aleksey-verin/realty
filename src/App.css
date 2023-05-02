@@ -100,6 +100,9 @@ aside {
 .header-title__back svg path {
   fill: #526477;
 }
+.header-title__back div {
+  display: flex;
+}
 .header-title__back:hover {
   box-shadow: inset 0px 0px 0px 2px #514ef3;
 }
@@ -124,30 +127,6 @@ aside {
 }
 .header-actions.aside-block {
   background-color: rgba(238, 246, 251, 0.9);
-}
-
-.button {
-  height: 50px;
-  border-radius: 25px;
-  box-sizing: border-box;
-  border: 1px solid #eaeef4;
-  background-color: #fff;
-  padding: 0 20px;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  font-size: 14px;
-  line-height: 30px;
-  color: #fff;
-  background-color: rgb(81, 78, 243);
-  cursor: pointer;
-  transition: all 0.1s 0s;
-}
-.button svg {
-  display: flex;
-}
-.button:hover {
-  background-color: rgb(28, 24, 242);
 }
 
 .search {
@@ -217,6 +196,9 @@ main {
 .filters-sort svg {
   display: flex;
 }
+.filters-sort div {
+  display: flex;
+}
 .filters-sort:hover {
   box-shadow: inset 0px 0px 0px 2px #514ef3;
 }
@@ -239,6 +221,9 @@ main {
   transition: all 0.1s 0s;
 }
 .filters-filter svg {
+  display: flex;
+}
+.filters-filter div {
   display: flex;
 }
 .filters-filter:hover {
@@ -293,15 +278,15 @@ main {
 .column-name {
   flex: 1 0 300px;
 }
+.column-date {
+  flex: 0 0 200px;
+}
 .column-area {
   flex: 0 0 60px;
 }
 .column-area span {
   font-size: 10px;
   vertical-align: top;
-}
-.column-date {
-  flex: 1 0 200px;
 }
 .column-price {
   flex: 0 0 80px;
@@ -430,7 +415,6 @@ main {
 }
 .record-form button {
   width: 100px;
-  font-weight: 500;
   justify-content: center;
   align-self: end;
 }
@@ -482,6 +466,9 @@ main {
   transition: all 0.1s 0s;
 }
 .log-loader__button svg {
+  display: flex;
+}
+.log-loader__button div {
   display: flex;
 }
 .log-loader__button:hover {

@@ -5,6 +5,8 @@ import ImgEdit from '../components/ui/images/ImgEdit';
 import ImgDelete from '../components/ui/images/ImgDelete';
 import ImgNotfound from '../components/ui/images/ImgNotfound';
 import { routes } from '../routes/routes';
+import ButtonOval from '../components/ui/buttons/ButtonOval';
+import PopupContainer from '../components/popup/PopupContainer';
 
 interface DealsDetailsProps {}
 
@@ -123,9 +125,7 @@ const DealsDetails: FC<DealsDetailsProps> = () => {
                 <input type="datetime-local" />
                 <label htmlFor="newImage">Image</label>
                 <input type="file" />
-                <button className="button" type="submit">
-                  Save
-                </button>
+                <ButtonOval>Save</ButtonOval>
               </form>
             </div>
             <div className="details-aside__log log">
@@ -165,6 +165,7 @@ const DealsDetails: FC<DealsDetailsProps> = () => {
             </div>
           </div>
         </div>
+        <PopupContainer>Content Content Content Content</PopupContainer>
       </main>
     </div>
   );

@@ -130,6 +130,9 @@ aside {
           fill: $color-grey90;
         }
       }
+      & div {
+        display: flex;
+      }
       &:hover {
         -webkit-box-shadow: inset 0px 0px 0px 2px #514ef3;
         -moz-box-shadow: inset 0px 0px 0px 2px #514ef3;
@@ -156,10 +159,10 @@ aside {
     align-items: center;
     justify-content: flex-end;
     gap: 20px;
-    &__action {
-    }
-    &__search {
-    }
+    // &__action {
+    // }
+    // &__search {
+    // }
     &__user {
       margin-right: 24px;
     }
@@ -168,16 +171,19 @@ aside {
     background-color: rgba(238, 246, 251, 0.9);
   }
 }
-.button {
-  @include oval-block;
-  color: #fff;
-  background-color: rgba(81, 78, 243, 1);
-  cursor: pointer;
-  transition: all 0.1s 0s;
-  &:hover {
-    background-color: rgb(28, 24, 242);
-  }
-}
+// .button {
+//   @include oval-block;
+//   color: #fff;
+//   background-color: rgba(81, 78, 243, 1);
+//   cursor: pointer;
+//   transition: all 0.1s 0s;
+//   & div {
+//     display: flex;
+//   }
+//   &:hover {
+//     background-color: rgb(28, 24, 242);
+//   }
+// }
 .search {
   @include circle-block;
   width: 50px;
@@ -232,6 +238,9 @@ main {
     @include oval-block;
     cursor: pointer;
     transition: all 0.1s 0s;
+    & div {
+      display: flex;
+    }
     &:hover {
       -webkit-box-shadow: inset 0px 0px 0px 2px #514ef3;
       -moz-box-shadow: inset 0px 0px 0px 2px #514ef3;
@@ -247,6 +256,9 @@ main {
     @include oval-block;
     cursor: pointer;
     transition: all 0.1s 0s;
+    & div {
+      display: flex;
+    }
     &:hover {
       -webkit-box-shadow: inset 0px 0px 0px 2px #514ef3;
       -moz-box-shadow: inset 0px 0px 0px 2px #514ef3;
@@ -312,15 +324,15 @@ main {
   &-name {
     flex: 1 0 300px;
   }
+  &-date {
+    flex: 0 0 200px;
+  }
   &-area {
     flex: 0 0 60px;
     & span {
       font-size: 10px;
       vertical-align: top;
     }
-  }
-  &-date {
-    flex: 1 0 200px;
   }
   &-price {
     flex: 0 0 80px;
@@ -458,7 +470,6 @@ main {
     }
     & button {
       width: 100px;
-      font-weight: 500;
       justify-content: center;
       align-self: end;
     }
@@ -499,6 +510,9 @@ main {
       width: 150px;
       cursor: pointer;
       transition: all 0.1s 0s;
+      & div {
+        display: flex;
+      }
       &:hover {
         -webkit-box-shadow: inset 0px 0px 0px 2px #514ef3;
         -moz-box-shadow: inset 0px 0px 0px 2px #514ef3;

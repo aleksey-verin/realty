@@ -34,8 +34,8 @@ const Deals: FC<DealsProps> = () => {
               <ImgUser />
             </div>
             <div className="spreadsheet-title__item column-name">Name</div>
-            <div className="spreadsheet-title__item column-area">Area</div>
             <div className="spreadsheet-title__item column-date">Appointment Date</div>
+            <div className="spreadsheet-title__item column-area">Area</div>
             <div className="spreadsheet-title__item column-price">Price</div>
             <div className="spreadsheet-title__item column-status">Status</div>
             <div className="spreadsheet-title__item column-edit">Edit</div>

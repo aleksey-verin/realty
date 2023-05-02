@@ -3,6 +3,7 @@ import ImgAdd from './ui/images/ImgAdd';
 import ImgSearch from './ui/images/ImgSearch';
 import ImgArrowLeft from './ui/images/ImgArrowLeft';
 import { Link } from 'react-router-dom';
+import ButtonOval from './ui/buttons/ButtonOval';
 
 interface HeaderProps {
   headerTitle: string;
@@ -42,12 +43,16 @@ const Header: FC<HeaderProps> = ({
       </div>
       <div className={headerActionsClasses}>
         {isButtonVisible && (
-          <div className="header-actions__action button">
-            <div className="button-title">{headerButtonTitle}</div>
-            <div className="button-image">
-              <ImgAdd />
-            </div>
-          </div>
+          <ButtonOval>
+            {headerButtonTitle}
+            <ImgAdd />
+          </ButtonOval>
+          // <div className="header-actions__action button">
+          //   <div className="button-title">{headerButtonTitle}</div>
+          //   <div className="button-image">
+          //     <ImgAdd />
+          //   </div>
+          // </div>
         )}
         <div className="header-actions__search search">
           <ImgSearch />

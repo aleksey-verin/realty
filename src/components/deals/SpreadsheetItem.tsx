@@ -34,10 +34,10 @@ const SpreadsheetItem: FC<SpreadsheetItemProps> = ({ data }) => {
         <div style={styleUser} className="column-picture__pic"></div>
       </div>
       <div className="column-name">{`${address}, ${city} ${state} ${zip}`}</div>
+      <div className="column-date">{viewedDate}</div>
       <div className="column-area">
         {area}m<span>2</span>
       </div>
-      <div className="column-date">{viewedDate}</div>
       <div className="column-price">${price}</div>
       <div className="column-status">
         <StatusItem status={progress} />
