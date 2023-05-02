@@ -2,6 +2,8 @@ import { FC } from 'react';
 import { Link } from 'react-router-dom';
 import { routes } from '../routes/routes';
 import ImgUndo from './ui/images/ImgUndo';
+import ButtonOval from './ui/buttons/ButtonOval';
+import ImgDeals from './ui/images/sidebar/ImgDeals';
 
 interface UnderConstructionProps {}
 
@@ -17,8 +19,11 @@ const UnderConstruction: FC<UnderConstructionProps> = () => {
       }}>
       <p>The page is under construction. You can go to the "Deals" page</p>
       <Link to={routes.deals} className="button">
-        <ImgUndo />
-        Go to Deals
+        <ButtonOval>
+          <ImgUndo />
+          Go to Deals
+          <ImgDeals />
+        </ButtonOval>
       </Link>
     </div>
   );

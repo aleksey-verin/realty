@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, useState } from 'react';
 // import { useParams } from 'react-router-dom';
 import Header from '../components/Header';
 import ImgEdit from '../components/ui/images/ImgEdit';
@@ -7,11 +7,14 @@ import ImgNotfound from '../components/ui/images/ImgNotfound';
 import { routes } from '../routes/routes';
 import ButtonOval from '../components/ui/buttons/ButtonOval';
 import PopupContainer from '../components/popup/PopupContainer';
+import PopupEditDeals from '../components/popup/PopupEditDeals';
 
 interface DealsDetailsProps {}
 
 const DealsDetails: FC<DealsDetailsProps> = () => {
   // const { id } = useParams();
+
+  const [popupIsOpen, setPopupIsOpen] = useState(false);
 
   const imageCustomer = {
     backgroundImage: `url()`
@@ -60,7 +63,7 @@ const DealsDetails: FC<DealsDetailsProps> = () => {
                 <ImgDelete />
               </div>
               <div className="middle-edit">
-                <ImgEdit />
+                <ImgEdit handleClick={() => setPopupIsOpen(true)} />
               </div>
             </div>
             <div className="details-main__basic basic">
@@ -165,7 +168,11 @@ const DealsDetails: FC<DealsDetailsProps> = () => {
             </div>
           </div>
         </div>
-        <PopupContainer>Content Content Content Content</PopupContainer>
+        {popupIsOpen && (
+          <PopupContainer handleClosePopup={() => setPopupIsOpen(false)}>
+            <PopupEditDeals />
+          </PopupContainer>
+        )}
       </main>
     </div>
   );

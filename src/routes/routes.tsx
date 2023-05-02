@@ -19,7 +19,6 @@ import Settings from '../pages/Settings';
 import ImgCalendarActive from '../components/ui/images/sidebar/ImgCalendarActive';
 import ImgNotesActive from '../components/ui/images/sidebar/ImgNotesActive';
 import ImgSettingsActive from '../components/ui/images/sidebar/ImgSettingsActive';
-import DealsDetails from '../pages/DealsDetails';
 
 export const routes = {
   dashboard: '/dashboard',
@@ -41,7 +40,7 @@ export const sidebarRoutes = [
       active: <ImgDashboardActive />
     },
     element: <Dashboard />,
-    isMainPage: true,
+    // isMainPage: true,
     headerButtonTitle: 'Add New'
   },
   {
@@ -52,7 +51,7 @@ export const sidebarRoutes = [
       active: <ImgDealsActive />
     },
     element: <Deals />,
-    isMainPage: true,
+    // isMainPage: true,
     headerButtonTitle: 'Add New Deal'
   },
   {
@@ -63,7 +62,7 @@ export const sidebarRoutes = [
       active: <ImgCustomersActive />
     },
     element: <Customers />,
-    isMainPage: true,
+    // isMainPage: true,
     headerButtonTitle: 'Add New Customer'
   },
   {
@@ -74,7 +73,7 @@ export const sidebarRoutes = [
       active: <ImgTasksActive />
     },
     element: <Tasks />,
-    isMainPage: true,
+    // isMainPage: true,
     headerButtonTitle: 'Add New Task'
   },
   {
@@ -85,7 +84,7 @@ export const sidebarRoutes = [
       active: <ImgCalendarActive />
     },
     element: <Calendar />,
-    isMainPage: true,
+    // isMainPage: true,
     headerButtonTitle: 'Add New Event'
   },
   {
@@ -96,7 +95,7 @@ export const sidebarRoutes = [
       active: <ImgNotesActive />
     },
     element: <Notes />,
-    isMainPage: true,
+    // isMainPage: true,
     headerButtonTitle: 'Add New Note'
   },
   {
@@ -107,15 +106,15 @@ export const sidebarRoutes = [
       active: <ImgSettingsActive />
     },
     element: <Settings />,
-    isMainPage: true,
+    // isMainPage: true,
     headerButtonTitle: 'Add New'
-  },
-  {
-    path: routes.dealsDetails,
-    title: 'Deals Details',
-    element: <DealsDetails />,
-    isMainPage: false
   }
+  // {
+  //   path: routes.dealsDetails,
+  //   title: 'Deals Details',
+  //   element: <DealsDetails />,
+  //   isMainPage: false
+  // }
 ];
 
 export interface routesType {
@@ -123,7 +122,7 @@ export interface routesType {
   title: string;
   menuImage?: images;
   element: JSX.Element;
-  isMainPage: boolean;
+  // isMainPage: boolean;
   headerButtonTitle?: string;
 }
 

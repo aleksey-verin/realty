@@ -1,10 +1,12 @@
 import { FC } from 'react';
 
-interface ImgEditProps {}
+interface ImgEditProps {
+  handleClick?: () => void;
+}
 
-const ImgEdit: FC<ImgEditProps> = () => {
+const ImgEdit: FC<ImgEditProps> = ({ handleClick }) => {
   return (
-    <button className="column-edit__button">
+    <button onClick={handleClick} className="column-edit__button">
       <svg
         width="24"
         height="25"
