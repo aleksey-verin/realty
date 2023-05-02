@@ -15,6 +15,7 @@ const PopupContainer: FC<PopupContainerProps> = ({ children }) => {
           <div className={style.titleClose}>
             <ImgClose />
           </div>
+          {children}
         </div>
       </div>
     </div>
