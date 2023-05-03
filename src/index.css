@@ -43,6 +43,11 @@ h1 {
 button {
   border: none;
 }
+
+button,
+input {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
 /* button {
   border-radius: 8px;
   border: 1px solid transparent;

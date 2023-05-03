@@ -7,31 +7,37 @@ import { mockDeals } from '../utils/mockdata/deals';
 import Header from '../components/Header';
 import PopupContainer from '../components/popup/PopupContainer';
 import PopupEditDeals from '../components/popup/PopupEditDeals';
+import { contentLocal } from '../constants/contentLocal';
 
 interface DealsProps {}
 
 const Deals: FC<DealsProps> = () => {
   const [popupIsOpen, setPopupIsOpen] = useState(false);
 
+  const local = 'rus';
+  const totalTasks = '23';
+
   return (
     <div className="content">
       <Header
         handleButtonClick={() => setPopupIsOpen(true)}
-        headerTitle="Deals"
+        headerTitle={contentLocal.pages.deals.header[local]}
         isButtonVisible={true}
-        headerButtonTitle="Add New Deals"
+        headerButtonTitle={contentLocal.pages.deals.headerButton[local]}
       />
       <main>
         <div className="filters">
-          <div className="filters-title">Total: 23 tasks</div>
+          <div className="filters-title">{`${contentLocal.pages.deals.tableTitle[local]}: ${totalTasks} ${contentLocal.pages.deals.tableTitleItems[local]}`}</div>
           <div className="filters-sort">
-            <div className="filters-sort__title">Sort by: Date Created</div>
+            <div className="filters-sort__title">{contentLocal.pages.deals.sortLabel[local]}</div>
             <div className="filters-sort__image">
               <ImgArrowDown />
             </div>
           </div>
           <div className="filters-filter">
-            <div className="filters-filter__title">Filter</div>
+            <div className="filters-filter__title">
+              {contentLocal.pages.deals.filterLabel[local]}
+            </div>
             <div className="filters-filter__image">
               <ImgFilter />
             </div>
@@ -42,12 +48,24 @@ const Deals: FC<DealsProps> = () => {
             <div className="spreadsheet-title__item column-picture">
               <ImgUser />
             </div>
-            <div className="spreadsheet-title__item column-address">Address</div>
-            <div className="spreadsheet-title__item column-date">Appointment Date</div>
-            <div className="spreadsheet-title__item column-area">Area</div>
-            <div className="spreadsheet-title__item column-price">Price</div>
-            <div className="spreadsheet-title__item column-status">Status</div>
-            <div className="spreadsheet-title__item column-edit">Edit</div>
+            <div className="spreadsheet-title__item column-address">
+              {contentLocal.pages.deals.tableAddress[local]}
+            </div>
+            <div className="spreadsheet-title__item column-date">
+              {contentLocal.pages.deals.tableDate[local]}
+            </div>
+            <div className="spreadsheet-title__item column-area">
+              {contentLocal.pages.deals.tableArea[local]}
+            </div>
+            <div className="spreadsheet-title__item column-price">
+              {contentLocal.pages.deals.tablePrice[local]}
+            </div>
+            <div className="spreadsheet-title__item column-status">
+              {contentLocal.pages.deals.tableStatus[local]}
+            </div>
+            <div className="spreadsheet-title__item column-edit">
+              {contentLocal.pages.deals.tableEdit[local]}
+            </div>
           </div>
           <div className="spreadsheet-content">
             {mockDeals.map((item) => (

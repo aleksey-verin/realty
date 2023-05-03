@@ -4,10 +4,13 @@ import { routes } from '../routes/routes';
 import ImgUndo from './ui/images/ImgUndo';
 import ButtonOval from './ui/buttons/ButtonOval';
 import ImgDeals from './ui/images/sidebar/ImgDeals';
+import { contentLocal } from '../constants/contentLocal';
 
 interface UnderConstructionProps {}
 
 const UnderConstruction: FC<UnderConstructionProps> = () => {
+  const local = 'rus';
+
   return (
     <div
       style={{
@@ -17,11 +20,11 @@ const UnderConstruction: FC<UnderConstructionProps> = () => {
         justifyContent: 'center',
         alignItems: 'center'
       }}>
-      <p>The page is under construction. You can go to the "Deals" page</p>
+      <p>{contentLocal.components.underConstruction.text[local]}</p>
       <Link to={routes.deals} className="button">
         <ButtonOval>
           <ImgUndo />
-          Go to Deals
+          {contentLocal.components.underConstruction.button[local]}
           <ImgDeals />
         </ButtonOval>
       </Link>
