@@ -4,14 +4,15 @@ import ImgClose from '../ui/images/ImgClose';
 interface PopupContainerProps {
   children: ReactNode;
   handleClosePopup: () => void;
+  title: string;
 }
 
-const PopupContainer: FC<PopupContainerProps> = ({ children, handleClosePopup }) => {
+const PopupContainer: FC<PopupContainerProps> = ({ children, handleClosePopup, title }) => {
   return (
     <div className="popup-container">
       <div className="popup">
         <div className="popup-title">
-          <div>Edit Deal</div>
+          <div>{title}</div>
           <button onClick={handleClosePopup}>
             <ImgClose />
           </button>

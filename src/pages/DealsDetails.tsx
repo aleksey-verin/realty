@@ -169,7 +169,7 @@ const DealsDetails: FC<DealsDetailsProps> = () => {
           </div>
         </div>
         {popupIsOpen && (
-          <PopupContainer handleClosePopup={() => setPopupIsOpen(false)}>
+          <PopupContainer title="Edit Deal" handleClosePopup={() => setPopupIsOpen(false)}>
             <PopupEditDeals />
           </PopupContainer>
         )}

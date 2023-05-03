@@ -8,6 +8,7 @@ import ButtonOval from './ui/buttons/ButtonOval';
 interface HeaderProps {
   headerTitle: string;
   isButtonVisible: boolean;
+  handleButtonClick?: () => void;
   headerButtonTitle?: string;
   isAsideBlockVisible?: boolean;
   pathForButtonBack?: string;
@@ -16,6 +17,7 @@ interface HeaderProps {
 const Header: FC<HeaderProps> = ({
   headerTitle,
   isButtonVisible,
+  handleButtonClick,
   headerButtonTitle,
   isAsideBlockVisible,
   pathForButtonBack
@@ -43,7 +45,7 @@ const Header: FC<HeaderProps> = ({
       </div>
       <div className={headerActionsClasses}>
         {isButtonVisible && (
-          <ButtonOval>
+          <ButtonOval handleClick={handleButtonClick}>
             {headerButtonTitle}
             <ImgAdd />
           </ButtonOval>

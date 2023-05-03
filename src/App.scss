@@ -321,7 +321,7 @@ main {
       background-size: cover;
     }
   }
-  &-name {
+  &-address {
     flex: 1 0 300px;
   }
   &-date {
@@ -681,6 +681,8 @@ main {
   right: 0;
   bottom: 0;
   left: 0;
+  min-height: 900px;
+  padding: 24px;
   background-color: rgba(0, 0, 0, 0.448);
   backdrop-filter: blur(3px);
   z-index: 1;
