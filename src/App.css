@@ -2,9 +2,14 @@
   width: 100vw;
   margin: 0 auto;
   text-align: center;
-  background-color: rgba(246, 250, 253, 0.9);
+  background-color: rgba(246, 250, 253, 0.9019607843);
 }
 
+@media (prefers-color-scheme: dark) {
+  #root {
+    background-color: #242424;
+  }
+}
 .container {
   display: flex;
   height: 100%;
@@ -27,6 +32,12 @@ aside {
   justify-content: center;
 }
 
+@media (prefers-color-scheme: dark) {
+  .logo {
+    border-bottom: 1px solid #3a4755;
+    border-right: 1px solid #3a4755;
+  }
+}
 .sidebar {
   flex: 1 0 auto;
   border-right: 1px solid #eaeef4;
@@ -59,6 +70,18 @@ aside {
   background-color: #514ef3;
 }
 
+@media (prefers-color-scheme: dark) {
+  .sidebar {
+    border-right: 1px solid #3a4755;
+  }
+  .sidebar-item {
+    border: 1px solid #3a4755;
+    background-color: #242424;
+  }
+  .sidebar-item svg path {
+    fill: #fff;
+  }
+}
 .content {
   width: 100%;
   display: flex;
@@ -127,9 +150,24 @@ aside {
   margin-right: 24px;
 }
 .header-actions.aside-block {
-  background-color: rgba(238, 246, 251, 0.9);
+  background-color: rgba(238, 246, 251, 0.9019607843);
 }
 
+@media (prefers-color-scheme: dark) {
+  .header {
+    border-bottom: 1px solid #3a4755;
+  }
+  .header-title__back {
+    border: 1px solid #3a4755;
+    background-color: #242424;
+  }
+  .header-title__back svg path {
+    fill: #fff;
+  }
+  .header-actions.aside-block {
+    background-color: #2e2e2e;
+  }
+}
 .search {
   border-radius: 50%;
   box-sizing: border-box;
@@ -150,6 +188,15 @@ aside {
   fill: #514ef3;
 }
 
+@media (prefers-color-scheme: dark) {
+  .search {
+    border: 1px solid #3a4755;
+    background-color: #242424;
+  }
+  .search svg path {
+    fill: #fff;
+  }
+}
 .user {
   border-radius: 50%;
   box-sizing: border-box;
@@ -162,6 +209,12 @@ aside {
   background-size: cover;
 }
 
+@media (prefers-color-scheme: dark) {
+  .user {
+    border: 1px solid #3a4755;
+    background-color: #242424;
+  }
+}
 main {
   height: 100%;
   width: 100%;
@@ -175,7 +228,8 @@ main {
 }
 .filters-title {
   flex: 1 0 auto;
-  text-align: left;
+  display: flex;
+  align-items: center;
   font-size: 16px;
   font-weight: 700;
 }
@@ -234,6 +288,22 @@ main {
   fill: #514ef3;
 }
 
+@media (prefers-color-scheme: dark) {
+  .filters-sort {
+    border: 1px solid #3a4755;
+    background-color: #242424;
+  }
+  .filters-sort svg path {
+    fill: #fff;
+  }
+  .filters-filter {
+    border: 1px solid #3a4755;
+    background-color: #242424;
+  }
+  .filters-filter svg path {
+    fill: #fff;
+  }
+}
 .spreadsheet {
   padding: 0 24px;
 }
@@ -251,6 +321,17 @@ main {
   background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(236, 236, 254, 0.5) 10%, rgba(236, 236, 254, 0.5) 90%, rgba(255, 255, 255, 0) 100%);
 }
 
+@media (prefers-color-scheme: dark) {
+  .spreadsheet-title {
+    border-bottom: 1px solid #3a4755;
+  }
+  .spreadsheet-content__item {
+    border-bottom: 1px solid #3a4755;
+  }
+  .spreadsheet-content__item:hover {
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.2) 10%, rgba(0, 0, 0, 0.2) 90%, rgba(255, 255, 255, 0) 100%);
+  }
+}
 .column {
   display: flex;
   align-items: center;
@@ -324,12 +405,20 @@ main {
   fill: #514ef3;
 }
 
+@media (prefers-color-scheme: dark) {
+  .column-picture__pic {
+    border: 1px solid #3a4755;
+    background-color: #242424;
+  }
+  .column-edit button svg path {
+    fill: #fff;
+  }
+}
 .status {
   width: 120px;
   height: 40px;
   border-radius: 20px;
   font-size: 12px;
-  color: #514ef3;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -337,10 +426,17 @@ main {
   background-color: #ececfe;
 }
 .status.closed {
-  color: #092c4c;
   background-color: #cbf9da;
 }
 
+@media (prefers-color-scheme: dark) {
+  .status {
+    background-color: #526477;
+  }
+  .status.closed {
+    background-color: #3e5e49;
+  }
+}
 .details {
   display: flex;
   height: 100%;
@@ -358,12 +454,17 @@ main {
 }
 .details-aside {
   flex: 0 0 417px;
-  background-color: rgba(238, 246, 251, 0.9);
+  background-color: rgba(238, 246, 251, 0.9019607843);
   box-sizing: border-box;
   padding: 24px;
   display: flex;
   flex-direction: column;
   gap: 24px;
+}
+@media (prefers-color-scheme: dark) {
+  .details-aside {
+    background-color: #2e2e2e;
+  }
 }
 .record {
   display: flex;
@@ -420,6 +521,16 @@ main {
   align-self: end;
 }
 
+@media (prefers-color-scheme: dark) {
+  .record {
+    border: 1px solid #3a4755;
+    background-color: #242424;
+  }
+  .record-form input {
+    background: #2e2e2e;
+    border: 1px solid #3a4755;
+  }
+}
 .log-title {
   font-size: 18px;
   line-height: 30px;
@@ -479,6 +590,12 @@ main {
   fill: #514ef3;
 }
 
+@media (prefers-color-scheme: dark) {
+  .log-loader__button {
+    border: 1px solid #3a4755;
+    background-color: #242424;
+  }
+}
 .log-item {
   display: flex;
   gap: 24px;
@@ -518,6 +635,11 @@ main {
   background-color: #d6e1e6;
 }
 
+@media (prefers-color-scheme: dark) {
+  .log-content__image {
+    background-color: #343434;
+  }
+}
 .information-item {
   display: flex;
   align-items: center;
@@ -546,6 +668,14 @@ main {
   color: #526477;
 }
 
+@media (prefers-color-scheme: dark) {
+  .information-item__info div:first-child {
+    color: #eaeef4;
+  }
+  .information-item__info div:last-child {
+    color: #f6fafd;
+  }
+}
 .middle {
   display: flex;
   align-items: center;
@@ -589,6 +719,17 @@ main {
 .middle-edit:hover button svg path, .middle-delete:hover button svg path {
   fill: #514ef3;
 }
+@media (prefers-color-scheme: dark) {
+  .middle {
+    background-color: #202020;
+  }
+  .middle-edit button, .middle-delete button {
+    border: 1px solid #3a4755;
+  }
+  .middle-edit button svg path, .middle-delete button svg path {
+    fill: #fff;
+  }
+}
 .basic {
   display: flex;
   padding: 24px;
@@ -614,6 +755,11 @@ main {
   border-radius: 12px;
 }
 
+@media (prefers-color-scheme: dark) {
+  .basic-image__pic {
+    background: #2e2e2e;
+  }
+}
 .popup-container {
   position: absolute;
   top: 0;
@@ -638,6 +784,11 @@ main {
   border-radius: 12px;
 }
 
+@media (prefers-color-scheme: dark) {
+  .popup {
+    background-color: #242424;
+  }
+}
 .popup-title {
   display: flex;
   justify-content: space-between;
@@ -665,7 +816,7 @@ main {
   height: 24px;
 }
 .popup-title button:hover svg path {
-  fill: blue;
+  fill: #3431e4;
 }
 
 .popup-content {
@@ -750,6 +901,12 @@ main {
   justify-content: center;
 }
 
+@media (prefers-color-scheme: dark) {
+  .form-deal input {
+    background: #2e2e2e;
+    border: 1px solid #3a4755;
+  }
+}
 .MyInput {
   background: #f6fafd;
   font-size: 16px;

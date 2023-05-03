@@ -5,7 +5,6 @@
   border-radius: 25px;
   box-sizing: border-box;
   border: 1px solid #eaeef4;
-  background-color: #fff;
   padding: 0 20px;
   display: flex;
   align-items: center;
@@ -26,4 +25,10 @@
 }
 .button:hover {
   background-color: rgb(28, 24, 242);
+}
+
+@media (prefers-color-scheme: dark) {
+  .button {
+    border: 1px solid #3a4755;
+  }
 }/*# sourceMappingURL=ButtonOval.module.css.map */

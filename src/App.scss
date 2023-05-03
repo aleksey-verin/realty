@@ -1,29 +1,36 @@
 $color-black: #000;
 $color-navy: #092c4c;
 $color-blue: #514ef3;
+$color-blue-dark: #3431e4;
 $color-green: #2dc8a8;
 $color-yellow: #ffc357;
 $color-pink: PINK;
+$color-grey110: #3a4755;
 $color-grey90: #526477;
 $color-grey70: #7e92a2;
 $color-grey50: #d6e1e6;
 $color-grey30: #eaeef4;
 $color-grey10: #f6fafd;
 $color-white: #fff;
+$color-bg-light: #f6fafde6;
+$color-bg-dark0: #202020;
+$color-bg-dark: #242424;
+$color-bg-dark2: #2e2e2e;
+$color-bg-dark3: #343434;
 
 @mixin circle-block {
   border-radius: 50%;
   box-sizing: border-box;
-  border: 1px solid #eaeef4;
-  background-color: #fff;
+  border: 1px solid $color-grey30;
+  background-color: $color-white;
 }
 
 @mixin oval-block {
   height: 50px;
   border-radius: 25px;
   box-sizing: border-box;
-  border: 1px solid #eaeef4;
-  background-color: #fff;
+  border: 1px solid $color-grey30;
+  background-color: $color-white;
   padding: 0 20px;
   display: flex;
   align-items: center;
@@ -39,7 +46,13 @@ $color-white: #fff;
   width: 100vw;
   margin: 0 auto;
   text-align: center;
-  background-color: rgba(246, 250, 253, 0.9);
+  background-color: $color-bg-light;
+}
+
+@media (prefers-color-scheme: dark) {
+  #root {
+    background-color: $color-bg-dark;
+  }
 }
 
 .container {
@@ -59,16 +72,23 @@ aside {
 .logo {
   flex: 0 0 90px;
   box-sizing: border-box;
-  border-bottom: 1px solid #eaeef4;
-  border-right: 1px solid #eaeef4;
+  border-bottom: 1px solid $color-grey30;
+  border-right: 1px solid $color-grey30;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
+@media (prefers-color-scheme: dark) {
+  .logo {
+    border-bottom: 1px solid $color-grey110;
+    border-right: 1px solid $color-grey110;
+  }
+}
+
 .sidebar {
   flex: 1 0 auto;
-  border-right: 1px solid #eaeef4;
+  border-right: 1px solid $color-grey30;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -81,19 +101,33 @@ aside {
     cursor: pointer;
     transition: all 0.1s 0s;
     &:hover {
-      -webkit-box-shadow: inset 0px 0px 0px 2px #514ef3;
-      -moz-box-shadow: inset 0px 0px 0px 2px #514ef3;
-      box-shadow: inset 0px 0px 0px 2px #514ef3;
+      -webkit-box-shadow: inset 0px 0px 0px 2px $color-blue;
+      -moz-box-shadow: inset 0px 0px 0px 2px $color-blue;
+      box-shadow: inset 0px 0px 0px 2px $color-blue;
     }
     display: flex;
     align-items: center;
     justify-content: center;
 
     &:active {
-      background-color: #3431e4;
+      background-color: $color-blue-dark;
     }
     &.active {
-      background-color: #514ef3;
+      background-color: $color-blue;
+    }
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .sidebar {
+    border-right: 1px solid $color-grey110;
+    &-item {
+      border: 1px solid $color-grey110; // oval & circle-block
+      background-color: $color-bg-dark; // oval & circle-block
+      & svg path {
+        fill: $color-white;
+        // stroke: $color-white;
+      }
     }
   }
 }
@@ -112,7 +146,7 @@ aside {
   flex: 0 0 90px;
   box-sizing: border-box;
   display: flex;
-  border-bottom: 1px solid #eaeef4;
+  border-bottom: 1px solid $color-grey30;
   &-title {
     padding: 0 24px;
     flex: 1 1 auto;
@@ -134,12 +168,12 @@ aside {
         display: flex;
       }
       &:hover {
-        -webkit-box-shadow: inset 0px 0px 0px 2px #514ef3;
-        -moz-box-shadow: inset 0px 0px 0px 2px #514ef3;
-        box-shadow: inset 0px 0px 0px 2px #514ef3;
+        -webkit-box-shadow: inset 0px 0px 0px 2px $color-blue;
+        -moz-box-shadow: inset 0px 0px 0px 2px $color-blue;
+        box-shadow: inset 0px 0px 0px 2px $color-blue;
         & svg {
           & path {
-            fill: #514ef3;
+            fill: $color-blue;
           }
         }
       }
@@ -168,7 +202,27 @@ aside {
     }
   }
   &-actions.aside-block {
-    background-color: rgba(238, 246, 251, 0.9);
+    background-color: #eef6fbe6;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .header {
+    border-bottom: 1px solid $color-grey110;
+    &-title {
+      &__back {
+        border: 1px solid $color-grey110;
+        background-color: $color-bg-dark;
+        & svg {
+          & path {
+            fill: $color-white;
+          }
+        }
+      }
+    }
+    &-actions.aside-block {
+      background-color: $color-bg-dark2;
+    }
   }
 }
 // .button {
@@ -194,16 +248,29 @@ aside {
   cursor: pointer;
   transition: all 0.1s 0s;
   &:hover {
-    -webkit-box-shadow: inset 0px 0px 0px 2px #514ef3;
-    -moz-box-shadow: inset 0px 0px 0px 2px #514ef3;
-    box-shadow: inset 0px 0px 0px 2px #514ef3;
+    -webkit-box-shadow: inset 0px 0px 0px 2px $color-blue;
+    -moz-box-shadow: inset 0px 0px 0px 2px $color-blue;
+    box-shadow: inset 0px 0px 0px 2px $color-blue;
     & svg {
       & path {
-        fill: #514ef3;
+        fill: $color-blue;
       }
     }
   }
 }
+
+@media (prefers-color-scheme: dark) {
+  .search {
+    border: 1px solid $color-grey110;
+    background-color: $color-bg-dark;
+    & svg {
+      & path {
+        fill: $color-white;
+      }
+    }
+  }
+}
+
 .user {
   @include circle-block;
   width: 50px;
@@ -211,6 +278,13 @@ aside {
   background-position: 50%;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+@media (prefers-color-scheme: dark) {
+  .user {
+    border: 1px solid $color-grey110; // oval & circle-block
+    background-color: $color-bg-dark; // oval & circle-block
+  }
 }
 
 // ================ MAIN BLOCK ================
@@ -230,7 +304,8 @@ main {
   gap: 20px;
   &-title {
     flex: 1 0 auto;
-    text-align: left;
+    display: flex;
+    align-items: center;
     font-size: 16px;
     font-weight: 700;
   }
@@ -242,12 +317,12 @@ main {
       display: flex;
     }
     &:hover {
-      -webkit-box-shadow: inset 0px 0px 0px 2px #514ef3;
-      -moz-box-shadow: inset 0px 0px 0px 2px #514ef3;
-      box-shadow: inset 0px 0px 0px 2px #514ef3;
+      -webkit-box-shadow: inset 0px 0px 0px 2px $color-blue;
+      -moz-box-shadow: inset 0px 0px 0px 2px $color-blue;
+      box-shadow: inset 0px 0px 0px 2px $color-blue;
       & svg {
         & path {
-          fill: #514ef3;
+          fill: $color-blue;
         }
       }
     }
@@ -260,12 +335,35 @@ main {
       display: flex;
     }
     &:hover {
-      -webkit-box-shadow: inset 0px 0px 0px 2px #514ef3;
-      -moz-box-shadow: inset 0px 0px 0px 2px #514ef3;
-      box-shadow: inset 0px 0px 0px 2px #514ef3;
+      -webkit-box-shadow: inset 0px 0px 0px 2px $color-blue;
+      -moz-box-shadow: inset 0px 0px 0px 2px $color-blue;
+      box-shadow: inset 0px 0px 0px 2px $color-blue;
       & svg {
         & path {
           fill: #514ef3;
+        }
+      }
+    }
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .filters {
+    &-sort {
+      border: 1px solid $color-grey110; // oval & circle-block
+      background-color: $color-bg-dark; // oval & circle-block
+      & svg {
+        & path {
+          fill: $color-white;
+        }
+      }
+    }
+    &-filter {
+      border: 1px solid $color-grey110; // oval & circle-block
+      background-color: $color-bg-dark; // oval & circle-block
+      & svg {
+        & path {
+          fill: $color-white;
         }
       }
     }
@@ -299,6 +397,29 @@ main {
     }
   }
 }
+
+@media (prefers-color-scheme: dark) {
+  .spreadsheet {
+    &-title {
+      border-bottom: 1px solid $color-grey110;
+    }
+    &-content {
+      &__item {
+        border-bottom: 1px solid $color-grey110;
+        &:hover {
+          background: linear-gradient(
+            90deg,
+            rgba(255, 255, 255, 0) 0%,
+            rgba(0, 0, 0, 0.2) 10%,
+            rgba(0, 0, 0, 0.2) 90%,
+            rgba(255, 255, 255, 0) 100%
+          );
+        }
+      }
+    }
+  }
+}
+
 .column {
   display: flex;
   align-items: center;
@@ -372,20 +493,44 @@ main {
     }
   }
 }
+@media (prefers-color-scheme: dark) {
+  .column {
+    &-picture {
+      &__pic {
+        border: 1px solid $color-grey110; // oval & circle-block
+        background-color: $color-bg-dark; // oval & circle-block
+      }
+    }
+    &-edit {
+      & button {
+        & svg path {
+          fill: $color-white;
+        }
+      }
+    }
+  }
+}
+
 .status {
   width: 120px;
   height: 40px;
   border-radius: 20px;
   font-size: 12px;
-  color: $color-blue;
   display: flex;
   align-items: center;
   justify-content: center;
   text-transform: uppercase;
   background-color: #ececfe;
   &.closed {
-    color: $color-navy;
     background-color: #cbf9da;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .status {
+    background-color: $color-grey90;
+    &.closed {
+      background-color: #3e5e49;
+    }
   }
 }
 
@@ -411,7 +556,7 @@ main {
   }
   &-aside {
     flex: 0 0 417px;
-    background-color: rgba(238, 246, 251, 0.9);
+    background-color: #eef6fbe6;
     box-sizing: border-box;
     padding: 24px;
     display: flex;
@@ -423,12 +568,20 @@ main {
     }
   }
 }
+@media (prefers-color-scheme: dark) {
+  .details {
+    &-aside {
+      background-color: $color-bg-dark2;
+    }
+  }
+}
+
 .record {
   display: flex;
   flex-direction: column;
-  border: 1px solid #eaeef4;
+  border: 1px solid $color-grey30;
   border-radius: 12px;
-  background-color: #fff;
+  background-color: $color-white;
   padding: 24px;
   gap: 24px;
   &-title {
@@ -447,9 +600,9 @@ main {
       text-align: left;
     }
     & input {
-      background: #f6fafd;
+      background: $color-grey10;
       font-size: 16px;
-      border: 1px solid #eaeef4;
+      border: 1px solid $color-grey30;
       border-radius: 8px;
       height: 50px;
       box-sizing: border-box;
@@ -475,6 +628,19 @@ main {
     }
   }
 }
+@media (prefers-color-scheme: dark) {
+  .record {
+    border: 1px solid $color-grey110;
+    background-color: $color-bg-dark;
+    &-form {
+      & input {
+        background: $color-bg-dark2;
+        border: 1px solid $color-grey110;
+      }
+    }
+  }
+}
+
 .log {
   &-title {
     font-size: 18px;
@@ -514,18 +680,29 @@ main {
         display: flex;
       }
       &:hover {
-        -webkit-box-shadow: inset 0px 0px 0px 2px #514ef3;
-        -moz-box-shadow: inset 0px 0px 0px 2px #514ef3;
-        box-shadow: inset 0px 0px 0px 2px #514ef3;
+        -webkit-box-shadow: inset 0px 0px 0px 2px $color-blue;
+        -moz-box-shadow: inset 0px 0px 0px 2px $color-blue;
+        box-shadow: inset 0px 0px 0px 2px $color-blue;
         & svg {
           & path {
-            fill: #514ef3;
+            fill: $color-blue;
           }
         }
       }
     }
   }
 }
+@media (prefers-color-scheme: dark) {
+  .log {
+    &-loader {
+      &__button {
+        border: 1px solid $color-grey110; // oval & circle-block
+        background-color: $color-bg-dark; // oval & circle-block
+      }
+    }
+  }
+}
+
 .log-item {
   display: flex;
   gap: 24px;
@@ -543,7 +720,7 @@ main {
 .mark {
   width: 10px;
   height: 10px;
-  border: 11px solid #514ef3;
+  border: 11px solid $color-blue;
   border-radius: 50%;
 }
 .log-content {
@@ -560,6 +737,13 @@ main {
   &__image {
     height: 120px;
     background-color: $color-grey50;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .log-content {
+    &__image {
+      background-color: $color-bg-dark3;
+    }
   }
 }
 
@@ -592,6 +776,21 @@ main {
     }
   }
 }
+@media (prefers-color-scheme: dark) {
+  .information {
+    &-item {
+      &__info {
+        & div:first-child {
+          color: $color-grey30;
+        }
+        & div:last-child {
+          color: $color-grey10;
+        }
+      }
+    }
+  }
+}
+
 .middle {
   display: flex;
   align-items: center;
@@ -621,7 +820,7 @@ main {
       justify-content: center;
       background-color: inherit;
       transition: all 0.2s 0s;
-      border: 1px solid #eaeef4;
+      border: 1px solid $color-grey30;
       cursor: pointer;
       & svg {
         width: 24px;
@@ -640,6 +839,20 @@ main {
   &-delete {
   }
   &-edit {
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .middle {
+    background-color: $color-bg-dark0;
+    &-edit,
+    &-delete {
+      & button {
+        border: 1px solid $color-grey110;
+        & svg path {
+          fill: $color-white;
+        }
+      }
+    }
   }
 }
 
@@ -671,6 +884,15 @@ main {
     }
   }
 }
+@media (prefers-color-scheme: dark) {
+  .basic {
+    &-image {
+      &__pic {
+        background: $color-bg-dark2;
+      }
+    }
+  }
+}
 
 // =================== POPUP ===================
 
@@ -693,9 +915,15 @@ main {
 .popup {
   width: 620px;
   height: auto;
-  background-color: #fff;
+  background-color: $color-white;
   border-radius: 12px;
 }
+@media (prefers-color-scheme: dark) {
+  .popup {
+    background-color: $color-bg-dark;
+  }
+}
+
 .popup-title {
   display: flex;
   justify-content: space-between;
@@ -721,7 +949,7 @@ main {
       height: 24px;
     }
     &:hover svg path {
-      fill: blue;
+      fill: $color-blue-dark;
     }
   }
 }
@@ -744,9 +972,9 @@ main {
     line-height: 30px;
   }
   & input {
-    background: #f6fafd;
+    background: $color-grey10;
     font-size: 16px;
-    border: 1px solid #eaeef4;
+    border: 1px solid $color-grey30;
     border-radius: 8px;
     height: 50px;
     box-sizing: border-box;
@@ -805,10 +1033,19 @@ main {
     }
   }
 }
+@media (prefers-color-scheme: dark) {
+  .form-deal {
+    & input {
+      background: $color-bg-dark2;
+      border: 1px solid $color-grey110;
+    }
+  }
+}
+
 .MyInput {
-  background: #f6fafd;
+  background: $color-grey10;
   font-size: 16px;
-  border: 1px solid #eaeef4;
+  border: 1px solid $color-grey30;
   border-radius: 8px;
   height: 50px;
   box-sizing: border-box;
