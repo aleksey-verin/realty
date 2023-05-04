@@ -426,7 +426,7 @@ main {
   justify-content: space-between;
   // align-items: center;
   text-align: left;
-  gap: 24px;
+  gap: 15px;
   padding: 0 12px;
   &-picture {
     display: flex;
@@ -443,13 +443,13 @@ main {
     }
   }
   &-address {
-    flex: 1 0 300px;
+    flex: 1 0 200px;
   }
   &-city {
-    flex: 0 0 200px;
+    flex: 0 0 150px;
   }
   &-state {
-    flex: 0 0 200px;
+    flex: 0 0 150px;
   }
   &-zip {
     flex: 0 0 60px;
@@ -458,14 +458,14 @@ main {
     flex: 0 0 200px;
   }
   &-area {
-    flex: 0 0 70px;
+    flex: 0 0 60px;
     & span {
       font-size: 10px;
       vertical-align: top;
     }
   }
   &-price {
-    flex: 0 0 80px;
+    flex: 0 0 70px;
   }
   &-status {
     flex: 0 0 120px;

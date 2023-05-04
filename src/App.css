@@ -337,7 +337,7 @@ main {
   align-items: center;
   justify-content: space-between;
   text-align: left;
-  gap: 24px;
+  gap: 15px;
   padding: 0 12px;
 }
 .column-picture {
@@ -358,13 +358,13 @@ main {
   background-size: cover;
 }
 .column-address {
-  flex: 1 0 300px;
+  flex: 1 0 200px;
 }
 .column-city {
-  flex: 0 0 200px;
+  flex: 0 0 150px;
 }
 .column-state {
-  flex: 0 0 200px;
+  flex: 0 0 150px;
 }
 .column-zip {
   flex: 0 0 60px;
@@ -373,14 +373,14 @@ main {
   flex: 0 0 200px;
 }
 .column-area {
-  flex: 0 0 70px;
+  flex: 0 0 60px;
 }
 .column-area span {
   font-size: 10px;
   vertical-align: top;
 }
 .column-price {
-  flex: 0 0 80px;
+  flex: 0 0 70px;
 }
 .column-status {
   flex: 0 0 120px;
