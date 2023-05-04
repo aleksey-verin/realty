@@ -8,13 +8,48 @@ import { routes } from '../routes/routes';
 import ButtonOval from '../components/ui/buttons/ButtonOval';
 import PopupContainer from '../components/popup/PopupContainer';
 import PopupEditDeals from '../components/popup/PopupEditDeals';
+import { contentLocal } from '../constants/contentLocal';
+import { Navigate, useParams } from 'react-router-dom';
+import { mockDealsRus } from '../utils/mockdata/mockDealsRus';
+import dayjs from 'dayjs';
+import { getCustomerData } from '../utils/helpers';
 
 interface DealsDetailsProps {}
 
 const DealsDetails: FC<DealsDetailsProps> = () => {
-  // const { id } = useParams();
+  const local = 'rus';
 
   const [popupIsOpen, setPopupIsOpen] = useState(false);
+
+  const { id } = useParams();
+  const deal = mockDealsRus.find((deal) => deal.id_deal === id);
+  if (!deal) return <Navigate to="/" />;
+
+  const {
+    appointmentDate,
+    photoSrc,
+    address: { address, city, state, zip },
+    area,
+    numberOfPeople,
+    instructions,
+    access,
+    price,
+    progress,
+    id_customer
+  } = deal;
+  const viewedAddress = `${zip}, ${state}, ${city}, ${address}`;
+  const viewedDate = dayjs(appointmentDate).format('MMM DD, YYYY HH:mm A');
+  const styleUser = {
+    backgroundImage: `url(${photoSrc})`
+  };
+
+  const customer = getCustomerData(id_customer);
+  console.log(customer);
+
+  const viewedProgress =
+    progress === 'inProgress'
+      ? contentLocal.pages.deals.progressStatuses.inProgress[local]
+      : contentLocal.pages.deals.progressStatuses.closed[local];
 
   const imageCustomer = {
     backgroundImage: `url()`
@@ -38,27 +73,24 @@ const DealsDetails: FC<DealsDetailsProps> = () => {
                   className="information-item__image column-picture__pic"></div>
                 <div className="information-item__info">
                   <div>Customer</div>
-                  <div>David Piotrovsky</div>
+                  <div>{customer ? `${customer.firstName} ${customer.lastName}` : null}</div>
                 </div>
               </div>
               <div className="information-item">
                 <div className="information-item__info">
                   <div>Email</div>
-                  <div>brodrigues@gmail.com</div>
+                  <div>{customer ? customer.email : null}</div>
                 </div>
               </div>
               <div className="information-item">
                 <div className="information-item__info">
                   <div>Phone</div>
-                  <div>617 962 4563</div>
+                  <div>{customer ? customer.phone : null}</div>
                 </div>
               </div>
             </div>
             <div className="details-main__middle middle">
-              <div className="middle-text">
-                2893 Austin Secret Lane, Parowan, UT 12413 Lorem ipsum dolor sit amet consectetur
-                adipisicing elit. Soluta, porro.
-              </div>
+              <div className="middle-text">{viewedAddress}</div>
               <div className="middle-delete">
                 <ImgDelete />
               </div>
@@ -71,51 +103,48 @@ const DealsDetails: FC<DealsDetailsProps> = () => {
                 <div className="information-item">
                   <div className="information-item__info">
                     <div>Progress</div>
-                    <div>In Progress</div>
+                    <div>{viewedProgress}</div>
                   </div>
                 </div>
                 <div className="information-item">
                   <div className="information-item__info">
                     <div>Appointment Date</div>
-                    <div>Nov 17, 2021 08:00</div>
+                    <div>{viewedDate}</div>
                   </div>
                 </div>
                 <div className="information-item">
                   <div className="information-item__info">
                     <div>Room Area</div>
-                    <div>25m2</div>
+                    <div>{`${area} m2`}</div>
                   </div>
                 </div>
                 <div className="information-item">
                   <div className="information-item__info">
                     <div>Number of people</div>
-                    <div>10</div>
+                    <div>{numberOfPeople}</div>
                   </div>
                 </div>
                 <div className="information-item">
                   <div className="information-item__info">
                     <div>Price</div>
-                    <div>$ 6000</div>
+                    <div>{`$ ${price}`}</div>
                   </div>
                 </div>
                 <div className="information-item">
                   <div className="information-item__info">
                     <div>Room Access</div>
-                    <div>Keys with doorman</div>
+                    <div>{access}</div>
                   </div>
                 </div>
                 <div className="information-item">
                   <div className="information-item__info">
                     <div>Special Instructions</div>
-                    <div>
-                      At risus viverra adipiscing at in tellus. Blandit massa enim nec dui nunc
-                      mattis. Lacus vel facilisis volutpat est velit.
-                    </div>
+                    <div>{instructions}</div>
                   </div>
                 </div>
               </div>
               <div className="basic-image">
-                <div className="basic-image__pic"></div>
+                <div style={styleUser} className="basic-image__pic"></div>
               </div>
             </div>
           </div>
@@ -169,8 +198,10 @@ const DealsDetails: FC<DealsDetailsProps> = () => {
           </div>
         </div>
         {popupIsOpen && (
-          <PopupContainer title="Edit Deal" handleClosePopup={() => setPopupIsOpen(false)}>
-            <PopupEditDeals />
+          <PopupContainer
+            title={contentLocal.components.popup.dealsAddEdit.headerTitleEdit[local]}
+            handleClosePopup={() => setPopupIsOpen(false)}>
+            <PopupEditDeals content={contentLocal.components.popup.dealsAddEdit} />
           </PopupContainer>
         )}
       </main>

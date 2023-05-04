@@ -39,6 +39,18 @@ export const contentLocal = {
         eng: 'Address',
         rus: 'Адрес объекта'
       },
+      tableCity: {
+        eng: 'City',
+        rus: 'Город'
+      },
+      tableState: {
+        eng: 'State',
+        rus: 'Регион'
+      },
+      tableZip: {
+        eng: 'Zip',
+        rus: 'Индекс'
+      },
       tableDate: {
         eng: 'Appointment Date',
         rus: 'Дата встречи'
@@ -54,6 +66,16 @@ export const contentLocal = {
       tableStatus: {
         eng: 'Status',
         rus: 'Статус'
+      },
+      progressStatuses: {
+        closed: {
+          eng: 'Closed',
+          rus: 'Завершено'
+        },
+        inProgress: {
+          eng: 'In progress',
+          rus: 'В процессе'
+        }
       },
       tableEdit: {
         eng: 'Edit',
@@ -121,6 +143,138 @@ export const contentLocal = {
         eng: 'Go to Deals',
         rus: 'Перейти в Сделки'
       }
+    },
+    popup: {
+      dealsAddEdit: {
+        headerTitleAdd: {
+          eng: 'Add New Deal',
+          rus: 'Добавить новую сделку'
+        },
+        headerTitleEdit: {
+          eng: 'Edit Deal',
+          rus: 'Изменить сделку'
+        },
+        customer: {
+          eng: 'Customer',
+          rus: 'Клиент'
+        },
+        changeCustomer: {
+          eng: 'Change Customer',
+          rus: 'Изменить клиентам'
+        },
+        roomImage: {
+          eng: 'Room Image',
+          rus: 'Фотография объекта'
+        },
+        roomImageButton: {
+          eng: 'ADD',
+          rus: 'Добавить'
+        },
+        address: {
+          eng: 'Address',
+          rus: 'Адрес'
+        },
+        addressPlaceholder: {
+          eng: 'Street Address',
+          rus: 'Улица, дом, помещение (напр. ул.Пулковская д.10 кв.10)'
+        },
+        cityPlaceholder: {
+          eng: 'City',
+          rus: 'Город'
+        },
+        statePlaceholder: {
+          eng: 'State / Province',
+          rus: 'Район / Область'
+        },
+        zipPlaceholder: {
+          eng: 'Zip Code',
+          rus: 'Индекс'
+        },
+        roomArea: {
+          eng: 'Room Area (m2)',
+          rus: 'Площадь помещения (м2)'
+        },
+        people: {
+          eng: '# of People',
+          rus: 'Число людей'
+        },
+        date: {
+          eng: 'Appointment Date',
+          rus: 'Дата и время встречи'
+        },
+        instructions: {
+          eng: 'Special Instructions',
+          rus: 'Специальные инструкции'
+        },
+        instructionsPlaceholder: {
+          eng: 'Leave a special instructions',
+          rus: 'Оставьте специальные инструкции'
+        },
+        roomAccess: {
+          eng: 'Room Access',
+          rus: 'Доступ к помещению'
+        },
+        roomAccessValue: {
+          eng: 'Keys with doorman',
+          rus: 'Ключ и консьерж'
+        },
+        price: {
+          eng: 'Price ($)',
+          rus: 'Цена'
+        },
+        pricePlaceholder: {
+          eng: '5000',
+          rus: '5000'
+        },
+        progress: {
+          eng: 'Progress',
+          rus: 'Статус'
+        },
+        progressValues: {
+          eng: 'In Progress',
+          rus: 'В процессе'
+        },
+        footerButtonCancel: {
+          eng: 'Cancel',
+          rus: 'Отменить'
+        },
+        footerButtonSave: {
+          eng: 'Save Deal',
+          rus: 'Сохранить'
+        }
+      }
     }
   }
 };
+
+interface localItem {
+  eng: string;
+  rus: string;
+}
+
+export interface dealsAddEditType {
+  headerTitleAdd: localItem;
+  headerTitleEdit: localItem;
+  customer: localItem;
+  changeCustomer: localItem;
+  roomImage: localItem;
+  roomImageButton: localItem;
+  address: localItem;
+  addressPlaceholder: localItem;
+  cityPlaceholder: localItem;
+  statePlaceholder: localItem;
+  zipPlaceholder: localItem;
+  roomArea: localItem;
+  people: localItem;
+  date: localItem;
+  instructions: localItem;
+  instructionsPlaceholder: localItem;
+  roomAccess: localItem;
+  roomAccessValue: localItem;
+  price: localItem;
+  pricePlaceholder: localItem;
+  progress: localItem;
+  progressValues: localItem;
+  footerButtonCancel: localItem;
+  footerButtonSave: localItem;
+}

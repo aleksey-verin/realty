@@ -1,58 +1,67 @@
 import { FC } from 'react';
 import ButtonOval from '../ui/buttons/ButtonOval';
+import { dealsAddEditType } from '../../constants/contentLocal';
 
-interface PopupEditDealsProps {}
+interface PopupEditDealsProps {
+  content: dealsAddEditType;
+}
 
-const PopupEditDeals: FC<PopupEditDealsProps> = () => {
+const PopupEditDeals: FC<PopupEditDealsProps> = ({ content }) => {
+  const local = 'rus';
+
   return (
     <form className="form-deal" action="#">
       <div className="form-deal__single">
-        <label htmlFor="dealImage">Room Image</label>
+        <label htmlFor="dealImage">{content.roomImage[local]}</label>
         <input id="dealImage" type="file" />
       </div>
       <div className="form-deal__single">
-        <label htmlFor="dealAddress">Address</label>
-        <input type="text" id="dealAddress" />
+        <label htmlFor="dealAddress">{content.address[local]}</label>
+        <input type="text" id="dealAddress" placeholder={content.addressPlaceholder[local]} />
         <div className="form-deal__triple">
-          <input type="text" id="dealAddress" />
-          <input type="text" id="dealAddress" />
-          <input type="text" id="dealAddress" />
+          <input type="text" id="dealAddress" placeholder={content.cityPlaceholder[local]} />
+          <input type="text" id="dealAddress" placeholder={content.statePlaceholder[local]} />
+          <input type="text" id="dealAddress" placeholder={content.zipPlaceholder[local]} />
         </div>
       </div>
       <div className="form-deal__double">
         <div className="form-deal__single">
-          <label htmlFor="dealArea">Address</label>
+          <label htmlFor="dealArea">{content.roomArea[local]}</label>
           <input type="text" id="dealArea" />
         </div>
         <div className="form-deal__single">
-          <label htmlFor="dealPeople">Address</label>
+          <label htmlFor="dealPeople">{content.people[local]}</label>
           <input type="text" id="dealPeople" />
         </div>
       </div>
       <div className="form-deal__single">
-        <label htmlFor="dealDate">Appointment Date</label>
+        <label htmlFor="dealDate">{content.date[local]}</label>
         <input type="datetime-local" id="dealDate" />
       </div>
       <div className="form-deal__single">
-        <label htmlFor="dealInstruction">Special Instructions</label>
-        <input type="text" id="dealInstruction" placeholder="Leave a special instructions" />
+        <label htmlFor="dealInstruction">{content.instructions[local]}</label>
+        <input
+          type="text"
+          id="dealInstruction"
+          placeholder={content.instructionsPlaceholder[local]}
+        />
       </div>
       <div className="form-deal__double">
         <div className="form-deal__single">
-          <label htmlFor="dealAccess">Room Access</label>
-          <input type="text" id="dealAccess" />
+          <label htmlFor="dealAccess">{content.roomAccess[local]}</label>
+          <input type="text" id="dealAccess" placeholder={content.roomAccessValue[local]} />
         </div>
         <div className="form-deal__single">
-          <label htmlFor="dealPrice">Price ($)</label>
-          <input type="text" id="dealPrice" placeholder="5000" />
+          <label htmlFor="dealPrice">{content.price[local]}</label>
+          <input type="text" id="dealPrice" placeholder={content.pricePlaceholder[local]} />
         </div>
       </div>
       <div className="form-deal__footer">
         <div>
-          <label htmlFor="dealProgress">Progress</label>
-          <input type="text" id="dealProgress" />
+          <label htmlFor="dealProgress">{content.progress[local]}</label>
+          <input type="text" id="dealProgress" placeholder={content.progressValues[local]} />
         </div>
-        <ButtonOval>Done</ButtonOval>
+        <ButtonOval>{content.footerButtonSave[local]}</ButtonOval>
       </div>
     </form>
   );

@@ -445,6 +445,15 @@ main {
   &-address {
     flex: 1 0 300px;
   }
+  &-city {
+    flex: 0 0 200px;
+  }
+  &-state {
+    flex: 0 0 200px;
+  }
+  &-zip {
+    flex: 0 0 60px;
+  }
   &-date {
     flex: 0 0 200px;
   }
@@ -753,6 +762,7 @@ main {
     align-items: center;
     gap: 20px;
     &__image {
+      flex-shrink: 0;
       width: 44px;
       height: 44px;
       display: flex;
@@ -879,8 +889,11 @@ main {
     &__pic {
       width: 320px;
       height: 320px;
-      background: $color-grey30;
+      background-color: $color-grey30;
       border-radius: 12px;
+      background-position: 50%;
+      background-repeat: no-repeat;
+      background-size: cover;
     }
   }
 }
@@ -888,7 +901,7 @@ main {
   .basic {
     &-image {
       &__pic {
-        background: $color-bg-dark2;
+        background-color: $color-bg-dark2;
       }
     }
   }

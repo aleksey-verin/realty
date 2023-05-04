@@ -360,6 +360,15 @@ main {
 .column-address {
   flex: 1 0 300px;
 }
+.column-city {
+  flex: 0 0 200px;
+}
+.column-state {
+  flex: 0 0 200px;
+}
+.column-zip {
+  flex: 0 0 60px;
+}
 .column-date {
   flex: 0 0 200px;
 }
@@ -646,6 +655,7 @@ main {
   gap: 20px;
 }
 .information-item__image {
+  flex-shrink: 0;
   width: 44px;
   height: 44px;
   display: flex;
@@ -751,13 +761,16 @@ main {
 .basic-image__pic {
   width: 320px;
   height: 320px;
-  background: #eaeef4;
+  background-color: #eaeef4;
   border-radius: 12px;
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 @media (prefers-color-scheme: dark) {
   .basic-image__pic {
-    background: #2e2e2e;
+    background-color: #2e2e2e;
   }
 }
 .popup-container {
