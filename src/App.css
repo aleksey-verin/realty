@@ -358,35 +358,35 @@ main {
   background-size: cover;
 }
 .column-address {
-  flex: 1 0 200px;
+  flex: 1 0 220px;
 }
 .column-city {
-  flex: 0 0 150px;
+  flex: 1 0 150px;
 }
 .column-state {
-  flex: 0 0 150px;
+  flex: 1 0 150px;
 }
 .column-zip {
-  flex: 0 0 60px;
+  flex: 1 0 60px;
 }
 .column-date {
-  flex: 0 0 200px;
+  flex: 1 0 200px;
 }
 .column-area {
-  flex: 0 0 60px;
+  flex: 1 0 60px;
 }
 .column-area span {
   font-size: 10px;
   vertical-align: top;
 }
 .column-price {
-  flex: 0 0 70px;
+  flex: 1 0 70px;
 }
 .column-status {
-  flex: 0 0 120px;
+  flex: 1 0 120px;
 }
 .column-edit {
-  flex: 0 0 40px;
+  flex: 1 0 40px;
   display: flex;
   justify-content: center;
   align-items: center;

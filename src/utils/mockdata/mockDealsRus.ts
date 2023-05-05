@@ -1,6 +1,7 @@
 export const mockDealsRus = [
   {
     id_deal: '121982192011',
+    createdAt: 1681992000000,
     appointmentDate: 1681992000000,
     photoSrc:
       'https://i0.wp.com/www.innovationquarter.com/wp-content/uploads/2022/01/winston-salem-apartment-complex_1200w.jpeg?w=1200&ssl=1',
@@ -20,6 +21,7 @@ export const mockDealsRus = [
   },
   {
     id_deal: '121982192012',
+    createdAt: 1681992000010,
     appointmentDate: 1682337600000,
     photoSrc:
       'https://q-xx.bstatic.com/xdata/images/hotel/max1024x768/174122706.jpg?k=6a7e5ee3eb8bfe72eb932f4d9c7653c2a9f78e50ac8db98ed6c02408b2c89bbd&o=',
@@ -39,6 +41,7 @@ export const mockDealsRus = [
   },
   {
     id_deal: '121982192013',
+    createdAt: 1681992000020,
     appointmentDate: 1682709420000,
     photoSrc: 'https://www.udr.com/globalassets/corporate/homepage/homepage_4_1274towson.jpg',
     address: {
@@ -57,6 +60,7 @@ export const mockDealsRus = [
   },
   {
     id_deal: '121982192014',
+    createdAt: 1681992000030,
     appointmentDate: 168231210000,
     photoSrc: 'https://tropki.ru/images/hotels3/-828511/page/o59905.webp',
     address: {
@@ -75,6 +79,7 @@ export const mockDealsRus = [
   },
   {
     id_deal: '121982192015',
+    createdAt: 1681992000040,
     appointmentDate: 1683231210000,
     photoSrc: 'https://tropki.ru/images/hotels3/-828511/page/o59905.webp',
     address: {
@@ -95,6 +100,7 @@ export const mockDealsRus = [
 
 export interface dealsType {
   id_deal: string;
+  createdAt: number;
   appointmentDate: number;
   photoSrc: string;
   address: address;
