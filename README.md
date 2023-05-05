@@ -69,7 +69,7 @@ Deployed with Github Pages.
 
 ## Authors
 
-- **Aleksey Verin** - [github](https://github.com/aleksey-verin)
+- **Aleksey Verin** - [github](https://github.com/aleksey-verin), [verevaa@yandex.ru](mailto:verevaa@yandex.ru)
 
 <!-- ## Acknowledgements
 ## License -->
