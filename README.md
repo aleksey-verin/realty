@@ -58,11 +58,11 @@ npm run dev
 ## Built With
 
 - Typescript
-- SCSS
 - [React](https://reactjs.org/)
 - [Redux Toolkit](https://redux-toolkit.js.org/)
 - React Router Dom
 - Firebase
+- SCSS
 - dayjs
 
 Deployed with Github Pages.
