@@ -44,6 +44,7 @@ $color-bg-dark3: #343434;
 
 #root {
   width: 100vw;
+  min-width: 1415px;
   margin: 0 auto;
   text-align: center;
   background-color: $color-bg-light;
@@ -924,12 +925,12 @@ main {
   backdrop-filter: blur(3px);
   z-index: 1;
   display: flex;
-  align-items: center;
+  // align-items: center;
   justify-content: center;
 }
 .popup {
   width: 620px;
-  height: auto;
+  height: fit-content;
   background-color: $color-white;
   border-radius: 12px;
 }
@@ -1016,6 +1017,9 @@ main {
     gap: 20px;
     & div {
       flex: 1 1 50%;
+      & input {
+        width: 100%;
+      }
     }
   }
   &__triple {

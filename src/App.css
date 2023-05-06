@@ -1,5 +1,6 @@
 #root {
   width: 100vw;
+  min-width: 1415px;
   margin: 0 auto;
   text-align: center;
   background-color: rgba(246, 250, 253, 0.9019607843);
@@ -788,13 +789,13 @@ main {
           backdrop-filter: blur(3px);
   z-index: 1;
   display: flex;
-  align-items: center;
   justify-content: center;
 }
 
 .popup {
   width: 620px;
-  height: auto;
+  height: -moz-fit-content;
+  height: fit-content;
   background-color: #fff;
   border-radius: 12px;
 }
@@ -885,6 +886,9 @@ main {
 }
 .form-deal__double div {
   flex: 1 1 50%;
+}
+.form-deal__double div input {
+  width: 100%;
 }
 .form-deal__triple {
   display: flex;
