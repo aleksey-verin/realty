@@ -1,10 +1,7 @@
+import { sidebarRoutes } from '../../utils/constants/sidebarItems';
 import SidebarItem from './SidebarItem';
-import { sidebarRoutes } from '../routes/routes';
 
 const Sidebar = () => {
-  console.log('sidebar');
-  // const sidebarItems = sidebarRoutes.filter((item) => item.isMainPage);
-
   return (
     <nav className="sidebar">
       {sidebarRoutes.map((item, index) => (

@@ -133,6 +133,94 @@ export const contentLocal = {
       }
     }
   },
+  subPages: {
+    dealsDetails: {
+      mainContent: {
+        header: {
+          eng: 'Deal Details',
+          rus: 'Детали сделки'
+        },
+        headerButton: {
+          eng: 'Back',
+          rus: 'Назад'
+        },
+        customer: {
+          eng: 'Customer',
+          rus: 'Клиент'
+        },
+        email: {
+          eng: 'Email',
+          rus: 'Почта'
+        },
+        phone: {
+          eng: 'Phone',
+          rus: 'Телефон'
+        },
+        status: {
+          eng: 'Status',
+          rus: 'Статус'
+        },
+        date: {
+          eng: 'Appointment Date',
+          rus: 'Дата встречи'
+        },
+        area: {
+          eng: 'Area',
+          rus: 'Площ.'
+        },
+        people: {
+          eng: 'number of people',
+          rus: 'Число людей'
+        },
+        price: {
+          eng: 'Price',
+          rus: 'Цена'
+        },
+        roomAccess: {
+          eng: 'Room Access',
+          rus: 'Доступ к помещению'
+        },
+        instructions: {
+          eng: 'Special Instructions',
+          rus: 'Специальные инструкции'
+        }
+      },
+      asideContent: {
+        activity: {
+          eng: 'Record Activity',
+          rus: 'Записать активность'
+        },
+        description: {
+          eng: 'Description',
+          rus: 'Описание'
+        },
+        notePlaceholder: {
+          eng: 'Write your notes',
+          rus: 'Запиши активность'
+        },
+        image: {
+          eng: 'Image',
+          rus: 'Фотография'
+        },
+        btnSave: {
+          eng: 'Save',
+          rus: 'Сохранить'
+        },
+        log: {
+          eng: 'Activity Log',
+          rus: 'Журнал действий'
+        },
+        noActivity: {
+          eng: 'No activity found.',
+          rus: 'Активность не обнаружена.'
+        },
+        btnLoad: {
+          eng: 'Load More',
+          rus: 'Загрузить еще'
+        }
+      }
+    }
+  },
   components: {
     underConstruction: {
       text: {

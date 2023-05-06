@@ -1,6 +1,6 @@
 import { FC } from 'react';
-import { routesType } from '../routes/routes';
 import { NavLink } from 'react-router-dom';
+import { routesType } from '../../utils/constants/sidebarItems';
 
 interface SidebarItemProps {
   data: routesType;

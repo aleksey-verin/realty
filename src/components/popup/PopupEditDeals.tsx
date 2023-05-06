@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import ButtonOval from '../ui/buttons/ButtonOval';
-import { dealsAddEditType } from '../../constants/contentLocal';
+import { dealsAddEditType } from '../../utils/constants/contentLocal';
 
 interface PopupEditDealsProps {
   content: dealsAddEditType;

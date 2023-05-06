@@ -12,6 +12,7 @@ interface HeaderProps {
   headerButtonTitle?: string;
   isAsideBlockVisible?: boolean;
   pathForButtonBack?: string;
+  headerButtonBackTitle?: string;
 }
 
 const Header: FC<HeaderProps> = ({
@@ -20,7 +21,8 @@ const Header: FC<HeaderProps> = ({
   handleButtonClick,
   headerButtonTitle,
   isAsideBlockVisible,
-  pathForButtonBack
+  pathForButtonBack,
+  headerButtonBackTitle
 }) => {
   const headerActionsClasses = `header-actions ${isAsideBlockVisible ? 'aside-block' : ''}`;
 
@@ -37,7 +39,7 @@ const Header: FC<HeaderProps> = ({
               <div>
                 <ImgArrowLeft />
               </div>
-              <div>Back</div>
+              <div>{headerButtonBackTitle}</div>
             </div>
           </Link>
         ) : null}
@@ -49,12 +51,6 @@ const Header: FC<HeaderProps> = ({
             {headerButtonTitle}
             <ImgAdd />
           </ButtonOval>
-          // <div className="header-actions__action button">
-          //   <div className="button-title">{headerButtonTitle}</div>
-          //   <div className="button-image">
-          //     <ImgAdd />
-          //   </div>
-          // </div>
         )}
         <div className="header-actions__search search">
           <ImgSearch />

@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import UnderConstruction from '../components/UnderConstruction';
 import Header from '../components/Header';
-import { contentLocal } from '../constants/contentLocal';
+import { contentLocal } from '../utils/constants/contentLocal';
 
 interface DashboardProps {}
 

@@ -8,7 +8,7 @@ import { routes } from '../routes/routes';
 import ButtonOval from '../components/ui/buttons/ButtonOval';
 import PopupContainer from '../components/popup/PopupContainer';
 import PopupEditDeals from '../components/popup/PopupEditDeals';
-import { contentLocal } from '../constants/contentLocal';
+import { contentLocal } from '../utils/constants/contentLocal';
 import { Navigate, useParams } from 'react-router-dom';
 import { mockDealsRus } from '../utils/mockdata/mockDealsRus';
 import dayjs from 'dayjs';
@@ -18,6 +18,9 @@ interface DealsDetailsProps {}
 
 const DealsDetails: FC<DealsDetailsProps> = () => {
   const local = 'rus';
+  const mainContent = contentLocal.subPages.dealsDetails.mainContent;
+  const asideContent = contentLocal.subPages.dealsDetails.asideContent;
+  const statuses = contentLocal.pages.deals.progressStatuses;
 
   const [popupIsOpen, setPopupIsOpen] = useState(false);
 
@@ -47,9 +50,7 @@ const DealsDetails: FC<DealsDetailsProps> = () => {
   console.log(customer);
 
   const viewedProgress =
-    progress === 'inProgress'
-      ? contentLocal.pages.deals.progressStatuses.inProgress[local]
-      : contentLocal.pages.deals.progressStatuses.closed[local];
+    progress === 'inProgress' ? statuses.inProgress[local] : statuses.closed[local];
 
   const imageCustomer = {
     backgroundImage: `url()`
@@ -58,10 +59,11 @@ const DealsDetails: FC<DealsDetailsProps> = () => {
   return (
     <div className="content">
       <Header
-        headerTitle="Deal Details"
+        headerTitle={mainContent.header[local]}
         isButtonVisible={false}
         isAsideBlockVisible={true}
         pathForButtonBack={routes.deals}
+        headerButtonBackTitle={mainContent.headerButton[local]}
       />
       <main>
         <div className="details">
@@ -72,19 +74,19 @@ const DealsDetails: FC<DealsDetailsProps> = () => {
                   style={imageCustomer}
                   className="information-item__image column-picture__pic"></div>
                 <div className="information-item__info">
-                  <div>Customer</div>
+                  <div>{mainContent.customer[local]}</div>
                   <div>{customer ? `${customer.firstName} ${customer.lastName}` : null}</div>
                 </div>
               </div>
               <div className="information-item">
                 <div className="information-item__info">
-                  <div>Email</div>
+                  <div>{mainContent.email[local]}</div>
                   <div>{customer ? customer.email : null}</div>
                 </div>
               </div>
               <div className="information-item">
                 <div className="information-item__info">
-                  <div>Phone</div>
+                  <div>{mainContent.phone[local]}</div>
                   <div>{customer ? customer.phone : null}</div>
                 </div>
               </div>
@@ -102,43 +104,43 @@ const DealsDetails: FC<DealsDetailsProps> = () => {
               <div className="basic-info">
                 <div className="information-item">
                   <div className="information-item__info">
-                    <div>Progress</div>
+                    <div>{mainContent.status[local]}</div>
                     <div>{viewedProgress}</div>
                   </div>
                 </div>
                 <div className="information-item">
                   <div className="information-item__info">
-                    <div>Appointment Date</div>
+                    <div>{mainContent.date[local]}</div>
                     <div>{viewedDate}</div>
                   </div>
                 </div>
                 <div className="information-item">
                   <div className="information-item__info">
-                    <div>Room Area</div>
+                    <div>{mainContent.area[local]}</div>
                     <div>{`${area} m2`}</div>
                   </div>
                 </div>
                 <div className="information-item">
                   <div className="information-item__info">
-                    <div>Number of people</div>
+                    <div>{mainContent.people[local]}</div>
                     <div>{numberOfPeople}</div>
                   </div>
                 </div>
                 <div className="information-item">
                   <div className="information-item__info">
-                    <div>Price</div>
+                    <div>{mainContent.price[local]}</div>
                     <div>{`$ ${price}`}</div>
                   </div>
                 </div>
                 <div className="information-item">
                   <div className="information-item__info">
-                    <div>Room Access</div>
+                    <div>{mainContent.roomAccess[local]}</div>
                     <div>{access}</div>
                   </div>
                 </div>
                 <div className="information-item">
                   <div className="information-item__info">
-                    <div>Special Instructions</div>
+                    <div>{mainContent.instructions[local]}</div>
                     <div>{instructions}</div>
                   </div>
                 </div>
@@ -150,18 +152,18 @@ const DealsDetails: FC<DealsDetailsProps> = () => {
           </div>
           <div className="details-aside">
             <div className="details-aside__record record">
-              <div className="record-title">Record Activity</div>
+              <div className="record-title">{asideContent.activity[local]}</div>
               <form action="#" className="record-form">
-                <label htmlFor="newNote">Description</label>
-                <input type="text" id="newNote" placeholder="Write your notes" />
+                <label htmlFor="newNote">{asideContent.description[local]}</label>
+                <input type="text" id="newNote" placeholder={asideContent.notePlaceholder[local]} />
                 <input type="datetime-local" />
-                <label htmlFor="newImage">Image</label>
+                <label htmlFor="newImage">{asideContent.image[local]}</label>
                 <input type="file" />
-                <ButtonOval>Save</ButtonOval>
+                <ButtonOval>{asideContent.btnSave[local]}</ButtonOval>
               </form>
             </div>
             <div className="details-aside__log log">
-              <div className="log-title">Activity Log</div>
+              <div className="log-title">{asideContent.log[local]}</div>
               <div className="log-items">
                 <div className="log-items__item log-item">
                   <div className="log-item__mark">
@@ -170,7 +172,8 @@ const DealsDetails: FC<DealsDetailsProps> = () => {
                   <div className="log-item__content log-content">
                     <div className="log-content__date">17 Apr 2023</div>
                     <div className="log-content__text">
-                      Installation or inspection of your thermostat Lorem ipsum dolor sit amet.
+                      Была проведены работы по замене термостатов на обогревателях по всех
+                      помещениях
                     </div>
                     <div className="log-content__image"></div>
                   </div>
@@ -181,18 +184,18 @@ const DealsDetails: FC<DealsDetailsProps> = () => {
                   </div>
                   <div className="log-item__content log-content">
                     <div className="log-content__date">17 Apr 2023</div>
-                    <div className="log-content__text">Installation or inspection</div>
+                    <div className="log-content__text">Проведена инспекция всех помещений</div>
                   </div>
                 </div>
                 <div className="log-items__empty">
                   <div>
                     <ImgNotfound />
                   </div>
-                  <div>No activity found.</div>
+                  <div>{asideContent.noActivity[local]}.</div>
                 </div>
               </div>
               <div className="log-loader">
-                <div className="log-loader__button">Load More</div>
+                <div className="log-loader__button">{asideContent.btnLoad[local]}</div>
               </div>
             </div>
           </div>

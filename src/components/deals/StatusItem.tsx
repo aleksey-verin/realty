@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { contentLocal } from '../../constants/contentLocal';
+import { contentLocal } from '../../utils/constants/contentLocal';
 
 interface StatusItemProps {
   status: string;

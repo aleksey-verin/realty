@@ -468,7 +468,9 @@ main {
     flex: 1 0 70px;
   }
   &-status {
-    flex: 1 0 120px;
+    display: flex;
+    justify-content: center;
+    flex: 0 0 120px;
   }
   &-edit {
     flex: 1 0 40px;
@@ -631,7 +633,7 @@ main {
       // overflow: hidden;
     }
     & button {
-      width: 100px;
+      min-width: 100px;
       justify-content: center;
       align-self: end;
     }

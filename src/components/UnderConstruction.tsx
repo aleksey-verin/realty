@@ -4,7 +4,7 @@ import { routes } from '../routes/routes';
 import ImgUndo from './ui/images/ImgUndo';
 import ButtonOval from './ui/buttons/ButtonOval';
 import ImgDeals from './ui/images/sidebar/ImgDeals';
-import { contentLocal } from '../constants/contentLocal';
+import { contentLocal } from '../utils/constants/contentLocal';
 
 interface UnderConstructionProps {}
 

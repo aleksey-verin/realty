@@ -13,8 +13,11 @@
 
 ## About the Project
 
+<hr>
 <p>It's a versatile application for real estate agents that helps manage your business in one place. It allows you to store current deals, a client list, and create tasks for your team. You can customize the fields and sections displayed in the lists, filter by parameters, plan tasks and meetings in a convenient calendar. The application has a user-friendly interface and helps efficiently manage your business, improve interaction within the team, and provide a high level of service for your clients.</p>
+<hr>
 <p>Это универсальное приложение для агентов по недвижимости, которое помогает управлять вашим бизнесом в одном месте. Оно позволяет сохранять текущие сделки, список клиентов и создавать задачи для вашей команды. Вы можете настроить поля и разделы, отображаемые в списках, фильтровать по параметрам, планировать задачи и встречи в удобном календаре. Приложение имеет простой и понятный интерфейс, помогает эффективно управлять бизнесом, улучшать взаимодействие в команде и обеспечивать высокий уровень сервиса для ваших клиентов.</p>
+<hr>
 
 ## Usage
 
@@ -22,7 +25,12 @@
 
 ## Videos and Screenshots
 
-![image of page Deals](/screen-deals.png)
+![image of page Deals](/readme/realty-image1.png)
+![image of page Deals](/readme/realty-image2.png)
+![image of page Deals](/readme/realty-image3.png)
+![image of page Deals](/readme/realty-image4.png)
+![image of page Deals](/readme/realty-image5.png)
+![image of page Deals](/readme/realty-image6.png)
 
 ## Getting Started
 

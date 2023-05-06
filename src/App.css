@@ -383,7 +383,9 @@ main {
   flex: 1 0 70px;
 }
 .column-status {
-  flex: 1 0 120px;
+  display: flex;
+  justify-content: center;
+  flex: 0 0 120px;
 }
 .column-edit {
   flex: 1 0 40px;
@@ -525,7 +527,7 @@ main {
   width: 319px;
 }
 .record-form button {
-  width: 100px;
+  min-width: 100px;
   justify-content: center;
   align-self: end;
 }

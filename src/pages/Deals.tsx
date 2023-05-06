@@ -6,7 +6,7 @@ import SpreadsheetItem from '../components/deals/SpreadsheetItem';
 import Header from '../components/Header';
 import PopupContainer from '../components/popup/PopupContainer';
 import PopupEditDeals from '../components/popup/PopupEditDeals';
-import { contentLocal } from '../constants/contentLocal';
+import { contentLocal } from '../utils/constants/contentLocal';
 import { mockDealsRus } from '../utils/mockdata/mockDealsRus';
 
 interface DealsProps {}
