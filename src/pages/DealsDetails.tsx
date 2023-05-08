@@ -13,11 +13,14 @@ import { Navigate, useParams } from 'react-router-dom';
 import { mockDealsRus } from '../utils/mockdata/mockDealsRus';
 import dayjs from 'dayjs';
 import { getCustomerData } from '../utils/helpers';
+import { useSelector } from 'react-redux';
+import { selectorLocalization } from '../store/reducers/localizationSlice';
 
 interface DealsDetailsProps {}
 
 const DealsDetails: FC<DealsDetailsProps> = () => {
-  const local = 'rus';
+  const { lang } = useSelector(selectorLocalization);
+
   const mainContent = contentLocal.subPages.dealsDetails.mainContent;
   const asideContent = contentLocal.subPages.dealsDetails.asideContent;
   const statuses = contentLocal.pages.deals.progressStatuses;
@@ -50,7 +53,7 @@ const DealsDetails: FC<DealsDetailsProps> = () => {
   console.log(customer);
 
   const viewedProgress =
-    progress === 'inProgress' ? statuses.inProgress[local] : statuses.closed[local];
+    progress === 'inProgress' ? statuses.inProgress[lang] : statuses.closed[lang];
 
   const imageCustomer = {
     backgroundImage: `url()`
@@ -59,11 +62,11 @@ const DealsDetails: FC<DealsDetailsProps> = () => {
   return (
     <div className="content">
       <Header
-        headerTitle={mainContent.header[local]}
+        headerTitle={mainContent.header[lang]}
         isButtonVisible={false}
         isAsideBlockVisible={true}
         pathForButtonBack={routes.deals}
-        headerButtonBackTitle={mainContent.headerButton[local]}
+        headerButtonBackTitle={mainContent.headerButton[lang]}
       />
       <main>
         <div className="details">
@@ -74,19 +77,19 @@ const DealsDetails: FC<DealsDetailsProps> = () => {
                   style={imageCustomer}
                   className="information-item__image column-picture__pic"></div>
                 <div className="information-item__info">
-                  <div>{mainContent.customer[local]}</div>
+                  <div>{mainContent.customer[lang]}</div>
                   <div>{customer ? `${customer.firstName} ${customer.lastName}` : null}</div>
                 </div>
               </div>
               <div className="information-item">
                 <div className="information-item__info">
-                  <div>{mainContent.email[local]}</div>
+                  <div>{mainContent.email[lang]}</div>
                   <div>{customer ? customer.email : null}</div>
                 </div>
               </div>
               <div className="information-item">
                 <div className="information-item__info">
-                  <div>{mainContent.phone[local]}</div>
+                  <div>{mainContent.phone[lang]}</div>
                   <div>{customer ? customer.phone : null}</div>
                 </div>
               </div>
@@ -104,43 +107,43 @@ const DealsDetails: FC<DealsDetailsProps> = () => {
               <div className="basic-info">
                 <div className="information-item">
                   <div className="information-item__info">
-                    <div>{mainContent.status[local]}</div>
+                    <div>{mainContent.status[lang]}</div>
                     <div>{viewedProgress}</div>
                   </div>
                 </div>
                 <div className="information-item">
                   <div className="information-item__info">
-                    <div>{mainContent.date[local]}</div>
+                    <div>{mainContent.date[lang]}</div>
                     <div>{viewedDate}</div>
                   </div>
                 </div>
                 <div className="information-item">
                   <div className="information-item__info">
-                    <div>{mainContent.area[local]}</div>
+                    <div>{mainContent.area[lang]}</div>
                     <div>{`${area} m2`}</div>
                   </div>
                 </div>
                 <div className="information-item">
                   <div className="information-item__info">
-                    <div>{mainContent.people[local]}</div>
+                    <div>{mainContent.people[lang]}</div>
                     <div>{numberOfPeople}</div>
                   </div>
                 </div>
                 <div className="information-item">
                   <div className="information-item__info">
-                    <div>{mainContent.price[local]}</div>
+                    <div>{mainContent.price[lang]}</div>
                     <div>{`$ ${price}`}</div>
                   </div>
                 </div>
                 <div className="information-item">
                   <div className="information-item__info">
-                    <div>{mainContent.roomAccess[local]}</div>
+                    <div>{mainContent.roomAccess[lang]}</div>
                     <div>{access}</div>
                   </div>
                 </div>
                 <div className="information-item">
                   <div className="information-item__info">
-                    <div>{mainContent.instructions[local]}</div>
+                    <div>{mainContent.instructions[lang]}</div>
                     <div>{instructions}</div>
                   </div>
                 </div>
@@ -152,18 +155,18 @@ const DealsDetails: FC<DealsDetailsProps> = () => {
           </div>
           <div className="details-aside">
             <div className="details-aside__record record">
-              <div className="record-title">{asideContent.activity[local]}</div>
+              <div className="record-title">{asideContent.activity[lang]}</div>
               <form action="#" className="record-form">
-                <label htmlFor="newNote">{asideContent.description[local]}</label>
-                <input type="text" id="newNote" placeholder={asideContent.notePlaceholder[local]} />
+                <label htmlFor="newNote">{asideContent.description[lang]}</label>
+                <input type="text" id="newNote" placeholder={asideContent.notePlaceholder[lang]} />
                 <input type="datetime-local" />
-                <label htmlFor="newImage">{asideContent.image[local]}</label>
+                <label htmlFor="newImage">{asideContent.image[lang]}</label>
                 <input type="file" />
-                <ButtonOval>{asideContent.btnSave[local]}</ButtonOval>
+                <ButtonOval>{asideContent.btnSave[lang]}</ButtonOval>
               </form>
             </div>
             <div className="details-aside__log log">
-              <div className="log-title">{asideContent.log[local]}</div>
+              <div className="log-title">{asideContent.log[lang]}</div>
               <div className="log-items">
                 <div className="log-items__item log-item">
                   <div className="log-item__mark">
@@ -191,18 +194,18 @@ const DealsDetails: FC<DealsDetailsProps> = () => {
                   <div>
                     <ImgNotfound />
                   </div>
-                  <div>{asideContent.noActivity[local]}.</div>
+                  <div>{asideContent.noActivity[lang]}.</div>
                 </div>
               </div>
               <div className="log-loader">
-                <div className="log-loader__button">{asideContent.btnLoad[local]}</div>
+                <div className="log-loader__button">{asideContent.btnLoad[lang]}</div>
               </div>
             </div>
           </div>
         </div>
         {popupIsOpen && (
           <PopupContainer
-            title={contentLocal.components.popup.dealsAddEdit.headerTitleEdit[local]}
+            title={contentLocal.components.popup.dealsAddEdit.headerTitleEdit[lang]}
             handleClosePopup={() => setPopupIsOpen(false)}>
             <PopupEditDeals content={contentLocal.components.popup.dealsAddEdit} />
           </PopupContainer>
