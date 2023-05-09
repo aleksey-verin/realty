@@ -852,8 +852,9 @@ main {
   text-align: left;
   line-height: 30px;
 }
-.form-deal input {
-  background: #f6fafd;
+.form-deal input,
+.form-deal select {
+  background-color: #f6fafd;
   font-size: 16px;
   border: 1px solid #eaeef4;
   border-radius: 8px;
@@ -861,10 +862,11 @@ main {
   box-sizing: border-box;
   padding: 10px 20px;
 }
-.form-deal input::-moz-placeholder {
+.form-deal input::-moz-placeholder, .form-deal select::-moz-placeholder {
   color: #7e92a2;
 }
-.form-deal input::placeholder {
+.form-deal input::placeholder,
+.form-deal select::placeholder {
   color: #7e92a2;
 }
 .form-deal input[type=datetime-local] {
@@ -874,6 +876,20 @@ main {
 .form-deal input[type=file] {
   font-family: inherit;
   color: #7e92a2;
+}
+.form-deal select {
+  display: block;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  background-image: url(./assets/images/select-arrow-down.svg);
+  background-repeat: no-repeat;
+  background-position: right 0.7em top 50%;
+  background-size: 20px 20px;
+  padding-right: 40px;
+}
+.form-deal select:-ms-expand {
+  display: none;
 }
 .form-deal__single {
   display: flex;
@@ -911,13 +927,15 @@ main {
   align-items: center;
   gap: 20px;
 }
-.form-deal__footer input {
-  margin-left: 20px;
-}
 .form-deal__footer button {
   width: 120px;
   display: flex;
   justify-content: center;
+}
+.form-deal__footer div {
+  display: flex;
+  align-items: center;
+  gap: 20px;
 }
 
 @media (prefers-color-scheme: dark) {

@@ -303,8 +303,22 @@ export const contentLocal = {
           rus: 'Доступ к помещению'
         },
         roomAccessValue: {
-          eng: 'Keys with doorman',
-          rus: 'Ключ и консьерж'
+          key: {
+            eng: 'Keys',
+            rus: 'Ключ'
+          },
+          keyAndDoorman: {
+            eng: 'Keys with doorman',
+            rus: 'Ключ и консьерж'
+          },
+          reception: {
+            eng: 'Reception',
+            rus: 'Ресепшен'
+          },
+          other: {
+            eng: 'Other',
+            rus: 'Другое'
+          }
         },
         price: {
           eng: 'Price ($)',
@@ -318,9 +332,15 @@ export const contentLocal = {
           eng: 'Progress',
           rus: 'Статус'
         },
-        progressValues: {
-          eng: 'In Progress',
-          rus: 'В процессе'
+        progressStatuses: {
+          closed: {
+            eng: 'Closed',
+            rus: 'Завершено'
+          },
+          inProgress: {
+            eng: 'In progress',
+            rus: 'В процессе'
+          }
         },
         footerButtonCancel: {
           eng: 'Cancel',
@@ -358,11 +378,19 @@ export interface dealsAddEditType {
   instructions: localItem;
   instructionsPlaceholder: localItem;
   roomAccess: localItem;
-  roomAccessValue: localItem;
+  roomAccessValue: {
+    key: localItem;
+    keyAndDoorman: localItem;
+    reception: localItem;
+    other: localItem;
+  };
   price: localItem;
   pricePlaceholder: localItem;
   progress: localItem;
-  progressValues: localItem;
+  progressStatuses: {
+    closed: localItem;
+    inProgress: localItem;
+  };
   footerButtonCancel: localItem;
   footerButtonSave: localItem;
 }

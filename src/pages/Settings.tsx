@@ -1,4 +1,4 @@
-import React, { FC, SelectHTMLAttributes, useState } from 'react';
+import React, { FC, useState } from 'react';
 import UnderConstruction from '../components/UnderConstruction';
 import Header from '../components/Header';
 import { useSelector } from 'react-redux';
