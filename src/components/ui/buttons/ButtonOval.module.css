@@ -26,6 +26,13 @@
 .button:hover {
   background-color: rgb(28, 24, 242);
 }
+.button.cancel {
+  background-color: inherit;
+  color: lightcoral;
+}
+.button:hover.cancel {
+  background-color: rgba(137, 137, 137, 0.233);
+}
 
 @media (prefers-color-scheme: dark) {
   .button {

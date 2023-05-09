@@ -19,7 +19,7 @@ const Deals: FC<DealsProps> = () => {
 
   const [popupIsOpen, setPopupIsOpen] = useState(false);
 
-  const totalTasks = '23';
+  const totalTasks = deals.length;
 
   return (
     <div className="content">

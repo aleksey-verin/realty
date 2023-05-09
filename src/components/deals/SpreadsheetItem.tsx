@@ -21,10 +21,8 @@ const SpreadsheetItem: FC<SpreadsheetItemProps> = ({ data }) => {
     progress
   } = data;
 
-  // const local = 'rus';
-
-  const viewedDate = dayjs(appointmentDate).format('MMM DD, YYYY HH:mm A');
-  // Nov 14, 2021 07:00 AM
+  const viewedDate = dayjs(appointmentDate).format('MMM DD, YYYY HH:mm');
+  // Nov 14, 2021 07:00
 
   const styleUser = {
     backgroundImage: `url(${photoSrc})`

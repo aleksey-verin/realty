@@ -1,4 +1,4 @@
-import { FC, useState } from 'react';
+import { FC, useEffect, useState } from 'react';
 // import { useParams } from 'react-router-dom';
 import Header from '../components/Header';
 import ImgEdit from '../components/ui/images/ImgEdit';
@@ -9,17 +9,18 @@ import ButtonOval from '../components/ui/buttons/ButtonOval';
 import PopupContainer from '../components/popup/PopupContainer';
 import { contentLocal } from '../utils/constants/contentLocal';
 import { Navigate, useParams } from 'react-router-dom';
-import { mockDealsRus } from '../utils/mockdata/mockDealsRus';
 import dayjs from 'dayjs';
 import { getCustomerData } from '../utils/helpers';
 import { useSelector } from 'react-redux';
 import { selectorLocalization } from '../store/reducers/localizationSlice';
-import PopupEditDeals from '../components/popup/PopupEditDeals';
+import PopupEditDeal from '../components/popup/PopupEditDeal';
+import { selectorDeals } from '../store/reducers/dealsSlice';
 
 interface DealsDetailsProps {}
 
 const DealsDetails: FC<DealsDetailsProps> = () => {
   const { lang } = useSelector(selectorLocalization);
+  const { deals } = useSelector(selectorDeals);
 
   const mainContent = contentLocal.subPages.dealsDetails.mainContent;
   const asideContent = contentLocal.subPages.dealsDetails.asideContent;
@@ -27,8 +28,12 @@ const DealsDetails: FC<DealsDetailsProps> = () => {
 
   const [popupIsOpen, setPopupIsOpen] = useState(false);
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const { id } = useParams();
-  const deal = mockDealsRus.find((deal) => deal.id_deal === id);
+  const deal = deals.find((deal) => deal.id_deal === id);
   if (!deal) return <Navigate to="/" />;
 
   const {
@@ -50,7 +55,6 @@ const DealsDetails: FC<DealsDetailsProps> = () => {
   };
 
   const customer = getCustomerData(id_customer);
-  console.log(customer);
 
   const viewedProgress =
     progress === 'inProgress' ? statuses.inProgress[lang] : statuses.closed[lang];
@@ -206,7 +210,7 @@ const DealsDetails: FC<DealsDetailsProps> = () => {
           <PopupContainer
             title={contentLocal.components.popup.dealsAddEdit.headerTitleEdit[lang]}
             handleClosePopup={() => setPopupIsOpen(false)}>
-            <PopupEditDeals content={contentLocal.components.popup.dealsAddEdit} />
+            <PopupEditDeal deal={deal} handleClosePopup={() => setPopupIsOpen(false)} />
           </PopupContainer>
         )}
       </main>

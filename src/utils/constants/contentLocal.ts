@@ -342,6 +342,10 @@ export const contentLocal = {
             rus: 'В процессе'
           }
         },
+        footerButtonAdd: {
+          eng: 'Add Deal',
+          rus: 'Добавить'
+        },
         footerButtonCancel: {
           eng: 'Cancel',
           rus: 'Отменить'

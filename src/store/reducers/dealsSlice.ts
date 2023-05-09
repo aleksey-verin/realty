@@ -14,14 +14,21 @@ const dealsSlice = createSlice({
   name: 'dealsSlice',
   initialState,
   reducers: {
-    addDeals(state, { payload }: PayloadAction<dealsType>) {
+    addDeal(state, { payload }: PayloadAction<dealsType>) {
       state.deals.push(payload);
+    },
+    editDeal(state, { payload }: PayloadAction<dealsType>) {
+      const indexDeal = state.deals.findIndex((item) => item.id_deal === payload.id_deal);
+      state.deals[indexDeal] = payload;
+    },
+    deleteDeal(state, { payload }: PayloadAction<dealsType>) {
+      state.deals.filter((deal) => deal.id_deal !== payload.id_deal);
     }
   }
 });
 
 export const selectorDeals = (state: IRootState) => state.dealsSlice;
 
-export const { addDeals } = dealsSlice.actions;
+export const { addDeal, editDeal, deleteDeal } = dealsSlice.actions;
 
 export default dealsSlice.reducer;

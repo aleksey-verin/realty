@@ -14,7 +14,6 @@ const StatusItem: FC<StatusItemProps> = ({ status }) => {
       ? contentLocal.pages.deals.progressStatuses.inProgress[local]
       : contentLocal.pages.deals.progressStatuses.closed[local];
 
-  console.log(viewedProgress);
   return (
     <div className={`status ${status === progressStatusForDeals.closed ? 'closed' : ''}`}>
       {viewedProgress}

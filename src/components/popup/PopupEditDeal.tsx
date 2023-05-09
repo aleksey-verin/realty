@@ -5,12 +5,13 @@ import { useSelector } from 'react-redux';
 import { selectorLocalization } from '../../store/reducers/localizationSlice';
 import { useAppDispatch } from '../../store/store';
 import dayjs from 'dayjs';
-import { addDeal } from '../../store/reducers/dealsSlice';
+import { editDeal } from '../../store/reducers/dealsSlice';
 import { dealsType } from '../../utils/mockdata/mockDealsRus';
 import { progressStatusForDeals } from '../../utils/constants/constants';
 
-interface PopupAddDealsProps {
+interface PopupEditDealsProps {
   // content: dealsAddEditType;
+  deal: dealsType;
   handleClosePopup: () => void;
 }
 
@@ -21,67 +22,65 @@ const accessValue = {
   other: 'other'
 };
 
-// const defaultValue = '';
-const defaultFormAddDealsValue = {
-  address: '',
-  city: '',
-  state: '',
-  zip: '',
-  area: '',
-  people: '',
-  date: '',
-  instructions: '',
-  access: accessValue.key,
-  price: '',
-  status: progressStatusForDeals.inProgress
-};
-
-const PopupAddDeals: FC<PopupAddDealsProps> = ({ handleClosePopup }) => {
+const PopupEditDeal: FC<PopupEditDealsProps> = ({ deal, handleClosePopup }) => {
   const dispatch = useAppDispatch();
 
   const { lang } = useSelector(selectorLocalization);
   const content = contentLocal.components.popup.dealsAddEdit;
+  const {
+    id_deal,
+    createdAt,
+    photoSrc,
+    address: { address, city, state, zip },
+    area,
+    numberOfPeople,
+    appointmentDate,
+    instructions,
+    access,
+    price,
+    progress
+  } = deal;
 
-  const [formValues, setFormValues] = useState(defaultFormAddDealsValue);
+  const [formValues, setFormValues] = useState({
+    address,
+    city,
+    state,
+    zip,
+    area,
+    people: numberOfPeople,
+    date: dayjs(appointmentDate).format('YYYY-MM-DDTHH:mm'),
+    instructions,
+    access,
+    price,
+    status: progress
+  });
 
-  // const [inputAddressValue, setInputAddressValue] = useState(defaultValue);
-  // const [inputCityValue, setInputCityValue] = useState(defaultValue);
-  // const [inputStateValue, setInputStateValue] = useState(defaultValue);
-  // const [inputZipValue, setInputZipValue] = useState(defaultValue);
-  // const [inputAreaValue, setInputAreaValue] = useState(defaultValue);
-  // const [inputPeopleValue, setInputPeopleValue] = useState(defaultValue);
-  // const [inputDateValue, setInputDateValue] = useState(defaultValue);
-  // const [inputInstructionValue, setInputInstructionValue] = useState(defaultValue);
-  // const [selectAccessValue, setSelectAccessValue] = useState('key');
-  // const [inputPriceValue, setInputPriceValue] = useState(defaultValue);
-  // const [selectStatusValue, setSelectStatusValue] = useState(progressStatusForDeals.inProgress);
-
-  console.log(formValues.date);
+  // 2023-05-18T21:36
 
   const handleSubmit = (e: React.ChangeEvent<HTMLFormElement>) => {
     e.preventDefault();
     const { date, address, city, state, zip, area, people, instructions, access, price, status } =
       formValues;
-    const newDeal: dealsType = {
-      id_deal: String(dayjs(new Date()).valueOf()),
-      createdAt: dayjs(new Date()).valueOf(),
+    const changedDeal: dealsType = {
+      id_deal,
+      createdAt,
       appointmentDate: dayjs(date).valueOf(),
-      photoSrc: '',
+      photoSrc,
       address: {
         address: address,
         city: city,
         state: state,
         zip: zip
       },
-      area: Number(area),
-      numberOfPeople: Number(people),
+      area,
+      numberOfPeople: people,
       instructions: instructions,
       access: access,
-      price: Number(price),
+      price,
       progress: status,
       id_customer: '101' //
     };
-    dispatch(addDeal(newDeal));
+    dispatch(editDeal(changedDeal));
     handleClosePopup();
   };
 
@@ -133,7 +132,7 @@ const PopupAddDeals: FC<PopupAddDealsProps> = ({ handleClosePopup }) => {
           <input
             required
             value={formValues.area}
-            onChange={(e) => setFormValues({ ...formValues, area: e.target.value })}
+            onChange={(e) => setFormValues({ ...formValues, area: Number(e.target.value) })}
             type="text"
             id="dealArea"
           />
@@ -143,7 +142,7 @@ const PopupAddDeals: FC<PopupAddDealsProps> = ({ handleClosePopup }) => {
           <input
             required
             value={formValues.people}
-            onChange={(e) => setFormValues({ ...formValues, people: e.target.value })}
+            onChange={(e) => setFormValues({ ...formValues, people: Number(e.target.value) })}
             type="text"
             id="dealPeople"
           />
@@ -191,7 +190,7 @@ const PopupAddDeals: FC<PopupAddDealsProps> = ({ handleClosePopup }) => {
             type="text"
             id="dealPrice"
             value={formValues.price}
-            onChange={(e) => setFormValues({ ...formValues, price: e.target.value })}
+            onChange={(e) => setFormValues({ ...formValues, price: Number(e.target.value) })}
             placeholder={content.pricePlaceholder[lang]}
           />
         </div>
@@ -215,11 +214,11 @@ const PopupAddDeals: FC<PopupAddDealsProps> = ({ handleClosePopup }) => {
           <ButtonOval styleClass="cancel" handleClick={handleClosePopup}>
             {content.footerButtonCancel[lang]}
           </ButtonOval>
-          <ButtonOval>{content.footerButtonAdd[lang]}</ButtonOval>
+          <ButtonOval>{content.footerButtonSave[lang]}</ButtonOval>
         </div>
       </div>
     </form>
   );
 };
 
-export default PopupAddDeals;
+export default PopupEditDeal;

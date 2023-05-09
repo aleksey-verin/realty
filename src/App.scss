@@ -456,10 +456,10 @@ main {
     flex: 1 0 60px;
   }
   &-date {
-    flex: 1 0 200px;
+    flex: 1 0 150px;
   }
   &-area {
-    flex: 1 0 60px;
+    flex: 1 0 50px;
     & span {
       font-size: 10px;
       vertical-align: top;
@@ -1045,7 +1045,7 @@ main {
       width: 100%;
     }
     & input:nth-child(2) {
-      width: 160px;
+      width: 200px;
     }
     & input:nth-child(3) {
       width: 109px;
@@ -1074,7 +1074,8 @@ main {
 }
 @media (prefers-color-scheme: dark) {
   .form-deal {
-    & input {
+    & input,
+    select {
       background: $color-bg-dark2;
       border: 1px solid $color-grey110;
     }

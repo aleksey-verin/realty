@@ -371,10 +371,10 @@ main {
   flex: 1 0 60px;
 }
 .column-date {
-  flex: 1 0 200px;
+  flex: 1 0 150px;
 }
 .column-area {
-  flex: 1 0 60px;
+  flex: 1 0 50px;
 }
 .column-area span {
   font-size: 10px;
@@ -915,7 +915,7 @@ main {
   width: 100%;
 }
 .form-deal__triple input:nth-child(2) {
-  width: 160px;
+  width: 200px;
 }
 .form-deal__triple input:nth-child(3) {
   width: 109px;
@@ -939,7 +939,8 @@ main {
 }
 
 @media (prefers-color-scheme: dark) {
-  .form-deal input {
+  .form-deal input,
+  .form-deal select {
     background: #2e2e2e;
     border: 1px solid #3a4755;
   }
