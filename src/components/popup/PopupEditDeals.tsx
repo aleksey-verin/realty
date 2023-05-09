@@ -12,7 +12,7 @@ const PopupEditDeals: FC<PopupEditDealsProps> = ({ content }) => {
   const { lang } = useSelector(selectorLocalization);
 
   return (
-    <form className="form-deal" action="#">
+    <form className="form-deal">
       <div className="form-deal__single">
         <label htmlFor="dealImage">{content.roomImage[lang]}</label>
         <input id="dealImage" type="file" />

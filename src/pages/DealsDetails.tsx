@@ -7,7 +7,6 @@ import ImgNotfound from '../components/ui/images/ImgNotfound';
 import { routes } from '../routes/routes';
 import ButtonOval from '../components/ui/buttons/ButtonOval';
 import PopupContainer from '../components/popup/PopupContainer';
-import PopupEditDeals from '../components/popup/PopupEditDeals';
 import { contentLocal } from '../utils/constants/contentLocal';
 import { Navigate, useParams } from 'react-router-dom';
 import { mockDealsRus } from '../utils/mockdata/mockDealsRus';
@@ -15,6 +14,7 @@ import dayjs from 'dayjs';
 import { getCustomerData } from '../utils/helpers';
 import { useSelector } from 'react-redux';
 import { selectorLocalization } from '../store/reducers/localizationSlice';
+import PopupEditDeals from '../components/popup/PopupEditDeals';
 
 interface DealsDetailsProps {}
 
@@ -175,8 +175,7 @@ const DealsDetails: FC<DealsDetailsProps> = () => {
                   <div className="log-item__content log-content">
                     <div className="log-content__date">17 Apr 2023</div>
                     <div className="log-content__text">
-                      Была проведены работы по замене термостатов на обогревателях по всех
-                      помещениях
+                      Были произведены работы по замене термостатов обогревателей во всех помещениях
                     </div>
                     <div className="log-content__image"></div>
                   </div>

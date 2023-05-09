@@ -298,11 +298,11 @@ export interface dealsType {
   appointmentDate: number;
   photoSrc: string;
   address: address;
-  area: number;
-  numberOfPeople: number;
+  area: string;
+  numberOfPeople: string;
   instructions: string;
   access: string;
-  price: number;
+  price: string;
   progress: string;
   id_customer: string;
 }

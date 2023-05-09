@@ -5,16 +5,19 @@ import ImgUser from '../components/ui/images/ImgUser';
 import SpreadsheetItem from '../components/deals/SpreadsheetItem';
 import Header from '../components/Header';
 import PopupContainer from '../components/popup/PopupContainer';
-import PopupEditDeals from '../components/popup/PopupEditDeals';
+import PopupEditDeals from '../components/popup/PopupAddOrEditDeals';
 import { contentLocal } from '../utils/constants/contentLocal';
 import { mockDealsRus } from '../utils/mockdata/mockDealsRus';
 import { useSelector } from 'react-redux';
 import { selectorLocalization } from '../store/reducers/localizationSlice';
+import PopupAddDeals from '../components/popup/PopupAddDeals';
+import { selectorDeals } from '../store/reducers/dealsSlice';
 
 interface DealsProps {}
 
 const Deals: FC<DealsProps> = () => {
   const { lang } = useSelector(selectorLocalization);
+  const { deals } = useSelector(selectorDeals);
 
   const [popupIsOpen, setPopupIsOpen] = useState(false);
 
@@ -80,7 +83,7 @@ const Deals: FC<DealsProps> = () => {
             </div>
           </div>
           <div className="spreadsheet-content">
-            {mockDealsRus.map((item) => (
+            {deals.map((item) => (
               <SpreadsheetItem key={item.id_deal} data={item} />
             ))}
           </div>
@@ -89,7 +92,7 @@ const Deals: FC<DealsProps> = () => {
           <PopupContainer
             title={contentLocal.components.popup.dealsAddEdit.headerTitleAdd[lang]}
             handleClosePopup={() => setPopupIsOpen(false)}>
-            <PopupEditDeals content={contentLocal.components.popup.dealsAddEdit} />
+            <PopupAddDeals handleClosePopup={() => setPopupIsOpen(false)} />
           </PopupContainer>
         )}
       </main>
