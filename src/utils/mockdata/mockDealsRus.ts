@@ -1,4 +1,4 @@
-export const mockDealsRus = [
+export const mockDealsRus: dealsType[] = [
   {
     id_deal: '121982192011',
     createdAt: 1681992000000,
@@ -298,11 +298,11 @@ export interface dealsType {
   appointmentDate: number;
   photoSrc: string;
   address: address;
-  area: string;
-  numberOfPeople: string;
+  area: number;
+  numberOfPeople: number;
   instructions: string;
   access: string;
-  price: string;
+  price: number;
   progress: string;
   id_customer: string;
 }

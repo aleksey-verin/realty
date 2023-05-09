@@ -1,4 +1,4 @@
-import { FC, useId, useState } from 'react';
+import { FC, useState } from 'react';
 import ButtonOval from '../ui/buttons/ButtonOval';
 import { contentLocal } from '../../utils/constants/contentLocal';
 import { useSelector } from 'react-redux';
@@ -54,11 +54,11 @@ const PopupAddDeals: FC<PopupAddDealsProps> = ({ handleClosePopup }) => {
         state: inputStateValue,
         zip: inputZipValue
       },
-      area: inputAreaValue,
-      numberOfPeople: inputPeopleValue,
+      area: +inputAreaValue,
+      numberOfPeople: +inputPeopleValue,
       instructions: inputInstructionValue,
       access: selectAccessValue,
-      price: inputPriceValue,
+      price: +inputPriceValue,
       progress: selectStatusValue,
       id_customer: '101' //
     };
@@ -137,6 +137,7 @@ const PopupAddDeals: FC<PopupAddDealsProps> = ({ handleClosePopup }) => {
       <div className="form-deal__single">
         <label htmlFor="dealInstruction">{content.instructions[lang]}</label>
         <input
+          required
           type="text"
           id="dealInstruction"
           value={inputInstructionValue}
