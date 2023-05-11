@@ -6,7 +6,7 @@ import { selectorLocalization } from '../../store/reducers/localizationSlice';
 import { useAppDispatch } from '../../store/store';
 import { deleteDeal } from '../../store/reducers/dealsSlice';
 import { dealsType } from '../../utils/mockdata/mockDealsRus';
-import { Navigate, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { routes } from '../../routes/routes';
 
 interface PopupDeleteDealsProps {
