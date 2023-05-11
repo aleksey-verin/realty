@@ -959,4 +959,15 @@ main {
 }
 .MyInput::placeholder {
   color: #333;
+}
+
+.popup-delete {
+  display: flex;
+  justify-content: space-between;
+  gap: 50px;
+}
+.popup-delete button {
+  flex: 1 1 50%;
+  display: flex;
+  justify-content: center;
 }/*# sourceMappingURL=App.css.map */

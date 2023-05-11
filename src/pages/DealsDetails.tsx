@@ -15,6 +15,7 @@ import { useSelector } from 'react-redux';
 import { selectorLocalization } from '../store/reducers/localizationSlice';
 import PopupEditDeal from '../components/popup/PopupEditDeal';
 import { selectorDeals } from '../store/reducers/dealsSlice';
+import PopupDeleteDeal from '../components/popup/PopupDeleteDeal';
 
 interface DealsDetailsProps {}
 
@@ -26,7 +27,8 @@ const DealsDetails: FC<DealsDetailsProps> = () => {
   const asideContent = contentLocal.subPages.dealsDetails.asideContent;
   const statuses = contentLocal.pages.deals.progressStatuses;
 
-  const [popupIsOpen, setPopupIsOpen] = useState(false);
+  const [popupEditIsOpen, setPopupEditIsOpen] = useState(false);
+  const [popupDeleteIsOpen, setPopupDeleteIsOpen] = useState(false);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -34,7 +36,7 @@ const DealsDetails: FC<DealsDetailsProps> = () => {
 
   const { id } = useParams();
   const deal = deals.find((deal) => deal.id_deal === id);
-  if (!deal) return <Navigate to="/" />;
+  if (!deal) return <Navigate to={routes.deals} />;
 
   const {
     appointmentDate,
@@ -105,10 +107,10 @@ const DealsDetails: FC<DealsDetailsProps> = () => {
             <div className="details-main__middle middle">
               <div className="middle-text">{viewedAddress}</div>
               <div className="middle-delete">
-                <ImgDelete />
+                <ImgDelete handleClick={() => setPopupDeleteIsOpen(true)} />
               </div>
               <div className="middle-edit">
-                <ImgEdit handleClick={() => setPopupIsOpen(true)} />
+                <ImgEdit handleClick={() => setPopupEditIsOpen(true)} />
               </div>
             </div>
             <div className="details-main__basic basic">
@@ -210,11 +212,18 @@ const DealsDetails: FC<DealsDetailsProps> = () => {
             </div>
           </div>
         </div>
-        {popupIsOpen && (
+        {popupEditIsOpen && (
           <PopupContainer
             title={contentLocal.components.popup.dealsAddEdit.headerTitleEdit[lang]}
-            handleClosePopup={() => setPopupIsOpen(false)}>
-            <PopupEditDeal deal={deal} handleClosePopup={() => setPopupIsOpen(false)} />
+            handleClosePopup={() => setPopupEditIsOpen(false)}>
+            <PopupEditDeal deal={deal} handleClosePopup={() => setPopupEditIsOpen(false)} />
+          </PopupContainer>
+        )}
+        {popupDeleteIsOpen && (
+          <PopupContainer
+            title={contentLocal.components.popup.dealsDelete.headerTitle[lang]}
+            handleClosePopup={() => setPopupDeleteIsOpen(false)}>
+            <PopupDeleteDeal deal={deal} handleClosePopup={() => setPopupDeleteIsOpen(false)} />
           </PopupContainer>
         )}
       </main>

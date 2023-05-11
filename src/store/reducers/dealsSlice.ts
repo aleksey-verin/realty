@@ -22,7 +22,7 @@ const dealsSlice = createSlice({
       state.deals[indexDeal] = payload;
     },
     deleteDeal(state, { payload }: PayloadAction<dealsType>) {
-      state.deals.filter((deal) => deal.id_deal !== payload.id_deal);
+      state.deals = state.deals.filter((deal) => deal.id_deal !== payload.id_deal);
     }
   }
 });

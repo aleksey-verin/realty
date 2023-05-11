@@ -1,10 +1,12 @@
 import { FC } from 'react';
 
-interface ImgDeleteProps {}
+interface ImgDeleteProps {
+  handleClick?: () => void;
+}
 
-const ImgDelete: FC<ImgDeleteProps> = () => {
+const ImgDelete: FC<ImgDeleteProps> = ({ handleClick }) => {
   return (
-    <button>
+    <button onClick={handleClick}>
       <svg
         width="20"
         height="20"

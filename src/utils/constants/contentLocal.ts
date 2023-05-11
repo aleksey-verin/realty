@@ -372,6 +372,20 @@ export const contentLocal = {
           eng: 'Save Deal',
           rus: 'Сохранить'
         }
+      },
+      dealsDelete: {
+        headerTitle: {
+          eng: 'Are you sure you want to delete this Deal?',
+          rus: 'Вы уверены что хотите удалить эту сделку?'
+        },
+        footerButtonDelete: {
+          eng: 'Delete this Deal',
+          rus: 'Удалить сделку'
+        },
+        footerButtonCancel: {
+          eng: 'Cancel',
+          rus: 'Отменить'
+        }
       }
     }
   }
