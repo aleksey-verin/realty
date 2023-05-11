@@ -180,6 +180,24 @@ export const contentLocal = {
           eng: 'Room Access',
           rus: 'Доступ к помещению'
         },
+        roomAccessValue: {
+          key: {
+            eng: 'Keys',
+            rus: 'Ключ'
+          },
+          keyAndDoorman: {
+            eng: 'Keys with doorman',
+            rus: 'Ключ и консьерж'
+          },
+          reception: {
+            eng: 'Reception',
+            rus: 'Ресепшен'
+          },
+          other: {
+            eng: 'Other',
+            rus: 'Другое'
+          }
+        },
         instructions: {
           eng: 'Special Instructions',
           rus: 'Специальные инструкции'
@@ -359,7 +377,7 @@ export const contentLocal = {
   }
 };
 
-interface localItem {
+export interface localItem {
   eng: string;
   rus: string;
 }

@@ -24,7 +24,7 @@ const UnderConstruction: FC<UnderConstructionProps> = () => {
       }}>
       <p>{contentLocal.components.underConstruction.text[lang]}</p>
       <Link to={routes.deals} className="button">
-        <ButtonOval>
+        <ButtonOval styleClass="primary-blue">
           <ImgUndo />
           {contentLocal.components.underConstruction.button[lang]}
           <ImgDeals />

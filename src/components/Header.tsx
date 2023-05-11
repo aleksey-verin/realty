@@ -47,7 +47,7 @@ const Header: FC<HeaderProps> = ({
       </div>
       <div className={headerActionsClasses}>
         {isButtonVisible && (
-          <ButtonOval handleClick={handleButtonClick}>
+          <ButtonOval handleClick={handleButtonClick} styleClass="primary-blue">
             {headerButtonTitle}
             <ImgAdd />
           </ButtonOval>

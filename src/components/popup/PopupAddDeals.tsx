@@ -212,10 +212,10 @@ const PopupAddDeals: FC<PopupAddDealsProps> = ({ handleClosePopup }) => {
           </select>
         </div>
         <div>
-          <ButtonOval styleClass="cancel" handleClick={handleClosePopup}>
+          <ButtonOval styleClass="transparent-red" handleClick={handleClosePopup}>
             {content.footerButtonCancel[lang]}
           </ButtonOval>
-          <ButtonOval>{content.footerButtonAdd[lang]}</ButtonOval>
+          <ButtonOval styleClass="primary-blue">{content.footerButtonAdd[lang]}</ButtonOval>
         </div>
       </div>
     </form>

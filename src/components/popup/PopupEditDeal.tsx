@@ -211,10 +211,10 @@ const PopupEditDeal: FC<PopupEditDealsProps> = ({ deal, handleClosePopup }) => {
           </select>
         </div>
         <div>
-          <ButtonOval styleClass="cancel" handleClick={handleClosePopup}>
+          <ButtonOval styleClass="transparent-red" handleClick={handleClosePopup}>
             {content.footerButtonCancel[lang]}
           </ButtonOval>
-          <ButtonOval>{content.footerButtonSave[lang]}</ButtonOval>
+          <ButtonOval styleClass="primary-blue">{content.footerButtonSave[lang]}</ButtonOval>
         </div>
       </div>
     </form>

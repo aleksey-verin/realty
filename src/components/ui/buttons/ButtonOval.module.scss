@@ -13,25 +13,28 @@
   font-size: 14px;
   font-weight: 500;
   line-height: 30px;
-  color: #fff;
-  background-color: rgb(81, 78, 243);
   cursor: pointer;
   transition: all 0.1s 0s;
   & div {
     display: flex;
   }
-  & svg path {
-    fill: #fff;
+  &.primary-blue {
+    color: #fff;
+    background-color: rgb(81, 78, 243);
+    & svg path {
+      fill: #fff;
+    }
+    &:hover {
+      background-color: rgb(28, 24, 242);
+    }
   }
-  &:hover {
-    background-color: rgb(28, 24, 242);
-  }
-  &.cancel {
+  &.transparent-red {
+    color: rgba(255, 0, 0, 0.757);
     background-color: inherit;
-    color: lightcoral;
-  }
-  &:hover.cancel {
-    background-color: rgba(137, 137, 137, 0.233);
+    &:hover {
+      color: rgba(255, 0, 0, 1);
+      background-color: rgba(137, 137, 137, 0.05);
+    }
   }
 }
 @media (prefers-color-scheme: dark) {

@@ -49,6 +49,10 @@ const DealsDetails: FC<DealsDetailsProps> = () => {
     id_customer
   } = deal;
   const viewedAddress = `${zip}, ${state}, ${city}, ${address}`;
+  const accessValue =
+    mainContent.roomAccessValue[
+      access as keyof typeof contentLocal.subPages.dealsDetails.mainContent.roomAccessValue
+    ];
   const viewedDate = dayjs(appointmentDate).format('MMM DD, YYYY HH:mm A');
   const styleUser = {
     backgroundImage: `url(${photoSrc})`
@@ -142,7 +146,7 @@ const DealsDetails: FC<DealsDetailsProps> = () => {
                 <div className="information-item">
                   <div className="information-item__info">
                     <div>{mainContent.roomAccess[lang]}</div>
-                    <div>{access}</div>
+                    <div>{accessValue[lang]}</div>
                   </div>
                 </div>
                 <div className="information-item">
@@ -166,7 +170,7 @@ const DealsDetails: FC<DealsDetailsProps> = () => {
                 <input type="datetime-local" />
                 <label htmlFor="newImage">{asideContent.image[lang]}</label>
                 <input type="file" />
-                <ButtonOval>{asideContent.btnSave[lang]}</ButtonOval>
+                <ButtonOval styleClass="primary-blue">{asideContent.btnSave[lang]}</ButtonOval>
               </form>
             </div>
             <div className="details-aside__log log">
