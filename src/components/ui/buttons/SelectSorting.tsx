@@ -45,12 +45,8 @@ const SelectSorting: FC<SelectSortingProps> = ({ menuItems, activeOption, handle
 
   return (
     <div ref={menu} className="sorting">
-      <div className="sorting-select" onClick={openMenu}>
-        <div
-          className="sorting-select__text"
-          style={activeItem !== activeOption ? { color: '#005FF8' } : {}}>
-          {titleActiveItem}
-        </div>
+      <div className={`sorting-select ${activeItem !== 'none' ? 'active' : ''}`} onClick={openMenu}>
+        <div className="sorting-select__text">{titleActiveItem}</div>
         <div className="sorting-select__image">{menuOpen ? <ImgArrowUp /> : <ImgArrowDown />}</div>
       </div>
       {menuOpen && (

@@ -305,6 +305,9 @@ main {
 .sorting-select:hover svg path {
   fill: #514ef3;
 }
+.sorting-select.active {
+  background-color: #2e2e2e;
+}
 .sorting-menu {
   position: absolute;
   top: 52px;

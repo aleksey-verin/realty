@@ -396,6 +396,12 @@ main {
         }
       }
     }
+    &.active {
+      background-color: $color-bg-dark2;
+    }
+    // &__text.active {
+    //   color: $color-blue;
+    // }
   }
   &-menu {
     position: absolute;
