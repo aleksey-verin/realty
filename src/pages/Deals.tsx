@@ -49,12 +49,12 @@ const Deals: FC<DealsProps> = () => {
             activeOption={sortingType}
             handleSorting={handleSelect}
           />
-          <div className="filters-sort">
+          {/* <div className="filters-sort">
             <div className="filters-sort__title">{contentLocal.pages.deals.sortLabel[lang]}</div>
             <div className="filters-sort__image">
               <ImgArrowDown />
             </div>
-          </div>
+          </div> */}
           <div className="filters-filter">
             <div className="filters-filter__title">
               {contentLocal.pages.deals.filterLabel[lang]}

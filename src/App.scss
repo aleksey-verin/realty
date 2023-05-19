@@ -311,24 +311,24 @@ main {
     font-size: 16px;
     font-weight: 700;
   }
-  &-sort {
-    @include oval-block;
-    cursor: pointer;
-    transition: all 0.1s 0s;
-    & div {
-      display: flex;
-    }
-    &:hover {
-      -webkit-box-shadow: inset 0px 0px 0px 2px $color-blue;
-      -moz-box-shadow: inset 0px 0px 0px 2px $color-blue;
-      box-shadow: inset 0px 0px 0px 2px $color-blue;
-      & svg {
-        & path {
-          fill: $color-blue;
-        }
-      }
-    }
-  }
+  // &-sort {
+  //   @include oval-block;
+  //   cursor: pointer;
+  //   transition: all 0.1s 0s;
+  //   & div {
+  //     display: flex;
+  //   }
+  //   &:hover {
+  //     -webkit-box-shadow: inset 0px 0px 0px 2px $color-blue;
+  //     -moz-box-shadow: inset 0px 0px 0px 2px $color-blue;
+  //     box-shadow: inset 0px 0px 0px 2px $color-blue;
+  //     & svg {
+  //       & path {
+  //         fill: $color-blue;
+  //       }
+  //     }
+  //   }
+  // }
   &-filter {
     @include oval-block;
     cursor: pointer;
@@ -351,15 +351,15 @@ main {
 
 @media (prefers-color-scheme: dark) {
   .filters {
-    &-sort {
-      border: 1px solid $color-grey110; // oval & circle-block
-      background-color: $color-bg-dark; // oval & circle-block
-      & svg {
-        & path {
-          fill: $color-white;
-        }
-      }
-    }
+    // &-sort {
+    //   border: 1px solid $color-grey110; // oval & circle-block
+    //   background-color: $color-bg-dark; // oval & circle-block
+    //   & svg {
+    //     & path {
+    //       fill: $color-white;
+    //     }
+    //   }
+    // }
     &-filter {
       border: 1px solid $color-grey110; // oval & circle-block
       background-color: $color-bg-dark; // oval & circle-block

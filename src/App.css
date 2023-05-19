@@ -234,33 +234,6 @@ main {
   font-size: 16px;
   font-weight: 700;
 }
-.filters-sort {
-  height: 50px;
-  border-radius: 25px;
-  box-sizing: border-box;
-  border: 1px solid #eaeef4;
-  background-color: #fff;
-  padding: 0 20px;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  font-size: 14px;
-  line-height: 30px;
-  cursor: pointer;
-  transition: all 0.1s 0s;
-}
-.filters-sort svg {
-  display: flex;
-}
-.filters-sort div {
-  display: flex;
-}
-.filters-sort:hover {
-  box-shadow: inset 0px 0px 0px 2px #514ef3;
-}
-.filters-sort:hover svg path {
-  fill: #514ef3;
-}
 .filters-filter {
   height: 50px;
   border-radius: 25px;
@@ -290,13 +263,6 @@ main {
 }
 
 @media (prefers-color-scheme: dark) {
-  .filters-sort {
-    border: 1px solid #3a4755;
-    background-color: #242424;
-  }
-  .filters-sort svg path {
-    fill: #fff;
-  }
   .filters-filter {
     border: 1px solid #3a4755;
     background-color: #242424;
