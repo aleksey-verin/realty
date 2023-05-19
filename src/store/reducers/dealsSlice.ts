@@ -1,8 +1,7 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 import { IRootState } from '../store';
-import { dealsType, mockDealsRus } from '../../utils/mockdata/mockDealsRus';
+import { dealsType } from '../../utils/mockdata/mockDealsRus';
 import { sortingDataDeals } from '../../utils/constants/constants';
-import { sortingHelper } from '../../utils/helpers';
 
 interface initialStateTypes {
   deals: dealsType[];

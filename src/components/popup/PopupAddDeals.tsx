@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux';
 import { selectorLocalization } from '../../store/reducers/localizationSlice';
 import { useAppDispatch } from '../../store/store';
 import dayjs from 'dayjs';
-import { addDeal, selectorDeals, sortDeals } from '../../store/reducers/dealsSlice';
+import { addDeal } from '../../store/reducers/dealsSlice';
 import { dealsType } from '../../utils/mockdata/mockDealsRus';
 import { progressStatusForDeals } from '../../utils/constants/constants';
 
