@@ -9,17 +9,27 @@ import { contentLocal } from '../utils/constants/contentLocal';
 import { useSelector } from 'react-redux';
 import { selectorLocalization } from '../store/reducers/localizationSlice';
 import PopupAddDeals from '../components/popup/PopupAddDeals';
-import { selectorDeals } from '../store/reducers/dealsSlice';
+import { selectorDeals, sortDeals } from '../store/reducers/dealsSlice';
+import { sortingDealsValues } from '../utils/constants/constants';
+import { useAppDispatch } from '../store/store';
+import SelectSorting from '../components/ui/buttons/SelectSorting';
 
 interface DealsProps {}
 
 const Deals: FC<DealsProps> = () => {
+  const dispatch = useAppDispatch();
   const { lang } = useSelector(selectorLocalization);
-  const { deals } = useSelector(selectorDeals);
+  const { modifiedDeals } = useSelector(selectorDeals);
 
   const [popupIsOpen, setPopupIsOpen] = useState(false);
 
-  const totalTasks = deals.length;
+  const totalTasks = modifiedDeals.length;
+
+  const { sortingType } = useSelector(selectorDeals); //
+
+  const handleSelect = (optionType: string) => {
+    dispatch(sortDeals(optionType));
+  };
 
   return (
     <div className="content">
@@ -31,7 +41,14 @@ const Deals: FC<DealsProps> = () => {
       />
       <main>
         <div className="filters">
-          <div className="filters-title">{`${contentLocal.pages.deals.tableTitle[lang]}: ${totalTasks} ${contentLocal.pages.deals.tableTitleItems[lang]}`}</div>
+          <div className="filters-title">
+            {`${contentLocal.pages.deals.tableTitle[lang]}: ${totalTasks} ${contentLocal.pages.deals.tableTitleItems[lang]}`}
+          </div>
+          <SelectSorting
+            menuItems={sortingDealsValues}
+            activeOption={sortingType}
+            handleSorting={handleSelect}
+          />
           <div className="filters-sort">
             <div className="filters-sort__title">{contentLocal.pages.deals.sortLabel[lang]}</div>
             <div className="filters-sort__image">
@@ -81,7 +98,7 @@ const Deals: FC<DealsProps> = () => {
             </div>
           </div>
           <div className="spreadsheet-content">
-            {deals.map((item) => (
+            {modifiedDeals.map((item) => (
               <SpreadsheetItem key={item.id_deal} data={item} />
             ))}
           </div>

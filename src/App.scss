@@ -1,5 +1,6 @@
 $color-black: #000;
 $color-navy: #092c4c;
+$color-blue-light: #8a88f6;
 $color-blue: #514ef3;
 $color-blue-dark: #3431e4;
 $color-green: #2dc8a8;
@@ -370,6 +371,102 @@ main {
     }
   }
 }
+
+//===== custom select ====
+.sorting {
+  display: flex;
+  position: relative;
+  align-items: center;
+  cursor: pointer;
+  &-select {
+    width: 320px;
+    @include oval-block;
+    cursor: pointer;
+    transition: all 0.1s 0s;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &:hover {
+      -webkit-box-shadow: inset 0px 0px 0px 2px $color-blue;
+      -moz-box-shadow: inset 0px 0px 0px 2px $color-blue;
+      box-shadow: inset 0px 0px 0px 2px $color-blue;
+      & svg {
+        & path {
+          fill: $color-blue;
+        }
+      }
+    }
+  }
+  &-menu {
+    position: absolute;
+    top: 52px;
+    left: 0px;
+    width: 100%;
+    height: auto;
+    box-sizing: border-box;
+    overflow: hidden;
+    background: #ffffff;
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.15);
+    border: 2px solid $color-blue;
+    border-radius: 25px;
+    color: #122945e7;
+    &__menu {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+    &__item {
+      height: 50px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      padding: 0 20px;
+      font-size: 14px;
+      transition: all 0.1s 0s;
+      &:hover {
+        background-color: $color-blue;
+        color: $color-white;
+      }
+      &.active {
+        color: $color-blue;
+        background-color: $color-grey30;
+      }
+      &.active:hover {
+        // color: $color-black;
+      }
+    }
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .sorting {
+    &-select {
+      border: 1px solid $color-grey110; // oval & circle-block
+      background-color: $color-bg-dark; // oval & circle-block
+      & svg {
+        & path {
+          fill: $color-white;
+        }
+      }
+    }
+    &-menu {
+      background-color: $color-bg-dark2; // oval & circle-block
+      box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.3);
+      color: $color-white;
+      &__item {
+        &:hover {
+          background-color: $color-blue;
+          color: $color-white;
+        }
+        &.active {
+          color: $color-blue-light;
+          background-color: $color-bg-dark;
+        }
+      }
+    }
+  }
+}
+
+//========================
 
 .spreadsheet {
   padding: 0 24px;
