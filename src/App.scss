@@ -379,7 +379,7 @@ main {
   align-items: center;
   cursor: pointer;
   &-select {
-    width: 320px;
+    width: 220px;
     @include oval-block;
     cursor: pointer;
     transition: all 0.1s 0s;
@@ -1164,6 +1164,7 @@ main {
     }
     & div {
       display: flex;
+      flex-direction: row-reverse;
       align-items: center;
       gap: 20px;
     }

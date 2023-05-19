@@ -11,8 +11,27 @@ import Tasks from './pages/Tasks';
 import Calendar from './pages/Calendar';
 import Notes from './pages/Notes';
 import Settings from './pages/Settings';
+import { useAppDispatch } from './store/store';
+import { setDeals } from './store/reducers/dealsSlice';
+import { useEffect } from 'react';
+import { mockDealsRus } from './utils/mockdata/mockDealsRus';
 
 function App() {
+  const dispatch = useAppDispatch();
+  // const { deals, sortingType } = useSelector(selectorDeals);
+
+  // useEffect(() => {
+  //   // dispatch(setModifiedDeals());
+  //   if (sortingType && deals) {
+  //     dispatch(sortDeals(sortingType));
+  //   }
+  // }, [sortingType, deals, dispatch]);
+
+  useEffect(() => {
+    console.log('uef app');
+    dispatch(setDeals(mockDealsRus));
+  }, [dispatch]);
+
   return (
     <div className="container">
       <HashRouter>

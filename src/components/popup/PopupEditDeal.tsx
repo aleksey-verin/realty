@@ -10,7 +10,6 @@ import { dealsType } from '../../utils/mockdata/mockDealsRus';
 import { progressStatusForDeals } from '../../utils/constants/constants';
 
 interface PopupEditDealsProps {
-  // content: dealsAddEditType;
   deal: dealsType;
   handleClosePopup: () => void;
 }
@@ -197,7 +196,6 @@ const PopupEditDeal: FC<PopupEditDealsProps> = ({ deal, handleClosePopup }) => {
       </div>
       <div className="form-deal__footer">
         <div>
-          <label htmlFor="dealProgress">{content.progress[lang]}</label>
           <select
             id="dealProgress"
             value={formValues.status}
@@ -209,12 +207,13 @@ const PopupEditDeal: FC<PopupEditDealsProps> = ({ deal, handleClosePopup }) => {
               {content.progressStatuses.closed[lang]}
             </option>
           </select>
+          <label htmlFor="dealProgress">{content.progress[lang]}</label>
         </div>
         <div>
+          <ButtonOval styleClass="primary-blue">{content.footerButtonSave[lang]}</ButtonOval>
           <ButtonOval styleClass="transparent-red" handleClick={handleClosePopup}>
             {content.footerButtonCancel[lang]}
           </ButtonOval>
-          <ButtonOval styleClass="primary-blue">{content.footerButtonSave[lang]}</ButtonOval>
         </div>
       </div>
     </form>

@@ -1,5 +1,4 @@
 import { FC, useState } from 'react';
-import ImgArrowDown from '../components/ui/images/ImgArrowDown';
 import ImgFilter from '../components/ui/images/ImgFilter';
 import ImgUser from '../components/ui/images/ImgUser';
 import SpreadsheetItem from '../components/deals/SpreadsheetItem';
@@ -9,26 +8,29 @@ import { contentLocal } from '../utils/constants/contentLocal';
 import { useSelector } from 'react-redux';
 import { selectorLocalization } from '../store/reducers/localizationSlice';
 import PopupAddDeals from '../components/popup/PopupAddDeals';
-import { selectorDeals, sortDeals } from '../store/reducers/dealsSlice';
+import { selectorDeals, setSortingType } from '../store/reducers/dealsSlice';
 import { sortingDealsValues } from '../utils/constants/constants';
 import { useAppDispatch } from '../store/store';
 import SelectSorting from '../components/ui/buttons/SelectSorting';
+import { sortingHelper } from '../utils/helpers';
 
 interface DealsProps {}
 
 const Deals: FC<DealsProps> = () => {
+  console.log('component Deals');
   const dispatch = useAppDispatch();
   const { lang } = useSelector(selectorLocalization);
-  const { modifiedDeals } = useSelector(selectorDeals);
+  const { deals, sortingType } = useSelector(selectorDeals);
 
   const [popupIsOpen, setPopupIsOpen] = useState(false);
 
+  // const modifiedDeals = useMemo(() => sortingHelper(deals, sortingType), [deals, sortingType]);
+  const modifiedDeals = deals.length ? sortingHelper(deals, sortingType) : deals;
+
   const totalTasks = modifiedDeals.length;
 
-  const { sortingType } = useSelector(selectorDeals); //
-
   const handleSelect = (optionType: string) => {
-    dispatch(sortDeals(optionType));
+    dispatch(setSortingType(optionType));
   };
 
   return (

@@ -7,21 +7,26 @@ import { sortingHelper } from '../../utils/helpers';
 interface initialStateTypes {
   deals: dealsType[];
   sortingType: string;
-  modifiedDeals: dealsType[];
+  // modifiedDeals: dealsType[];
 }
 
 const initialState: initialStateTypes = {
-  deals: mockDealsRus,
-  sortingType: sortingDataDeals.none.value,
-  modifiedDeals: mockDealsRus
+  deals: [],
+  sortingType: sortingDataDeals.none.value
+  // modifiedDeals: []
 };
 
 const dealsSlice = createSlice({
   name: 'dealsSlice',
   initialState,
   reducers: {
+    setDeals(state, { payload }: PayloadAction<dealsType[]>) {
+      state.deals = payload;
+      // state.modifiedDeals = sortingHelper(payload, state.sortingType);
+    },
     addDeal(state, { payload }: PayloadAction<dealsType>) {
       state.deals.push(payload);
+      // state.modifiedDeals.push(payload);
     },
     editDeal(state, { payload }: PayloadAction<dealsType>) {
       const indexDeal = state.deals.findIndex((item) => item.id_deal === payload.id_deal);
@@ -30,15 +35,30 @@ const dealsSlice = createSlice({
     deleteDeal(state, { payload }: PayloadAction<dealsType>) {
       state.deals = state.deals.filter((deal) => deal.id_deal !== payload.id_deal);
     },
-    sortDeals(state, { payload }: PayloadAction<string>) {
+    // setModifiedDeals(state) {
+    //   state.modifiedDeals = state.deals;
+    // },
+    setSortingType(state, { payload }: PayloadAction<string>) {
+      console.log('setSortType reducer');
       state.sortingType = payload;
-      state.modifiedDeals = sortingHelper(state.deals, payload);
     }
+    // sortDeals(state, { payload }: PayloadAction<string>) {
+    //   console.log('sortDeals reducer');
+    //   state.modifiedDeals = sortingHelper(state.deals, payload);
+    // }
   }
 });
 
 export const selectorDeals = (state: IRootState) => state.dealsSlice;
 
-export const { addDeal, editDeal, deleteDeal, sortDeals } = dealsSlice.actions;
+export const {
+  setDeals,
+  addDeal,
+  editDeal,
+  deleteDeal,
+  setSortingType
+  // sortDeals,
+  // setModifiedDeals
+} = dealsSlice.actions;
 
 export default dealsSlice.reducer;

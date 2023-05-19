@@ -5,12 +5,11 @@ import { useSelector } from 'react-redux';
 import { selectorLocalization } from '../../store/reducers/localizationSlice';
 import { useAppDispatch } from '../../store/store';
 import dayjs from 'dayjs';
-import { addDeal } from '../../store/reducers/dealsSlice';
+import { addDeal, selectorDeals, sortDeals } from '../../store/reducers/dealsSlice';
 import { dealsType } from '../../utils/mockdata/mockDealsRus';
 import { progressStatusForDeals } from '../../utils/constants/constants';
 
 interface PopupAddDealsProps {
-  // content: dealsAddEditType;
   handleClosePopup: () => void;
 }
 
@@ -43,20 +42,6 @@ const PopupAddDeals: FC<PopupAddDealsProps> = ({ handleClosePopup }) => {
   const content = contentLocal.components.popup.dealsAddEdit;
 
   const [formValues, setFormValues] = useState(defaultFormAddDealsValue);
-
-  // const [inputAddressValue, setInputAddressValue] = useState(defaultValue);
-  // const [inputCityValue, setInputCityValue] = useState(defaultValue);
-  // const [inputStateValue, setInputStateValue] = useState(defaultValue);
-  // const [inputZipValue, setInputZipValue] = useState(defaultValue);
-  // const [inputAreaValue, setInputAreaValue] = useState(defaultValue);
-  // const [inputPeopleValue, setInputPeopleValue] = useState(defaultValue);
-  // const [inputDateValue, setInputDateValue] = useState(defaultValue);
-  // const [inputInstructionValue, setInputInstructionValue] = useState(defaultValue);
-  // const [selectAccessValue, setSelectAccessValue] = useState('key');
-  // const [inputPriceValue, setInputPriceValue] = useState(defaultValue);
-  // const [selectStatusValue, setSelectStatusValue] = useState(progressStatusForDeals.inProgress);
-
-  console.log(formValues.date);
 
   const handleSubmit = (e: React.ChangeEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -198,7 +183,6 @@ const PopupAddDeals: FC<PopupAddDealsProps> = ({ handleClosePopup }) => {
       </div>
       <div className="form-deal__footer">
         <div>
-          <label htmlFor="dealProgress">{content.progress[lang]}</label>
           <select
             id="dealProgress"
             value={formValues.status}
@@ -210,12 +194,13 @@ const PopupAddDeals: FC<PopupAddDealsProps> = ({ handleClosePopup }) => {
               {content.progressStatuses.closed[lang]}
             </option>
           </select>
+          <label htmlFor="dealProgress">{content.progress[lang]}</label>
         </div>
         <div>
+          <ButtonOval styleClass="primary-blue">{content.footerButtonAdd[lang]}</ButtonOval>
           <ButtonOval styleClass="transparent-red" handleClick={handleClosePopup}>
             {content.footerButtonCancel[lang]}
           </ButtonOval>
-          <ButtonOval styleClass="primary-blue">{content.footerButtonAdd[lang]}</ButtonOval>
         </div>
       </div>
     </form>

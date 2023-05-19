@@ -12,17 +12,17 @@ export const sortingHelper = (initialsData: dealsType[], type: string): dealsTyp
     case sortingDataDeals.none.value:
       return initialsData;
     case sortingDataDeals.createAtAscending.value:
-      return initialsData.sort((a, b) => a.createdAt - b.createdAt);
+      return [...initialsData].sort((a, b) => a.createdAt - b.createdAt);
     case sortingDataDeals.createAtDescending.value:
-      return initialsData.sort((a, b) => b.createdAt - a.createdAt);
+      return [...initialsData].sort((a, b) => b.createdAt - a.createdAt);
     case sortingDataDeals.appointmentDateAscending.value:
-      return initialsData.sort((a, b) => a.appointmentDate - b.appointmentDate);
+      return [...initialsData].sort((a, b) => a.appointmentDate - b.appointmentDate);
     case sortingDataDeals.appointmentDateDescending.value:
-      return initialsData.sort((a, b) => b.appointmentDate - a.appointmentDate);
+      return [...initialsData].sort((a, b) => b.appointmentDate - a.appointmentDate);
     case sortingDataDeals.cityAscending.value:
-      return initialsData.sort((a, b) => a.address.city.localeCompare(b.address.city));
+      return [...initialsData].sort((a, b) => a.address.city.localeCompare(b.address.city));
     case sortingDataDeals.cityDescending.value:
-      return initialsData.sort((a, b) => b.address.city.localeCompare(a.address.city));
+      return [...initialsData].sort((a, b) => b.address.city.localeCompare(a.address.city));
     default:
       return initialsData;
   }

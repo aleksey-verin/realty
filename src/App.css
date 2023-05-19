@@ -278,7 +278,7 @@ main {
   cursor: pointer;
 }
 .sorting-select {
-  width: 320px;
+  width: 220px;
   height: 50px;
   border-radius: 25px;
   box-sizing: border-box;
@@ -992,6 +992,7 @@ main {
 }
 .form-deal__footer div {
   display: flex;
+  flex-direction: row-reverse;
   align-items: center;
   gap: 20px;
 }
