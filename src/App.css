@@ -306,7 +306,7 @@ main {
   fill: #514ef3;
 }
 .sorting-select.active {
-  background-color: #2e2e2e;
+  background-color: #eaeef4;
 }
 .sorting-menu {
   position: absolute;
@@ -351,6 +351,9 @@ main {
   }
   .sorting-select svg path {
     fill: #fff;
+  }
+  .sorting-select.active {
+    background-color: #2e2e2e;
   }
   .sorting-menu {
     background-color: #2e2e2e;

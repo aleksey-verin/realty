@@ -397,7 +397,7 @@ main {
       }
     }
     &.active {
-      background-color: $color-bg-dark2;
+      background-color: $color-grey30;
     }
     // &__text.active {
     //   color: $color-blue;
@@ -453,7 +453,11 @@ main {
           fill: $color-white;
         }
       }
+      &.active {
+        background-color: $color-bg-dark2;
+      }
     }
+
     &-menu {
       background-color: $color-bg-dark2; // oval & circle-block
       box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.3);
