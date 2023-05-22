@@ -212,21 +212,21 @@ const DealsDetails: FC<DealsDetailsProps> = () => {
             </div>
           </div>
         </div>
-        {popupEditIsOpen && (
-          <PopupContainer
-            title={contentLocal.components.popup.dealsAddEdit.headerTitleEdit[lang]}
-            handleClosePopup={() => setPopupEditIsOpen(false)}>
-            <PopupEditDeal deal={deal} handleClosePopup={() => setPopupEditIsOpen(false)} />
-          </PopupContainer>
-        )}
-        {popupDeleteIsOpen && (
-          <PopupContainer
-            title={contentLocal.components.popup.dealsDelete.headerTitle[lang]}
-            handleClosePopup={() => setPopupDeleteIsOpen(false)}>
-            <PopupDeleteDeal deal={deal} handleClosePopup={() => setPopupDeleteIsOpen(false)} />
-          </PopupContainer>
-        )}
       </main>
+      {popupEditIsOpen && (
+        <PopupContainer
+          title={contentLocal.components.popup.dealsAddEdit.headerTitleEdit[lang]}
+          handleClosePopup={() => setPopupEditIsOpen(false)}>
+          <PopupEditDeal deal={deal} handleClosePopup={() => setPopupEditIsOpen(false)} />
+        </PopupContainer>
+      )}
+      {popupDeleteIsOpen && (
+        <PopupContainer
+          title={contentLocal.components.popup.dealsDelete.headerTitle[lang]}
+          handleClosePopup={() => setPopupDeleteIsOpen(false)}>
+          <PopupDeleteDeal deal={deal} handleClosePopup={() => setPopupDeleteIsOpen(false)} />
+        </PopupContainer>
+      )}
     </div>
   );
 };

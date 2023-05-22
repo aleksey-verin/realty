@@ -294,6 +294,7 @@ aside {
 main {
   height: 100%;
   width: 100%;
+  position: relative;
   // flex: 1 1 auto;
 }
 
@@ -1107,7 +1108,8 @@ main {
       color: $color-grey70;
     }
   }
-  & input[type='datetime-local'] {
+  & input[type='datetime-local'],
+  input[type='date'] {
     font-family: inherit;
     color: $color-grey70;
   }
@@ -1214,5 +1216,70 @@ main {
     flex: 1 1 50%;
     display: flex;
     justify-content: center;
+  }
+}
+
+// ======= fake ===
+
+.filters-menu {
+  width: 417px;
+  position: absolute;
+  display: none;
+  top: 0;
+  right: -420px;
+  bottom: 0;
+  // flex: 0 0 417px;
+  background-color: $color-white;
+  box-sizing: border-box;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  border-radius: 12px 0px 0px 12px;
+  -webkit-box-shadow: -8px 7px 13px -6px rgba(34, 60, 80, 0.2);
+  -moz-box-shadow: -8px 7px 13px -6px rgba(34, 60, 80, 0.2);
+  box-shadow: -8px 7px 13px -6px rgba(34, 60, 80, 0.2);
+  transition: all ease-in-out 0.3s 0s;
+  &.open {
+    display: flex;
+    transition: all ease-in-out 0.3s 0s;
+    top: 0;
+    right: 0;
+    bottom: 0;
+  }
+  &__title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    // padding: 24px 32px;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 30px;
+    & button {
+      border: none;
+      width: 24px;
+      height: 24px;
+      border-radius: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: inherit;
+      transition: all 0.2s 0s;
+      cursor: pointer;
+      & svg {
+        flex: 0 0 auto;
+        width: 24px;
+        height: 24px;
+      }
+      &:hover svg path {
+        fill: $color-blue-dark;
+      }
+    }
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .filters-menu {
+    background-color: $color-bg-dark2;
   }
 }

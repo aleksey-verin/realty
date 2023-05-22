@@ -219,6 +219,7 @@ aside {
 main {
   height: 100%;
   width: 100%;
+  position: relative;
 }
 
 .filters {
@@ -933,7 +934,8 @@ main {
 .form-deal select::placeholder {
   color: #7e92a2;
 }
-.form-deal input[type=datetime-local] {
+.form-deal input[type=datetime-local],
+.form-deal input[type=date] {
   font-family: inherit;
   color: #7e92a2;
 }
@@ -1035,4 +1037,63 @@ main {
   flex: 1 1 50%;
   display: flex;
   justify-content: center;
+}
+
+.filters-menu {
+  width: 417px;
+  position: absolute;
+  display: none;
+  top: 0;
+  right: -420px;
+  bottom: 0;
+  background-color: #fff;
+  box-sizing: border-box;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  border-radius: 12px 0px 0px 12px;
+  box-shadow: -8px 7px 13px -6px rgba(34, 60, 80, 0.2);
+  transition: all ease-in-out 0.3s 0s;
+}
+.filters-menu.open {
+  display: flex;
+  transition: all ease-in-out 0.3s 0s;
+  top: 0;
+  right: 0;
+  bottom: 0;
+}
+.filters-menu__title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 30px;
+}
+.filters-menu__title button {
+  border: none;
+  width: 24px;
+  height: 24px;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: inherit;
+  transition: all 0.2s 0s;
+  cursor: pointer;
+}
+.filters-menu__title button svg {
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+}
+.filters-menu__title button:hover svg path {
+  fill: #3431e4;
+}
+
+@media (prefers-color-scheme: dark) {
+  .filters-menu {
+    background-color: #2e2e2e;
+  }
 }/*# sourceMappingURL=App.css.map */

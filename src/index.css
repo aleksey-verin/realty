@@ -37,6 +37,7 @@ h1 {
 
 button {
   border: none;
+  background-color: inherit;
 }
 
 button,
