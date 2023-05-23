@@ -1,5 +1,4 @@
 import { FC, useMemo, useState } from 'react';
-import ImgFilter from '../components/ui/images/ImgFilter';
 import ImgUser from '../components/ui/images/ImgUser';
 import SpreadsheetItem from '../components/deals/SpreadsheetItem';
 import Header from '../components/Header';
@@ -13,8 +12,6 @@ import { sortingDealsValues } from '../utils/constants/constants';
 import { useAppDispatch } from '../store/store';
 import SelectSorting from '../components/ui/SelectSorting';
 import { sortingHelper } from '../utils/helpers';
-import ButtonOval from '../components/ui/buttons/ButtonOval';
-import ImgClose from '../components/ui/images/ImgClose';
 import Filter from '../components/ui/Filter';
 
 interface DealsProps {}
