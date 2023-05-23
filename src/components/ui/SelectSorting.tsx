@@ -1,6 +1,6 @@
 import { FC, useEffect, useRef, useState } from 'react';
-import ImgArrowDown from '../images/ImgArrowDown';
-import ImgArrowUp from '../images/ImgArrowUp';
+import ImgArrowDown from './images/ImgArrowDown';
+import ImgArrowUp from './images/ImgArrowUp';
 
 interface SelectSortingProps {
   menuItems: Array<{ value: string; name: string }>;

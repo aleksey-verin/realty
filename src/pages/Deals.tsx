@@ -11,10 +11,11 @@ import PopupAddDeals from '../components/popup/PopupAddDeals';
 import { selectorDeals, setSortingType } from '../store/reducers/dealsSlice';
 import { sortingDealsValues } from '../utils/constants/constants';
 import { useAppDispatch } from '../store/store';
-import SelectSorting from '../components/ui/buttons/SelectSorting';
+import SelectSorting from '../components/ui/SelectSorting';
 import { sortingHelper } from '../utils/helpers';
 import ButtonOval from '../components/ui/buttons/ButtonOval';
 import ImgClose from '../components/ui/images/ImgClose';
+import Filter from '../components/ui/Filter';
 
 interface DealsProps {}
 
@@ -25,7 +26,6 @@ const Deals: FC<DealsProps> = () => {
   const { deals, sortingType } = useSelector(selectorDeals);
 
   const [popupIsOpen, setPopupIsOpen] = useState(false);
-  const [filtersMenuIsOpen, setFiltersMenuIsOpen] = useState(false);
 
   const modifiedDeals = useMemo(() => sortingHelper(deals, sortingType), [deals, sortingType]);
   // const modifiedDeals = deals.length ? sortingHelper(deals, sortingType) : deals;
@@ -60,14 +60,7 @@ const Deals: FC<DealsProps> = () => {
               <ImgArrowDown />
             </div>
           </div> */}
-          <div className="filters-filter" onClick={() => setFiltersMenuIsOpen(!filtersMenuIsOpen)}>
-            <div className="filters-filter__title">
-              {contentLocal.pages.deals.filterLabel[lang]}
-            </div>
-            <div className="filters-filter__image">
-              <ImgFilter />
-            </div>
-          </div>
+          <Filter title={contentLocal.pages.deals.filterLabel[lang]} />
         </div>
         <div className="spreadsheet">
           <div className="spreadsheet-title column">
@@ -107,61 +100,6 @@ const Deals: FC<DealsProps> = () => {
               <SpreadsheetItem key={item.id_deal} data={item} />
             ))}
           </div>
-        </div>
-
-        <div className={`filters-menu ${filtersMenuIsOpen ? 'open' : ''}`}>
-          <div className="filters-menu__title">
-            <div>Выберите фильтры</div>
-            <button onClick={() => setFiltersMenuIsOpen(!filtersMenuIsOpen)}>
-              <ImgClose />
-            </button>
-          </div>
-          <div className="filters-menu__filters form-deal">
-            <form>
-              <input type="text" />
-              <input type="text" />
-
-              <input type="text" />
-              <div className="form-deal__single">
-                <label htmlFor="dealDate">Выберите дату</label>
-                <input
-                  required
-                  // value={formValues.date}
-                  // onChange={(e) => setFormValues({ ...formValues, date: e.target.value })}
-                  type="date"
-                  id="dealDate"
-                />
-                <input
-                  required
-                  // value={formValues.date}
-                  // onChange={(e) => setFormValues({ ...formValues, date: e.target.value })}
-                  type="date"
-                  id="dealDate"
-                />
-              </div>
-              <div>
-                <ButtonOval styleClass="primary-blue">Применить</ButtonOval>
-                <ButtonOval styleClass="transparent-red">Отменить</ButtonOval>
-              </div>
-            </form>
-          </div>
-          {/* <ButtonOval
-            handleClick={() => setFiltersMenuIsOpen(!filtersMenuIsOpen)}
-            styleClass="primary-blue">
-            Закрыть
-          </ButtonOval> */}
-
-          {/* <div className="details-aside__record record">
-            <div className="record-title">{asideContent.activity[lang]}</div>
-            <form action="#" className="record-form">
-              <label htmlFor="newNote">{asideContent.description[lang]}</label>
-              <input type="text" id="newNote" placeholder={asideContent.notePlaceholder[lang]} />
-              <input type="datetime-local" />
-              <label htmlFor="newImage">{asideContent.image[lang]}</label>
-              <input type="file" />
-              <ButtonOval styleClass="primary-blue">{asideContent.btnSave[lang]}</ButtonOval>
-            </form>
-          </div> */}
         </div>
       </main>
       <footer>

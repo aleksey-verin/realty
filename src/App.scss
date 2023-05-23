@@ -1219,7 +1219,7 @@ main {
   }
 }
 
-// ======= fake ===
+// ======= filter deals ===
 
 .filters-menu {
   width: 417px;
@@ -1243,9 +1243,9 @@ main {
   &.open {
     display: flex;
     transition: all ease-in-out 0.3s 0s;
-    top: 0;
+    // top: 0;
     right: 0;
-    bottom: 0;
+    // bottom: 0;
   }
   &__title {
     display: flex;
